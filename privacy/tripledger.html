@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TripLedger Privacy Policy | GK Mobile Studio</title>
-  <meta name="description" content="Privacy Policy for TripLedger by GK Mobile Studio.">
+  <meta name="description" content="Privacy Policy for TripLedger by GK Mobile Studio." data-i18n-content="meta.description">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,51 +13,115 @@
 <body class="legal-page">
   <header class="site-header" data-header>
     <a class="brand" href="../index.html">
-      <img src="../assets/logo.png" alt="GK Mobile Studio logo">
+      <img src="../assets/logo.png" alt="GK Mobile Studio logo" data-i18n-alt="brand.logoAlt">
       <span>GK Mobile Studio</span>
     </a>
-    <nav class="nav-links" aria-label="Legal navigation">
-      <a href="../index.html#applications">Applications</a>
-      <a href="../index.html#contact">Contact</a>
-    </nav>
+    <div class="header-actions">
+      <nav class="nav-links" aria-label="Legal navigation">
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
+        <a href="../index.html#applications" data-i18n="nav.applications">Applications</a>
+        <a href="../index.html#whats-new" data-i18n="nav.updates">Updates</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="tr">TR</button>
+      </div>
+    </div>
   </header>
 
   <main>
     <section class="legal-hero section-shell reveal">
-      <p class="eyebrow">Privacy Policy</p>
+      <p class="eyebrow" data-i18n="legal.eyebrow">Privacy Policy</p>
       <h1>TripLedger</h1>
-      <p class="legal-meta">Last updated: July 4, 2026</p>
+      <p class="legal-meta" data-i18n="legal.lastUpdated">Last updated: July 4, 2026</p>
       <div class="legal-nav">
-        <a class="button compact ghost" href="../index.html">Home</a>
-        <a class="button compact ghost" href="../terms/tripledger.html">Terms of Service</a>
+        <a class="button compact ghost" href="../index.html" data-i18n="legal.home">Home</a>
+        <a class="button compact ghost" href="../terms/tripledger.html" data-i18n="legal.terms">Terms of Service</a>
       </div>
     </section>
 
     <article class="legal-card reveal">
-      <h2>Overview</h2>
-      <p>GK Mobile Studio provides TripLedger as an expense tracking, travel budgeting, subscription management and shared expense tracking application.</p>
+      <h2 data-i18n="legal.overview">Overview</h2>
+      <p data-i18n="legal.overviewText">GK Mobile Studio provides TripLedger as an expense tracking, travel budgeting, subscription management and shared expense tracking application.</p>
 
-      <h2>Information You Provide</h2>
-      <p>TripLedger may store information you enter in the app, such as expenses, budgets, subscriptions, notes, categories and shared expense details. This information is used to provide the app features you choose to use.</p>
+      <h2 data-i18n="legal.infoProvide">Information You Provide</h2>
+      <p data-i18n="legal.infoProvideText">TripLedger may store information you enter in the app, such as expenses, budgets, subscriptions, notes, categories and shared expense details. This information is used to provide the app features you choose to use.</p>
 
-      <h2>Device and App Data</h2>
-      <p>The app may use technical information required for core functionality, diagnostics, security, crash handling and performance improvement, depending on the services enabled in the app version you use.</p>
+      <h2 data-i18n="legal.deviceData">Device and App Data</h2>
+      <p data-i18n="legal.deviceDataText">The app may use technical information required for core functionality, diagnostics, security, crash handling and performance improvement, depending on the services enabled in the app version you use.</p>
 
-      <h2>How Information Is Used</h2>
+      <h2 data-i18n="legal.howUsed">How Information Is Used</h2>
       <ul>
-        <li>To provide expense, budget, subscription and shared tracking features.</li>
-        <li>To maintain, secure and improve the application.</li>
-        <li>To respond to support requests sent by email.</li>
+        <li data-i18n="legal.howUsed1">To provide expense, budget, subscription and shared tracking features.</li>
+        <li data-i18n="legal.howUsed2">To maintain, secure and improve the application.</li>
+        <li data-i18n="legal.howUsed3">To respond to support requests sent by email.</li>
       </ul>
 
-      <h2>Third-Party Services</h2>
-      <p>TripLedger may rely on platform or analytics services where necessary for app distribution, diagnostics or performance. Third-party services process data according to their own privacy practices.</p>
+      <h2 data-i18n="legal.thirdParty">Third-Party Services</h2>
+      <p data-i18n="legal.thirdPartyTextTripLedger">TripLedger may rely on platform or analytics services where necessary for app distribution, diagnostics or performance. Third-party services process data according to their own privacy practices.</p>
 
-      <h2>Contact</h2>
-      <p>For privacy questions, contact GK Mobile Studio at <a href="mailto:asilzade.1999@gmail.com">asilzade.1999@gmail.com</a>.</p>
+      <h2 data-i18n="legal.contact">Contact</h2>
+      <p data-i18n-html="legal.contactPrivacyText">For privacy questions, contact GK Mobile Studio at <a href="mailto:asilzade.1999@gmail.com">asilzade.1999@gmail.com</a>.</p>
     </article>
   </main>
 
+  <script>
+    window.I18N = {
+      en: {
+        "meta.description": "Privacy Policy for TripLedger by GK Mobile Studio.",
+        "brand.logoAlt": "GK Mobile Studio logo",
+        "nav.about": "About",
+        "nav.applications": "Applications",
+        "nav.updates": "Updates",
+        "nav.contact": "Contact",
+        "legal.eyebrow": "Privacy Policy",
+        "legal.lastUpdated": "Last updated: July 4, 2026",
+        "legal.home": "Home",
+        "legal.terms": "Terms of Service",
+        "legal.overview": "Overview",
+        "legal.overviewText": "GK Mobile Studio provides TripLedger as an expense tracking, travel budgeting, subscription management and shared expense tracking application.",
+        "legal.infoProvide": "Information You Provide",
+        "legal.infoProvideText": "TripLedger may store information you enter in the app, such as expenses, budgets, subscriptions, notes, categories and shared expense details. This information is used to provide the app features you choose to use.",
+        "legal.deviceData": "Device and App Data",
+        "legal.deviceDataText": "The app may use technical information required for core functionality, diagnostics, security, crash handling and performance improvement, depending on the services enabled in the app version you use.",
+        "legal.howUsed": "How Information Is Used",
+        "legal.howUsed1": "To provide expense, budget, subscription and shared tracking features.",
+        "legal.howUsed2": "To maintain, secure and improve the application.",
+        "legal.howUsed3": "To respond to support requests sent by email.",
+        "legal.thirdParty": "Third-Party Services",
+        "legal.thirdPartyTextTripLedger": "TripLedger may rely on platform or analytics services where necessary for app distribution, diagnostics or performance. Third-party services process data according to their own privacy practices.",
+        "legal.contact": "Contact",
+        "legal.contactPrivacyText": "For privacy questions, contact GK Mobile Studio at <a href=\"mailto:asilzade.1999@gmail.com\">asilzade.1999@gmail.com</a>."
+      },
+      tr: {
+        "meta.description": "GK Mobile Studio tarafından geliştirilen TripLedger için Gizlilik Politikası.",
+        "brand.logoAlt": "GK Mobile Studio logosu",
+        "nav.about": "Hakkımızda",
+        "nav.applications": "Uygulamalar",
+        "nav.updates": "Güncellemeler",
+        "nav.contact": "İletişim",
+        "legal.eyebrow": "Gizlilik Politikası",
+        "legal.lastUpdated": "Son güncelleme: 4 Temmuz 2026",
+        "legal.home": "Ana Sayfa",
+        "legal.terms": "Kullanım Şartları",
+        "legal.overview": "Genel Bakış",
+        "legal.overviewText": "GK Mobile Studio, TripLedger'ı gider takibi, seyahat bütçeleme, abonelik yönetimi ve ortak gider takibi sağlayan bir uygulama olarak sunar.",
+        "legal.infoProvide": "Sağladığınız Bilgiler",
+        "legal.infoProvideText": "TripLedger; uygulama içinde girdiğiniz giderler, bütçeler, abonelikler, notlar, kategoriler ve ortak gider detayları gibi bilgileri saklayabilir. Bu bilgiler, kullanmayı tercih ettiğiniz uygulama özelliklerini sağlamak için kullanılır.",
+        "legal.deviceData": "Cihaz ve Uygulama Verileri",
+        "legal.deviceDataText": "Uygulama; kullandığınız sürümde etkin olan hizmetlere bağlı olarak temel işlevsellik, tanılama, güvenlik, çökme yönetimi ve performans iyileştirmesi için gerekli teknik bilgileri kullanabilir.",
+        "legal.howUsed": "Bilgilerin Kullanım Amacı",
+        "legal.howUsed1": "Gider, bütçe, abonelik ve ortak gider takibi özelliklerini sağlamak için.",
+        "legal.howUsed2": "Uygulamanın bakımını yapmak, güvenliğini sağlamak ve iyileştirmek için.",
+        "legal.howUsed3": "E-posta yoluyla gönderilen destek taleplerine yanıt vermek için.",
+        "legal.thirdParty": "Üçüncü Taraf Hizmetler",
+        "legal.thirdPartyTextTripLedger": "TripLedger; uygulama dağıtımı, tanılama veya performans için gerekli olduğunda platform ya da analiz hizmetlerine dayanabilir. Üçüncü taraf hizmetler, verileri kendi gizlilik uygulamalarına göre işler.",
+        "legal.contact": "İletişim",
+        "legal.contactPrivacyText": "Gizlilikle ilgili sorularınız için GK Mobile Studio ile <a href=\"mailto:asilzade.1999@gmail.com\">asilzade.1999@gmail.com</a> adresinden iletişime geçebilirsiniz."
+      }
+    };
+  </script>
   <script src="../script.js"></script>
 </body>
 </html>
