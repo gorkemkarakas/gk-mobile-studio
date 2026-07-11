@@ -3,12 +3,52 @@ const revealItems = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isFinePointer = window.matchMedia("(pointer: fine)").matches;
 
+document.querySelectorAll("[data-current-year]").forEach((element) => {
+  element.textContent = new Date().getFullYear();
+});
+
 const updateHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 18);
 };
 
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
+
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const headerMenu = document.querySelector("[data-header-menu]");
+
+const closeMenu = () => {
+  if (!menuToggle || !header) return;
+  menuToggle.setAttribute("aria-expanded", "false");
+  header.classList.remove("menu-open");
+};
+
+menuToggle?.addEventListener("click", () => {
+  const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+  menuToggle.setAttribute("aria-expanded", String(willOpen));
+  header?.classList.toggle("menu-open", willOpen);
+});
+
+headerMenu?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+    menuToggle?.focus();
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (header?.classList.contains("menu-open") && !header.contains(event.target)) {
+    closeMenu();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 860) closeMenu();
+});
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
@@ -203,7 +243,9 @@ const applyLanguage = (lang) => {
   });
 
   document.querySelectorAll("[data-lang-toggle] button").forEach((btn) => {
-    btn.classList.toggle("is-active", btn.dataset.lang === lang);
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle("is-active", isActive);
+    btn.setAttribute("aria-pressed", String(isActive));
   });
 };
 

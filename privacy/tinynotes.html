@@ -5,18 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TinyNotes Privacy Policy | GK Mobile Studio</title>
   <meta name="description" content="Privacy Policy for TinyNotes by GK Mobile Studio." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#05080b">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/logo-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body class="legal-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" data-header>
     <a class="brand" href="../index.html">
-      <img src="../assets/logo.png" alt="GK Mobile Studio logo" data-i18n-alt="brand.logoAlt">
+      <img src="../assets/logo-192.png" alt="GK Mobile Studio logo" width="42" height="42" decoding="async" data-i18n-alt="brand.logoAlt">
       <span>GK Mobile Studio</span>
     </a>
-    <div class="header-actions">
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="header-menu" aria-label="Navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="header-actions" id="header-menu" data-header-menu>
       <nav class="nav-links" aria-label="Legal navigation">
         <a href="../index.html#about" data-i18n="nav.about">About</a>
         <a href="../index.html#applications" data-i18n="nav.applications">Applications</a>
@@ -30,7 +36,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="legal-hero section-shell reveal">
       <p class="eyebrow" data-i18n="legal.eyebrow">Privacy Policy</p>
       <h1>TinyNotes</h1>

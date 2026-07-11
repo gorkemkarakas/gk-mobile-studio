@@ -5,23 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GK Mobile Studio</title>
   <meta name="description" content="GK Mobile Studio builds useful, simple and beautiful mobile applications." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#05080b">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GK Mobile Studio">
+  <meta property="og:title" content="GK Mobile Studio">
+  <meta property="og:description" content="Useful, simple and beautiful mobile applications.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GK Mobile Studio">
+  <meta name="twitter:description" content="Useful, simple and beautiful mobile applications.">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="cursor-glow" data-cursor-glow aria-hidden="true"></div>
   <div class="site-glow site-glow-one" aria-hidden="true"></div>
   <div class="site-glow site-glow-two" aria-hidden="true"></div>
 
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="GK Mobile Studio home">
-      <img src="assets/logo.png" alt="GK Mobile Studio logo" data-i18n-alt="brand.logoAlt">
+      <img src="assets/logo-192.png" alt="GK Mobile Studio logo" width="42" height="42" decoding="async" data-i18n-alt="brand.logoAlt">
       <span>GK Mobile Studio</span>
     </a>
 
-    <div class="header-actions">
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="header-menu" aria-label="Navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="header-actions" id="header-menu" data-header-menu>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#applications" data-i18n="nav.applications">Applications</a>
@@ -36,7 +50,8 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main-content" tabindex="-1">
+    <span id="top" aria-hidden="true"></span>
     <section class="hero section-shell">
       <div class="hero-copy reveal">
         <p class="eyebrow" data-i18n="hero.eyebrow">Independent mobile app developer</p>
@@ -94,7 +109,7 @@
             <span class="phone-btn phone-btn-vol-down" aria-hidden="true"></span>
             <div class="phone-screen">
               <span class="phone-notch" aria-hidden="true"></span>
-              <img src="assets/tripledger.png" alt="TripLedger dark theme app preview" data-i18n-alt="hero.phoneAlt">
+              <img src="assets/tripledger-768.jpg" alt="TripLedger dark theme app preview" width="768" height="1152" fetchpriority="high" decoding="async" data-i18n-alt="hero.phoneAlt">
               <span class="phone-shine" aria-hidden="true"></span>
               <span class="phone-home-indicator" aria-hidden="true"></span>
             </div>
@@ -200,7 +215,7 @@
             </div>
           </div>
           <div class="app-actions">
-            <a class="play-badge" href="#" aria-label="Get TripLedger on Google Play" data-i18n-aria-label="apps.tripledgerPlayAria">
+            <span class="play-badge is-disabled" aria-label="TripLedger Google Play link coming soon" data-i18n-aria-label="apps.tripledgerPlayAria">
               <svg class="play-badge-glyph" viewBox="0 0 24 24">
                 <defs>
                   <linearGradient id="playGradGreen1" x1="0" y1="0" x2="1" y2="1">
@@ -216,10 +231,10 @@
                 <path d="M13 12l2.55-2.6 4.2 2.4c.4.23.4.77 0 1l-4.2 2.4L13 12z" fill="#ffb84d"/>
               </svg>
               <span class="play-badge-text">
-                <em data-i18n="apps.getItOn">GET IT ON</em>
+                <em data-i18n="apps.comingSoon">COMING SOON</em>
                 <strong>Google Play</strong>
               </span>
-            </a>
+            </span>
             <a class="button compact ghost" href="privacy/tripledger.html" data-i18n="apps.privacyPolicy">Privacy Policy</a>
             <a class="button compact ghost" href="terms/tripledger.html" data-i18n="apps.termsOfService">Terms of Service</a>
           </div>
@@ -239,7 +254,7 @@
             </div>
           </div>
           <div class="app-actions">
-            <a class="play-badge" href="#" aria-label="Get TinyNotes on Google Play" data-i18n-aria-label="apps.tinynotesPlayAria">
+            <span class="play-badge is-disabled" aria-label="TinyNotes Google Play link coming soon" data-i18n-aria-label="apps.tinynotesPlayAria">
               <svg class="play-badge-glyph" viewBox="0 0 24 24">
                 <defs>
                   <linearGradient id="playGradGreen2" x1="0" y1="0" x2="1" y2="1">
@@ -255,12 +270,30 @@
                 <path d="M13 12l2.55-2.6 4.2 2.4c.4.23.4.77 0 1l-4.2 2.4L13 12z" fill="#ffb84d"/>
               </svg>
               <span class="play-badge-text">
-                <em data-i18n="apps.getItOn">GET IT ON</em>
+                <em data-i18n="apps.comingSoon">COMING SOON</em>
                 <strong>Google Play</strong>
               </span>
-            </a>
+            </span>
             <a class="button compact ghost" href="privacy/tinynotes.html" data-i18n="apps.privacyPolicy">Privacy Policy</a>
             <a class="button compact ghost" href="terms/tinynotes.html" data-i18n="apps.termsOfService">Terms of Service</a>
+          </div>
+        </article>
+
+        <article class="app-card reveal" style="--delay: 200ms">
+          <div class="app-card-top">
+            <div class="app-icon hydro-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 11a6 6 0 0 1-12 0c0-4.8 6-11 6-11z"/><path d="M9.5 15.5a3 3 0 0 0 2.5 1.4"/></svg>
+            </div>
+            <div>
+              <div class="app-card-heading">
+                <h3>HydroBuddy</h3>
+                <span class="app-tag hydro-tag" data-i18n="apps.hydration">Hydration</span>
+              </div>
+              <p data-i18n="apps.hydrobuddyDesc">A focused water intake tracking application for building better daily hydration habits.</p>
+            </div>
+          </div>
+          <div class="app-actions">
+            <span class="store-status" data-i18n="apps.detailsComingSoon">More details coming soon</span>
           </div>
         </article>
       </div>
@@ -307,13 +340,33 @@
   </main>
 
   <footer id="contact" class="footer section-shell reveal">
-    <div>
+    <div class="footer-intro">
       <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
       <h2>GK Mobile Studio</h2>
+      <p data-i18n="contact.description">Independent mobile applications, thoughtfully built and directly supported.</p>
+      <a class="footer-email" href="mailto:asilzade.1999@gmail.com?subject=GK%20Mobile%20Studio%20Support" data-i18n="contact.support">Get support by email</a>
     </div>
-    <div class="contact-card">
-      <p><span data-i18n="contact.developer">Developer</span> GK Mobile Studio</p>
-      <p><span data-i18n="contact.email">Email</span> <a href="mailto:asilzade.1999@gmail.com">asilzade.1999@gmail.com</a></p>
+
+    <nav class="footer-links" aria-label="Footer navigation" data-i18n-aria-label="contact.footerNavAria">
+      <div class="footer-column">
+        <h3 data-i18n="contact.apps">Applications</h3>
+        <a href="#applications">TripLedger</a>
+        <a href="#applications">TinyNotes</a>
+        <a href="#applications">HydroBuddy</a>
+        <a href="#whats-new" data-i18n="nav.updates">Updates</a>
+      </div>
+      <div class="footer-column">
+        <h3 data-i18n="contact.legal">Legal</h3>
+        <a href="privacy/tripledger.html" data-i18n="contact.tripledgerPrivacy">TripLedger Privacy</a>
+        <a href="terms/tripledger.html" data-i18n="contact.tripledgerTerms">TripLedger Terms</a>
+        <a href="privacy/tinynotes.html" data-i18n="contact.tinynotesPrivacy">TinyNotes Privacy</a>
+        <a href="terms/tinynotes.html" data-i18n="contact.tinynotesTerms">TinyNotes Terms</a>
+      </div>
+    </nav>
+
+    <div class="footer-bottom">
+      <p>&copy; <span data-current-year>2026</span> GK Mobile Studio. <span data-i18n="contact.rights">All rights reserved.</span></p>
+      <a href="#top" data-i18n="misc.backToTop">Back to top</a>
     </div>
   </footer>
 
@@ -359,10 +412,14 @@
         "apps.tripledgerDesc": "Expense tracking, travel budgeting, subscription management and shared expense tracking.",
         "apps.tinynotesDesc": "Minimal note taking application.",
         "apps.getItOn": "GET IT ON",
+        "apps.comingSoon": "COMING SOON",
+        "apps.hydration": "Hydration",
+        "apps.hydrobuddyDesc": "A focused water intake tracking application for building better daily hydration habits.",
+        "apps.detailsComingSoon": "More details coming soon",
         "apps.privacyPolicy": "Privacy Policy",
         "apps.termsOfService": "Terms of Service",
-        "apps.tripledgerPlayAria": "Get TripLedger on Google Play",
-        "apps.tinynotesPlayAria": "Get TinyNotes on Google Play",
+        "apps.tripledgerPlayAria": "TripLedger Google Play link coming soon",
+        "apps.tinynotesPlayAria": "TinyNotes Google Play link coming soon",
         "updates.eyebrow": "What's New",
         "updates.title": "Recent updates across our apps.",
         "updates.date1": "June 2026",
@@ -375,8 +432,16 @@
         "updates.title3": "Initial release",
         "updates.text3": "TinyNotes launched on Google Play — a minimal, distraction-free notes app built for quick capture.",
         "contact.eyebrow": "Contact",
-        "contact.developer": "Developer",
-        "contact.email": "Email",
+        "contact.description": "Independent mobile applications, thoughtfully built and directly supported.",
+        "contact.support": "Get support by email",
+        "contact.apps": "Applications",
+        "contact.legal": "Legal",
+        "contact.tripledgerPrivacy": "TripLedger Privacy",
+        "contact.tripledgerTerms": "TripLedger Terms",
+        "contact.tinynotesPrivacy": "TinyNotes Privacy",
+        "contact.tinynotesTerms": "TinyNotes Terms",
+        "contact.rights": "All rights reserved.",
+        "contact.footerNavAria": "Footer navigation",
         "misc.backToTop": "Back to top"
       },
       tr: {
@@ -415,10 +480,14 @@
         "apps.tripledgerDesc": "Gider takibi, seyahat bütçeleme, abonelik yönetimi ve ortak gider takibi.",
         "apps.tinynotesDesc": "Minimalist not alma uygulaması.",
         "apps.getItOn": "UYGULAMAYI EDİNİN",
+        "apps.comingSoon": "YAKINDA",
+        "apps.hydration": "Su Takibi",
+        "apps.hydrobuddyDesc": "Daha iyi günlük su tüketimi alışkanlıkları oluşturmak için odaklı bir su takibi uygulaması.",
+        "apps.detailsComingSoon": "Daha fazla ayrıntı yakında",
         "apps.privacyPolicy": "Gizlilik Politikası",
         "apps.termsOfService": "Kullanım Şartları",
-        "apps.tripledgerPlayAria": "TripLedger'ı Google Play'den edinin",
-        "apps.tinynotesPlayAria": "TinyNotes'u Google Play'den edinin",
+        "apps.tripledgerPlayAria": "TripLedger Google Play bağlantısı yakında",
+        "apps.tinynotesPlayAria": "TinyNotes Google Play bağlantısı yakında",
         "updates.eyebrow": "Yenilikler",
         "updates.title": "Uygulamalarımızdaki son güncellemeler.",
         "updates.date1": "Haziran 2026",
@@ -431,8 +500,16 @@
         "updates.title3": "İlk sürüm",
         "updates.text3": "TinyNotes Google Play'de yayınlandı — hızlı not almak için tasarlanmış, minimalist ve dikkat dağıtmayan bir not uygulaması.",
         "contact.eyebrow": "İletişim",
-        "contact.developer": "Geliştirici",
-        "contact.email": "E-posta",
+        "contact.description": "Özenle geliştirilen ve doğrudan desteklenen bağımsız mobil uygulamalar.",
+        "contact.support": "E-posta ile destek alın",
+        "contact.apps": "Uygulamalar",
+        "contact.legal": "Yasal",
+        "contact.tripledgerPrivacy": "TripLedger Gizlilik",
+        "contact.tripledgerTerms": "TripLedger Kullanım Şartları",
+        "contact.tinynotesPrivacy": "TinyNotes Gizlilik",
+        "contact.tinynotesTerms": "TinyNotes Kullanım Şartları",
+        "contact.rights": "Tüm hakları saklıdır.",
+        "contact.footerNavAria": "Alt bilgi navigasyonu",
         "misc.backToTop": "Yukarı çık"
       }
     };
