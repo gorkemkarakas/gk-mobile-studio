@@ -533,25 +533,43 @@ a.play-badge:hover {
 }
 
 .phone-float {
+  position: relative;
+  isolation: isolate;
   animation: phone-float 6.5s ease-in-out infinite;
 }
 
+.phone-float::before {
+  position: absolute;
+  inset: 12% 5% 8%;
+  z-index: -1;
+  content: "";
+  border-radius: 48%;
+  background: radial-gradient(circle at 55% 42%, rgba(84, 242, 194, 0.24), rgba(77, 227, 255, 0.1) 42%, transparent 72%);
+  filter: blur(30px);
+  opacity: 0.8;
+  animation: phone-aura 4.8s ease-in-out infinite;
+}
+
 @keyframes phone-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-16px); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-0.5deg); }
+  50% { transform: translate3d(0, -16px, 0) rotate(0.7deg); }
+}
+
+@keyframes phone-aura {
+  0%, 100% { opacity: 0.58; transform: scale(0.94); }
+  50% { opacity: 0.92; transform: scale(1.04); }
 }
 
 .phone-mockup {
   position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  box-shadow:
-    0 40px 90px rgba(0, 0, 0, 0.5),
-    0 0 70px rgba(77, 227, 255, 0.16);
-  transition: transform 120ms ease-out;
+  filter: drop-shadow(0 42px 38px rgba(0, 0, 0, 0.52)) drop-shadow(0 0 30px rgba(77, 227, 255, 0.12));
+  transition: transform 140ms ease-out, filter 300ms ease;
   transform-style: preserve-3d;
   will-change: transform;
+}
+
+.hero-visual:hover .phone-mockup {
+  filter: drop-shadow(0 48px 42px rgba(0, 0, 0, 0.58)) drop-shadow(0 0 40px rgba(84, 242, 194, 0.2));
 }
 
 .phone-mockup img {
