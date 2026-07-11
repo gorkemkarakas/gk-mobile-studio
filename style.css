@@ -559,6 +559,28 @@ a.play-badge:hover {
   height: auto;
 }
 
+/* Prevent a previously cached hero markup from drawing a second phone frame. */
+.phone-btn,
+.phone-notch,
+.phone-home-indicator,
+.phone-shine {
+  display: none !important;
+}
+
+.phone-screen {
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .floating-chip,
 .floating-rating {
   position: absolute;
