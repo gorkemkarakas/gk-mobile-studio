@@ -3,509 +3,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GK Mobile Studio</title>
-  <meta name="description" content="GK Mobile Studio builds useful, simple and beautiful mobile applications." data-i18n-content="meta.description">
-  <meta name="theme-color" content="#05080b">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GK Mobile Studio">
-  <meta property="og:title" content="GK Mobile Studio">
-  <meta property="og:description" content="Useful, simple and beautiful mobile applications.">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="GK Mobile Studio">
-  <meta name="twitter:description" content="Useful, simple and beautiful mobile applications.">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png">
+  <title data-i18n="meta.title">GK Mobile Studio | Digital products that move business forward</title>
+  <meta name="description" content="GK Mobile Studio creates mobile apps, dashboards and web solutions for growing businesses." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#f8faff">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260711-3">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="cursor-glow" data-cursor-glow aria-hidden="true"></div>
-  <div class="site-glow site-glow-one" aria-hidden="true"></div>
-  <div class="site-glow site-glow-two" aria-hidden="true"></div>
-
+  <a class="skip-link" href="#main-content" data-i18n="accessibility.skip">Skip to main content</a>
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="GK Mobile Studio home">
-      <img src="assets/logo-192.png" alt="GK Mobile Studio logo" width="42" height="42" decoding="async" data-i18n-alt="brand.logoAlt">
+      <img class="brand-mark" src="assets/logo.png" alt="GK Mobile Studio logo" width="38" height="38">
       <span>GK Mobile Studio</span>
     </a>
-
-    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="header-menu" aria-label="Navigation menu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <div class="header-actions" id="header-menu" data-header-menu>
-      <nav class="nav-links" aria-label="Primary navigation">
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="header-menu" aria-label="Open navigation" data-i18n-aria-label="accessibility.openNav"><span></span><span></span><span></span></button>
+    <div class="header-menu" id="header-menu" data-header-menu>
+      <nav class="nav-links" aria-label="Primary navigation" data-i18n-aria-label="accessibility.primaryNav">
+        <a class="is-active" href="#top" data-i18n="nav.home">Home</a>
         <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#applications" data-i18n="nav.applications">Applications</a>
-        <a href="#whats-new" data-i18n="nav.updates">Updates</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
-
-      <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language">
-        <button type="button" data-lang="en">EN</button>
-        <button type="button" data-lang="tr">TR</button>
+      <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language" data-i18n-aria-label="language.label">
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang="tr" aria-pressed="false">TR</button>
       </div>
+      <a class="button button-dark header-quote" href="mailto:asilzade.1999@gmail.com?subject=Project%20inquiry" data-i18n="cta.quote">Get a Quote</a>
     </div>
   </header>
 
-  <main id="main-content" tabindex="-1">
-    <span id="top" aria-hidden="true"></span>
+  <main id="main-content" tabindex="-1"><span id="top" aria-hidden="true"></span>
     <section class="hero section-shell">
-      <div class="hero-copy reveal">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Independent mobile app developer</p>
-        <h1 data-i18n="hero.title">Building useful, simple and beautiful mobile applications.</h1>
-        <p class="hero-text" data-i18n="hero.text">
-          GK Mobile Studio creates focused mobile products with clean interfaces,
-          practical workflows and thoughtful details for everyday use.
-        </p>
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Welcome to GK Mobile Studio</p>
+        <h1 data-i18n-html="hero.title">Crafting Digital <span>Success</span></h1>
+        <p class="hero-text" data-i18n="hero.text">We build mobile apps, dashboards, and web solutions that help businesses grow.</p>
         <div class="hero-actions">
-          <a class="button primary" data-magnetic href="#applications">
-            <span class="button-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-            <span data-i18n="hero.exploreApps">Explore apps</span>
-          </a>
-          <a class="button ghost" data-magnetic href="mailto:asilzade.1999@gmail.com">
-            <span class="button-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
-            </span>
-            <span data-i18n="hero.contact">Contact</span>
-          </a>
-        </div>
-
-        <div class="hero-trust">
-          <span class="play-badge play-badge-mini" aria-hidden="true">
-            <svg class="play-badge-glyph" viewBox="0 0 24 24">
-              <defs>
-                <linearGradient id="playGradGreenMini" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#54f2c2"/><stop offset="1" stop-color="#22c37f"/>
-                </linearGradient>
-                <linearGradient id="playGradRedMini" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#ff6b6b"/><stop offset="1" stop-color="#ff3d57"/>
-                </linearGradient>
-              </defs>
-              <path d="M3 2.6v18.8c0 .3.15.55.4.7L13 12 3.4 1.9c-.25.15-.4.4-.4.7z" fill="#4de3ff"/>
-              <path d="M13 12 3.4 1.9c.1-.06.22-.1.35-.1.14 0 .28.04.4.11l11.4 6.5L13 12z" fill="url(#playGradGreenMini)"/>
-              <path d="M13 12l3.55 3.6-11.4 6.5c-.12.07-.26.11-.4.11-.13 0-.25-.04-.35-.1L13 12z" fill="url(#playGradRedMini)"/>
-              <path d="M13 12l2.55-2.6 4.2 2.4c.4.23.4.77 0 1l-4.2 2.4L13 12z" fill="#ffb84d"/>
-            </svg>
-            <span class="play-badge-text">
-              <em data-i18n="hero.availableOn">Available on</em>
-              <strong>Google Play</strong>
-            </span>
-          </span>
-          <span class="hero-trust-divider" aria-hidden="true"></span>
-          <span class="hero-trust-note" data-i18n="hero.trustNote">2 apps shipped &middot; independently built &amp; maintained</span>
+          <a class="button button-dark" href="mailto:asilzade.1999@gmail.com?subject=Project%20inquiry" data-i18n="cta.quote">Get a Quote</a>
+          <a class="button button-outline" href="#projects" data-i18n="cta.viewWork">View Work</a>
         </div>
       </div>
 
-      <div class="hero-visual reveal" style="--delay: 120ms">
-        <div class="phone-float">
-          <div class="phone-mockup" data-tilt>
-            <img src="assets/tripledger-phone-cutout.png" alt="TripLedger app shown on a phone" width="1023" height="1537" fetchpriority="high" decoding="async" data-i18n-alt="hero.phoneAlt">
-          </div>
-        </div>
+      <div class="hero-visual">
+        <img class="hero-showcase" src="assets/Görsel1.png" alt="Mobile analytics dashboard displayed on a smartphone and laptop" data-i18n-alt="hero.imageAlt" width="1171" height="912" fetchpriority="high" decoding="async">
+      </div>
+    </section>
 
-        <div class="floating-chip reveal" style="--delay: 420ms">
-          <div class="floating-chip-icon tripledger-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M5 7h14v12H5z"/><path d="M8 5v4M16 5v4M5 11h14M8 15h4"/></svg>
-          </div>
-          <div>
-            <strong>TripLedger</strong>
-            <span data-i18n="hero.featuredApp">Featured app</span>
-          </div>
+    <section id="services" class="services section-band" aria-labelledby="services-title">
+      <div class="section-shell">
+        <div class="section-intro centered">
+          <h2 id="services-title" data-i18n="services.title">Services</h2>
+          <p data-i18n="services.intro">End-to-end digital solutions tailored to your business needs.</p>
         </div>
-
-        <div class="floating-rating reveal" style="--delay: 560ms" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L12 17l-5.6 3.1 1.4-6.3-4.8-4.3 6.4-.6z"/></svg>
-          <span data-i18n="hero.craftedWithCare">Crafted with care</span>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div>
+            <h3 data-i18n="services.mobile.title">Mobile Apps</h3>
+            <p data-i18n="services.mobile.text">High-performance, user-friendly mobile apps for iOS &amp; Android.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+            <h3 data-i18n="services.web.title">Web Development</h3>
+            <p data-i18n="services.web.text">Responsive, fast, and SEO-friendly web applications that scale with you.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/><path d="M7 13l3-3 2.5 2.5L17 8"/></svg></div>
+            <h3 data-i18n="services.dashboard.title">Dashboards</h3>
+            <p data-i18n="services.dashboard.text">Data-driven dashboards with real-time insights and smart reporting.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon lavender"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2.8 1.6 4.5 4.7 4.5 8.5 0 2-1 4-2 5.5l-2.5 2.5-2.5-2.5c-1-1.5-2-3.5-2-5.5C7.5 6.7 9.2 3.6 12 2z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 16.5 7 21l3.5-1.8M15 16.5 17 21l-3.5-1.8"/></svg></div>
+            <h3 data-i18n="services.mvp.title">MVP Development</h3>
+            <p data-i18n="services.mvp.text">Validate your idea with a minimum viable product built to adapt and grow.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="stats section-shell reveal">
-      <div class="stat-item">
-        <span class="stat-number" data-count-to="2">0</span>
-        <span class="stat-label" data-i18n="stats.appsShipped">Apps shipped</span>
+    <section id="projects" class="projects section-shell" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <h2 id="projects-title" data-i18n="projects.title">Projects</h2>
+        <a href="mailto:asilzade.1999@gmail.com?subject=Project%20inquiry"><span data-i18n="projects.viewAll">View All Projects</span> <span aria-hidden="true">&#8594;</span></a>
       </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count-to="2024" data-count-plain="true">0</span>
-        <span class="stat-label" data-i18n="stats.studioFounded">Studio founded</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count-to="100" data-suffix="%">0</span>
-        <span class="stat-label" data-i18n="stats.independent">Independent &amp; self-funded</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-count-to="24" data-suffix="h" data-suffix-tr="sa">0</span>
-        <span class="stat-label" data-i18n="stats.supportReply">Avg. support reply</span>
-      </div>
-    </section>
-
-    <section id="about" class="about section-shell">
-      <div class="section-heading reveal">
-        <p class="eyebrow" data-i18n="about.eyebrow">About GK Mobile Studio</p>
-        <h2 data-i18n="about.title">An independent studio building apps we'd want to use ourselves.</h2>
-      </div>
-
-      <div class="about-grid">
-        <p class="about-lead reveal" data-i18n="about.lead">
-          GK Mobile Studio is a small, independent mobile development studio focused on shipping
-          focused applications rather than bloated feature factories. Every app starts from a real,
-          everyday problem, ships with a clean interface, and stays in active development long after
-          launch &mdash; with direct support from the person who actually built it.
-        </p>
-
-        <div class="value-grid">
-          <div class="value-card reveal" style="--delay: 60ms">
-            <div class="value-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h10M4 18h7"/></svg>
-            </div>
-            <h3 data-i18n="about.value1Title">Simplicity first</h3>
-            <p data-i18n="about.value1Text">No clutter, no dark patterns. Every interface earns every element it keeps.</p>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-title">
+            <span class="project-mark plane"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="currentColor" stroke="none"/></svg></span>
+            <div><h3>TripLedger</h3><p data-i18n="projects.mobileCategory">Mobile App</p></div>
           </div>
-
-          <div class="value-card reveal" style="--delay: 140ms">
-            <div class="value-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.6 3.2 8.3 8 9 4.8-.7 8-4.4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3 data-i18n="about.value2Title">Built to last</h3>
-            <p data-i18n="about.value2Text">Apps stay maintained, updated and supported well beyond release day.</p>
-          </div>
-
-          <div class="value-card reveal" style="--delay: 220ms">
-            <div class="value-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M6 10V7a6 6 0 0 1 12 0v3"/><path d="M5 10h14v10H5z"/></svg>
-            </div>
-            <h3 data-i18n="about.value3Title">Privacy by default</h3>
-            <p data-i18n="about.value3Text">Minimal data collection, transparent policies, no unnecessary tracking.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="applications" class="applications section-shell">
-      <div class="section-heading reveal">
-        <p class="eyebrow" data-i18n="apps.eyebrow">Applications</p>
-        <h2 data-i18n="apps.title">Designed for clarity, speed and daily use.</h2>
-      </div>
-
-      <div class="app-grid">
-        <article class="app-card reveal">
-          <div class="app-card-top">
-            <div class="app-icon tripledger-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M5 7h14v12H5z"/><path d="M8 5v4M16 5v4M5 11h14M8 15h4"/></svg>
-            </div>
-            <div>
-              <div class="app-card-heading">
-                <h3>TripLedger</h3>
-                <span class="app-tag" data-i18n="apps.new">New</span>
-              </div>
-              <p data-i18n="apps.tripledgerDesc">Expense tracking, travel budgeting, subscription management and shared expense tracking.</p>
-            </div>
-          </div>
-          <div class="app-actions">
-            <span class="play-badge is-disabled" aria-label="TripLedger Google Play link coming soon" data-i18n-aria-label="apps.tripledgerPlayAria">
-              <svg class="play-badge-glyph" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="playGradGreen1" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#54f2c2"/><stop offset="1" stop-color="#22c37f"/>
-                  </linearGradient>
-                  <linearGradient id="playGradRed1" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#ff6b6b"/><stop offset="1" stop-color="#ff3d57"/>
-                  </linearGradient>
-                </defs>
-                <path d="M3 2.6v18.8c0 .3.15.55.4.7L13 12 3.4 1.9c-.25.15-.4.4-.4.7z" fill="#4de3ff"/>
-                <path d="M13 12 3.4 1.9c.1-.06.22-.1.35-.1.14 0 .28.04.4.11l11.4 6.5L13 12z" fill="url(#playGradGreen1)"/>
-                <path d="M13 12l3.55 3.6-11.4 6.5c-.12.07-.26.11-.4.11-.13 0-.25-.04-.35-.1L13 12z" fill="url(#playGradRed1)"/>
-                <path d="M13 12l2.55-2.6 4.2 2.4c.4.23.4.77 0 1l-4.2 2.4L13 12z" fill="#ffb84d"/>
-              </svg>
-              <span class="play-badge-text">
-                <em data-i18n="apps.comingSoon">COMING SOON</em>
-                <strong>Google Play</strong>
-              </span>
-            </span>
-            <a class="button compact ghost" href="privacy/tripledger.html" data-i18n="apps.privacyPolicy">Privacy Policy</a>
-            <a class="button compact ghost" href="terms/tripledger.html" data-i18n="apps.termsOfService">Terms of Service</a>
-          </div>
+          <div class="project-image tripledger-image"><img src="assets/tripledger-phone-cutout.png" alt="TripLedger travel app preview" data-i18n-alt="projects.tripledgerAlt" loading="lazy"></div>
+          <p data-i18n="projects.tripledgerText">A travel expense tracker that helps users plan trips, track expenses and manage receipts on the go.</p>
+          <a class="case-link" href="privacy/tripledger.html"><span data-i18n="projects.caseStudy">View Case Study</span> <span aria-hidden="true">&#8594;</span></a>
+          <div class="project-legal"><a href="privacy/tripledger.html" data-i18n="legal.privacyShort">Privacy</a><a href="terms/tripledger.html" data-i18n="legal.termsShort">Terms</a></div>
         </article>
-
-        <article class="app-card reveal" style="--delay: 100ms">
-          <div class="app-card-top">
-            <div class="app-icon notes-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 4h8l4 4v12H7z"/><path d="M15 4v5h4M10 13h6M10 17h5"/></svg>
-            </div>
-            <div>
-              <div class="app-card-heading">
-                <h3>TinyNotes</h3>
-                <span class="app-tag" data-i18n="apps.new">New</span>
-              </div>
-              <p data-i18n="apps.tinynotesDesc">Minimal note taking application.</p>
-            </div>
+        <article class="project-card">
+          <div class="project-title">
+            <span class="project-mark cloud"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.5 18H7.2a4.2 4.2 0 0 1-.66-8.35A5.5 5.5 0 0 1 17 8.2a4.7 4.7 0 0 1 1.5 9.8z"/></svg></span>
+            <div><h3>DeviceCloud</h3><p data-i18n="projects.dashboardCategory">Dashboard</p></div>
           </div>
-          <div class="app-actions">
-            <span class="play-badge is-disabled" aria-label="TinyNotes Google Play link coming soon" data-i18n-aria-label="apps.tinynotesPlayAria">
-              <svg class="play-badge-glyph" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="playGradGreen2" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#54f2c2"/><stop offset="1" stop-color="#22c37f"/>
-                  </linearGradient>
-                  <linearGradient id="playGradRed2" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#ff6b6b"/><stop offset="1" stop-color="#ff3d57"/>
-                  </linearGradient>
-                </defs>
-                <path d="M3 2.6v18.8c0 .3.15.55.4.7L13 12 3.4 1.9c-.25.15-.4.4-.4.7z" fill="#4de3ff"/>
-                <path d="M13 12 3.4 1.9c.1-.06.22-.1.35-.1.14 0 .28.04.4.11l11.4 6.5L13 12z" fill="url(#playGradGreen2)"/>
-                <path d="M13 12l3.55 3.6-11.4 6.5c-.12.07-.26.11-.4.11-.13 0-.25-.04-.35-.1L13 12z" fill="url(#playGradRed2)"/>
-                <path d="M13 12l2.55-2.6 4.2 2.4c.4.23.4.77 0 1l-4.2 2.4L13 12z" fill="#ffb84d"/>
-              </svg>
-              <span class="play-badge-text">
-                <em data-i18n="apps.comingSoon">COMING SOON</em>
-                <strong>Google Play</strong>
-              </span>
-            </span>
-            <a class="button compact ghost" href="privacy/tinynotes.html" data-i18n="apps.privacyPolicy">Privacy Policy</a>
-            <a class="button compact ghost" href="terms/tinynotes.html" data-i18n="apps.termsOfService">Terms of Service</a>
-          </div>
+          <div class="project-image device-image" aria-label="DeviceCloud analytics dashboard mockup" data-i18n-aria-label="projects.deviceAlt"><div class="mockup-head">Devices <strong>2,350</strong><span>Online 1,780</span></div><div class="mockup-line"></div><div class="mockup-donut">75%</div><div class="mockup-spark"></div></div>
+          <p data-i18n="projects.deviceText">A device management dashboard for monitoring systems, metrics and remote configuration at scale.</p>
+          <a class="case-link" href="mailto:asilzade.1999@gmail.com?subject=DeviceCloud%20case%20study"><span data-i18n="projects.caseStudy">View Case Study</span> <span aria-hidden="true">&#8594;</span></a>
         </article>
-
-        <article class="app-card reveal" style="--delay: 200ms">
-          <div class="app-card-top">
-            <div class="app-icon hydro-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 11a6 6 0 0 1-12 0c0-4.8 6-11 6-11z"/><path d="M9.5 15.5a3 3 0 0 0 2.5 1.4"/></svg>
-            </div>
-            <div>
-              <div class="app-card-heading">
-                <h3>HydroBuddy</h3>
-                <span class="app-tag hydro-tag" data-i18n="apps.hydration">Hydration</span>
-              </div>
-              <p data-i18n="apps.hydrobuddyDesc">A focused water intake tracking application for building better daily hydration habits.</p>
-            </div>
+        <article class="project-card">
+          <div class="project-title">
+            <span class="project-mark food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2v6M8 2v6M11 2v6M8 8v14"/><path d="M17 2c-2.2 0-3.4 2-3.4 4.6 0 2.2 1.2 3.9 3 4.2V22"/></svg></span>
+            <div><h3>Restaurant POS</h3><p data-i18n="projects.webCategory">Web App</p></div>
           </div>
-          <div class="app-actions">
-            <span class="store-status" data-i18n="apps.detailsComingSoon">More details coming soon</span>
-          </div>
+          <div class="project-image pos-image" aria-label="Restaurant POS interface mockup" data-i18n-aria-label="projects.posAlt"><div class="pos-nav"></div><div class="pos-total"><span data-i18n="projects.todaySales">Today’s Sales</span><strong>$1,234.50</strong></div><div class="pos-rows"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <p data-i18n="projects.posText">A modern POS system for restaurants with seamless ordering, inventory, and sales reporting.</p>
+          <a class="case-link" href="mailto:asilzade.1999@gmail.com?subject=Restaurant%20POS%20case%20study"><span data-i18n="projects.caseStudy">View Case Study</span> <span aria-hidden="true">&#8594;</span></a>
         </article>
       </div>
     </section>
 
-    <section id="whats-new" class="whats-new section-shell">
-      <div class="section-heading reveal">
-        <p class="eyebrow" data-i18n="updates.eyebrow">What's New</p>
-        <h2 data-i18n="updates.title">Recent updates across our apps.</h2>
+    <section id="about" class="about section-band" aria-labelledby="about-title">
+      <div class="section-shell about-inner">
+        <div><p class="eyebrow" data-i18n="about.eyebrow">About us</p><h2 id="about-title" data-i18n="about.title">Digital products with a human touch.</h2></div>
+        <p data-i18n="about.text">GK Mobile Studio is an independent team focused on making useful digital experiences feel clear, capable, and easy to use. We work closely with each client from first idea to launch and beyond.</p>
       </div>
-
-      <div class="update-list">
-        <article class="update-card reveal">
-          <div class="update-meta">
-            <span class="update-app-tag tripledger-icon">TripLedger</span>
-            <span class="update-version">v1.2</span>
-            <span class="update-date" data-i18n="updates.date1">June 2026</span>
-          </div>
-          <h3 data-i18n="updates.title1">Shared expenses, refreshed reminders</h3>
-          <p data-i18n="updates.text1">Split and track shared costs with friends and family, plus a refreshed subscription reminder flow so nothing sneaks up on you.</p>
-        </article>
-
-        <article class="update-card reveal" style="--delay: 100ms">
-          <div class="update-meta">
-            <span class="update-app-tag tripledger-icon">TripLedger</span>
-            <span class="update-version">v1.1</span>
-            <span class="update-date" data-i18n="updates.date2">April 2026</span>
-          </div>
-          <h3 data-i18n="updates.title2">Travel budgeting tools</h3>
-          <p data-i18n="updates.text2">Added trip-based budgets with category breakdowns and smarter overspend alerts while you're on the move.</p>
-        </article>
-
-        <article class="update-card reveal" style="--delay: 200ms">
-          <div class="update-meta">
-            <span class="update-app-tag notes-icon">TinyNotes</span>
-            <span class="update-version">v1.0</span>
-            <span class="update-date" data-i18n="updates.date3">February 2026</span>
-          </div>
-          <h3 data-i18n="updates.title3">Initial release</h3>
-          <p data-i18n="updates.text3">TinyNotes launched on Google Play &mdash; a minimal, distraction-free notes app built for quick capture.</p>
-        </article>
-      </div>
+    </section>
+    <section id="contact" class="contact section-shell">
+      <div><p class="eyebrow" data-i18n="contact.eyebrow">Let’s work together</p><h2 data-i18n="contact.title">Have a project in mind?</h2></div>
+      <a class="button button-dark" href="mailto:asilzade.1999@gmail.com?subject=Project%20inquiry"><span data-i18n="contact.button">Start a Conversation</span> <span aria-hidden="true">&#8594;</span></a>
     </section>
   </main>
+  <footer class="site-footer">
+    <div class="section-shell footer-grid">
+      <div class="footer-brand-column">
+        <a class="brand footer-brand" href="#top" aria-label="GK Mobile Studio home">
+          <img class="brand-mark" src="assets/logo.png" alt="GK Mobile Studio logo" width="38" height="38">
+          <span>GK Mobile Studio</span>
+        </a>
+        <p data-i18n="footer.description">Building mobile apps, dashboards and web products that move businesses forward.</p>
+        <div class="social-links">
+          <a href="https://github.com/gorkemkarakas" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-i18n-aria-label="social.github">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.71 5.39-5.29 5.68.42.36.79 1.06.79 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/görkem-karakaş/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-i18n-aria-label="social.linkedin">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.2 7.8H1.6V22h3.6V7.8ZM3.4 2A2.1 2.1 0 1 0 3.4 6.2 2.1 2.1 0 0 0 3.4 2ZM22 13.9c0-4.3-2.3-6.3-5.4-6.3a4.7 4.7 0 0 0-4.3 2.4V7.8H8.7V22h3.6v-7c0-1.9.4-3.7 2.7-3.7 2.2 0 2.3 2.1 2.3 3.8V22H22v-8.1Z"/></svg>
+          </a>
+          <a href="mailto:asilzade.1999@gmail.com" aria-label="Email" data-i18n-aria-label="social.email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
 
-  <footer id="contact" class="footer section-shell reveal">
-    <div class="footer-intro">
-      <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
-      <h2>GK Mobile Studio</h2>
-      <p data-i18n="contact.description">Independent mobile applications, thoughtfully built and directly supported.</p>
-      <a class="footer-email" href="mailto:asilzade.1999@gmail.com?subject=GK%20Mobile%20Studio%20Support" data-i18n="contact.support">Get support by email</a>
+      <div class="footer-column">
+        <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+        <nav aria-label="Footer navigation" data-i18n-aria-label="accessibility.footerNav">
+          <a href="#top" data-i18n="nav.home">Home</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-column">
+        <h3 data-i18n="footer.services">Services</h3>
+        <nav aria-label="Services" data-i18n-aria-label="accessibility.servicesNav">
+          <a href="#services" data-i18n="footer.mobileService">Mobile App Development</a>
+          <a href="#services" data-i18n="footer.webService">Web Development</a>
+          <a href="#services" data-i18n="footer.dashboardService">Dashboard Development</a>
+          <a href="#services" data-i18n="footer.mvpService">MVP Development</a>
+        </nav>
+      </div>
+
+      <div class="footer-column footer-cta">
+        <h3 data-i18n="footer.ctaTitle">Let’s Work Together</h3>
+        <p data-i18n="footer.ctaText">Let’s turn your idea into a clear, fast and scalable digital product.</p>
+        <a class="button button-outline" href="mailto:asilzade.1999@gmail.com?subject=Project%20inquiry" data-i18n="footer.ctaButton">Get in Touch</a>
+      </div>
     </div>
 
-    <nav class="footer-links" aria-label="Footer navigation" data-i18n-aria-label="contact.footerNavAria">
-      <div class="footer-column">
-        <h3 data-i18n="contact.apps">Applications</h3>
-        <a href="#applications">TripLedger</a>
-        <a href="#applications">TinyNotes</a>
-        <a href="#applications">HydroBuddy</a>
-        <a href="#whats-new" data-i18n="nav.updates">Updates</a>
-      </div>
-      <div class="footer-column">
-        <h3 data-i18n="contact.legal">Legal</h3>
-        <a href="privacy/tripledger.html" data-i18n="contact.tripledgerPrivacy">TripLedger Privacy</a>
-        <a href="terms/tripledger.html" data-i18n="contact.tripledgerTerms">TripLedger Terms</a>
-        <a href="privacy/tinynotes.html" data-i18n="contact.tinynotesPrivacy">TinyNotes Privacy</a>
-        <a href="terms/tinynotes.html" data-i18n="contact.tinynotesTerms">TinyNotes Terms</a>
-      </div>
-    </nav>
-
-    <div class="footer-bottom">
-      <p>&copy; <span data-current-year>2026</span> GK Mobile Studio. <span data-i18n="contact.rights">All rights reserved.</span></p>
-      <a href="#top" data-i18n="misc.backToTop">Back to top</a>
+    <div class="section-shell footer-bottom">
+      <p>&copy; <span data-current-year>2026</span> GK Mobile Studio. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <nav aria-label="Legal" data-i18n-aria-label="accessibility.legalNav">
+        <a href="privacy/tripledger.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="terms/tripledger.html" data-i18n="footer.terms">Terms of Service</a>
+      </nav>
     </div>
   </footer>
-
-  <button class="to-top" data-to-top type="button" aria-label="Back to top" data-i18n-aria-label="misc.backToTop">
-    <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
-  </button>
-
-  <script>
-    window.I18N = {
-      en: {
-        "meta.description": "GK Mobile Studio builds useful, simple and beautiful mobile applications.",
-        "brand.logoAlt": "GK Mobile Studio logo",
-        "nav.about": "About",
-        "nav.applications": "Applications",
-        "nav.updates": "Updates",
-        "nav.contact": "Contact",
-        "hero.eyebrow": "Independent mobile app developer",
-        "hero.title": "Building useful, simple and beautiful mobile applications.",
-        "hero.text": "GK Mobile Studio creates focused mobile products with clean interfaces, practical workflows and thoughtful details for everyday use.",
-        "hero.exploreApps": "Explore apps",
-        "hero.contact": "Contact",
-        "hero.availableOn": "Available on",
-        "hero.trustNote": "2 apps shipped · independently built & maintained",
-        "hero.phoneAlt": "TripLedger dark theme app preview",
-        "hero.featuredApp": "Featured app",
-        "hero.craftedWithCare": "Crafted with care",
-        "stats.appsShipped": "Apps shipped",
-        "stats.studioFounded": "Studio founded",
-        "stats.independent": "Independent & self-funded",
-        "stats.supportReply": "Avg. support reply",
-        "about.eyebrow": "About GK Mobile Studio",
-        "about.title": "An independent studio building apps we'd want to use ourselves.",
-        "about.lead": "GK Mobile Studio is a small, independent mobile development studio focused on shipping focused applications rather than bloated feature factories. Every app starts from a real, everyday problem, ships with a clean interface, and stays in active development long after launch — with direct support from the person who actually built it.",
-        "about.value1Title": "Simplicity first",
-        "about.value1Text": "No clutter, no dark patterns. Every interface earns every element it keeps.",
-        "about.value2Title": "Built to last",
-        "about.value2Text": "Apps stay maintained, updated and supported well beyond release day.",
-        "about.value3Title": "Privacy by default",
-        "about.value3Text": "Minimal data collection, transparent policies, no unnecessary tracking.",
-        "apps.eyebrow": "Applications",
-        "apps.title": "Designed for clarity, speed and daily use.",
-        "apps.new": "New",
-        "apps.tripledgerDesc": "Expense tracking, travel budgeting, subscription management and shared expense tracking.",
-        "apps.tinynotesDesc": "Minimal note taking application.",
-        "apps.getItOn": "GET IT ON",
-        "apps.comingSoon": "COMING SOON",
-        "apps.hydration": "Hydration",
-        "apps.hydrobuddyDesc": "A focused water intake tracking application for building better daily hydration habits.",
-        "apps.detailsComingSoon": "More details coming soon",
-        "apps.privacyPolicy": "Privacy Policy",
-        "apps.termsOfService": "Terms of Service",
-        "apps.tripledgerPlayAria": "TripLedger Google Play link coming soon",
-        "apps.tinynotesPlayAria": "TinyNotes Google Play link coming soon",
-        "updates.eyebrow": "What's New",
-        "updates.title": "Recent updates across our apps.",
-        "updates.date1": "June 2026",
-        "updates.title1": "Shared expenses, refreshed reminders",
-        "updates.text1": "Split and track shared costs with friends and family, plus a refreshed subscription reminder flow so nothing sneaks up on you.",
-        "updates.date2": "April 2026",
-        "updates.title2": "Travel budgeting tools",
-        "updates.text2": "Added trip-based budgets with category breakdowns and smarter overspend alerts while you're on the move.",
-        "updates.date3": "February 2026",
-        "updates.title3": "Initial release",
-        "updates.text3": "TinyNotes launched on Google Play — a minimal, distraction-free notes app built for quick capture.",
-        "contact.eyebrow": "Contact",
-        "contact.description": "Independent mobile applications, thoughtfully built and directly supported.",
-        "contact.support": "Get support by email",
-        "contact.apps": "Applications",
-        "contact.legal": "Legal",
-        "contact.tripledgerPrivacy": "TripLedger Privacy",
-        "contact.tripledgerTerms": "TripLedger Terms",
-        "contact.tinynotesPrivacy": "TinyNotes Privacy",
-        "contact.tinynotesTerms": "TinyNotes Terms",
-        "contact.rights": "All rights reserved.",
-        "contact.footerNavAria": "Footer navigation",
-        "misc.backToTop": "Back to top"
-      },
-      tr: {
-        "meta.description": "GK Mobile Studio; kullanışlı, sade ve güzel mobil uygulamalar geliştirir.",
-        "brand.logoAlt": "GK Mobile Studio logosu",
-        "nav.about": "Hakkımızda",
-        "nav.applications": "Uygulamalar",
-        "nav.updates": "Güncellemeler",
-        "nav.contact": "İletişim",
-        "hero.eyebrow": "Bağımsız mobil uygulama geliştiricisi",
-        "hero.title": "Kullanışlı, sade ve güzel mobil uygulamalar geliştiriyoruz.",
-        "hero.text": "GK Mobile Studio; sade arayüzlere, pratik iş akışlarına ve günlük kullanım için özenle düşünülmüş detaylara sahip, odaklı mobil ürünler geliştirir.",
-        "hero.exploreApps": "Uygulamaları keşfet",
-        "hero.contact": "İletişim",
-        "hero.availableOn": "Şurada mevcut",
-        "hero.trustNote": "2 uygulama yayında · bağımsız olarak geliştirilir ve desteklenir",
-        "hero.phoneAlt": "TripLedger koyu tema uygulama önizlemesi",
-        "hero.featuredApp": "Öne çıkan uygulama",
-        "hero.craftedWithCare": "Özenle tasarlandı",
-        "stats.appsShipped": "Yayınlanan uygulama",
-        "stats.studioFounded": "Stüdyo kuruluşu",
-        "stats.independent": "Bağımsız ve öz kaynaklı",
-        "stats.supportReply": "Ort. destek yanıt süresi",
-        "about.eyebrow": "GK Mobile Studio Hakkında",
-        "about.title": "Kendimizin de kullanmak isteyeceği uygulamalar yapan bağımsız bir stüdyo.",
-        "about.lead": "GK Mobile Studio; şişirilmiş özellik yığınları yerine odaklı uygulamalar yayınlamaya odaklanan küçük, bağımsız bir mobil geliştirme stüdyosudur. Her uygulama gerçek, gündelik bir problemden yola çıkar, sade bir arayüzle yayınlanır ve yayından çok sonrasına kadar -uygulamayı bizzat geliştiren kişinin doğrudan desteğiyle- aktif geliştirilmeye devam eder.",
-        "about.value1Title": "Önce sadelik",
-        "about.value1Text": "Karmaşa yok, kötü niyetli tasarım hileleri yok. Her arayüz, üzerinde tuttuğu her öğeyi hak eder.",
-        "about.value2Title": "Uzun ömürlü olacak şekilde geliştirilir",
-        "about.value2Text": "Uygulamaların bakımı yapılır, güncellenir ve yayın gününden çok sonrasına kadar desteklenir.",
-        "about.value3Title": "Varsayılan olarak gizlilik",
-        "about.value3Text": "Minimum veri toplama, şeffaf politikalar, gereksiz takip yok.",
-        "apps.eyebrow": "Uygulamalar",
-        "apps.title": "Açıklık, hız ve günlük kullanım için tasarlandı.",
-        "apps.new": "Yeni",
-        "apps.tripledgerDesc": "Gider takibi, seyahat bütçeleme, abonelik yönetimi ve ortak gider takibi.",
-        "apps.tinynotesDesc": "Minimalist not alma uygulaması.",
-        "apps.getItOn": "UYGULAMAYI EDİNİN",
-        "apps.comingSoon": "YAKINDA",
-        "apps.hydration": "Su Takibi",
-        "apps.hydrobuddyDesc": "Daha iyi günlük su tüketimi alışkanlıkları oluşturmak için odaklı bir su takibi uygulaması.",
-        "apps.detailsComingSoon": "Daha fazla ayrıntı yakında",
-        "apps.privacyPolicy": "Gizlilik Politikası",
-        "apps.termsOfService": "Kullanım Şartları",
-        "apps.tripledgerPlayAria": "TripLedger Google Play bağlantısı yakında",
-        "apps.tinynotesPlayAria": "TinyNotes Google Play bağlantısı yakında",
-        "updates.eyebrow": "Yenilikler",
-        "updates.title": "Uygulamalarımızdaki son güncellemeler.",
-        "updates.date1": "Haziran 2026",
-        "updates.title1": "Ortak giderler, yenilenmiş hatırlatıcılar",
-        "updates.text1": "Arkadaşlar ve aileyle ortak giderleri bölüştürün ve takip edin; ayrıca hiçbir ödemenin gözden kaçmaması için yenilenmiş abonelik hatırlatma akışı.",
-        "updates.date2": "Nisan 2026",
-        "updates.title2": "Seyahat bütçeleme araçları",
-        "updates.text2": "Kategori kırılımlarına sahip seyahat bazlı bütçeler ve yoldayken daha akıllı aşırı harcama uyarıları eklendi.",
-        "updates.date3": "Şubat 2026",
-        "updates.title3": "İlk sürüm",
-        "updates.text3": "TinyNotes Google Play'de yayınlandı — hızlı not almak için tasarlanmış, minimalist ve dikkat dağıtmayan bir not uygulaması.",
-        "contact.eyebrow": "İletişim",
-        "contact.description": "Özenle geliştirilen ve doğrudan desteklenen bağımsız mobil uygulamalar.",
-        "contact.support": "E-posta ile destek alın",
-        "contact.apps": "Uygulamalar",
-        "contact.legal": "Yasal",
-        "contact.tripledgerPrivacy": "TripLedger Gizlilik",
-        "contact.tripledgerTerms": "TripLedger Kullanım Şartları",
-        "contact.tinynotesPrivacy": "TinyNotes Gizlilik",
-        "contact.tinynotesTerms": "TinyNotes Kullanım Şartları",
-        "contact.rights": "Tüm hakları saklıdır.",
-        "contact.footerNavAria": "Alt bilgi navigasyonu",
-        "misc.backToTop": "Yukarı çık"
-      }
-    };
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
