@@ -31,22 +31,28 @@
     medieval: `<div class="cover-mockup medieval-mockup"><span class="medieval-sigil">♜</span><div class="decision-card"><i></i><b>KINGDOM</b><span>II</span></div><span class="choice-arrow choice-left">←</span><span class="choice-arrow choice-right">→</span></div>`,
     chat: `<div class="cover-mockup chat-mockup"><div class="chat-sidebar"><b></b><i></i><i></i><i></i></div><div class="chat-window"><span class="chat-status">3 ONLINE</span><i class="bubble incoming"></i><i class="bubble outgoing"></i><i class="bubble incoming short"></i><div class="chat-input"></div></div></div>`,
     notes: `<div class="cover-mockup notes-mockup"><div class="note-sheet note-back"><i></i><i></i><i></i></div><div class="note-sheet note-front"><b>TODAY</b><span><i></i></span><span><i></i></span><span><i></i></span></div><div class="note-pin"></div></div>`,
-    pos: `<div class="cover-mockup pos-mockup"><div class="pos-orders"><b>ORDERS</b><span><i>01</i><em></em></span><span><i>02</i><em></em></span><span><i>03</i><em></em></span></div><div class="pos-tables"><i>01</i><i>04</i><i>07</i><strong>TOTAL</strong><b>$248</b></div></div>`
+    pos: `<div class="cover-mockup pos-mockup"><div class="pos-orders"><b>ORDERS</b><span><i>01</i><em></em></span><span><i>02</i><em></em></span><span><i>03</i><em></em></span></div><div class="pos-tables"><i>01</i><i>04</i><i>07</i><strong>TOTAL</strong><b>$248</b></div></div>`,
+    aqua: `<div class="cover-mockup aqua-mockup"><div class="aqua-stats"><span><small>DAILY</small><b>72%</b></span><i>+250 ML</i></div><div class="water-tank"><span></span><i></i><b>1.4 L</b></div><div class="aqua-streak">7 DAY STREAK</div></div>`,
+    arcane: `<div class="cover-mockup arcane-mockup"><div class="arcane-level">LV. 12 <i></i></div><span class="arcane-player">✦</span><i class="arcane-orb orb-one"></i><i class="arcane-orb orb-two"></i><i class="arcane-orb orb-three"></i><b class="arcane-boss">BOSS</b></div>`,
+    garden: `<div class="cover-mockup garden-mockup"><i class="garden-leaf leaf-one"></i><i class="garden-leaf leaf-two"></i><div class="garden-fountain"><span></span><b>✦</b></div><span class="garden-coin coin-one">●</span><span class="garden-coin coin-two">●</span><em>12 / 48 FOUND</em></div>`,
+    mining: `<div class="cover-mockup mining-mockup"><div class="mine-sky"><i></i><i></i></div><div class="mine-ground"><span class="mine-shaft"></span><span class="mine-truck">▰<i></i><i></i></span><b>+24 ORE</b></div></div>`
   };
   function coverContent(project) {
+    const projectTitle = local(project.title);
     if (project.coverImage) {
-      return `<img class="cover-image" src="${escape(project.coverImage)}" alt="${escape(project.title + ' — ' + t(project.category))}" loading="lazy" width="1672" height="941">`;
+      return `<img class="cover-image" src="${escape(project.coverImage)}" alt="${escape(projectTitle + ' — ' + t(project.category))}" loading="lazy" width="1672" height="941">`;
     }
     if (project.image) {
       return `<div class="cover-mockup finance-mockup"><span class="finance-stat finance-budget" aria-hidden="true"><small>BUDGET</small><b>72%</b></span><span class="finance-stat finance-total" aria-hidden="true"><small>TOTAL</small><b>€248</b></span><i class="finance-chart" aria-hidden="true"></i><img src="${escape(project.image)}" alt="${escape(local(project.screenshots[0]?.alt))}" loading="lazy" width="1023" height="1537"></div>`;
     }
-    return coverMockups[project.coverVariant] || `<span class="cover-word">${escape(project.coverTitle || project.title)}</span>`;
+    return coverMockups[project.coverVariant] || `<span class="cover-word">${escape(project.coverTitle || projectTitle)}</span>`;
   }
   function card(project) {
+    const projectTitle = local(project.title);
     const playAction = project.isPlayable === true && project.playUrl
-      ? `<a class="case-link" href="${escape(project.playUrl)}" aria-label="${escape(t('play') + ': ' + project.title)}"><span>${t('play')}</span><span aria-hidden="true">↗</span></a>`
+      ? `<a class="case-link" href="${escape(project.playUrl)}" aria-label="${escape(t('play') + ': ' + projectTitle)}"><span>${t('play')}</span><span aria-hidden="true">↗</span></a>`
       : '';
-    return `<article class="project-card"><div class="project-cover cover-${project.id}${project.coverImage ? ' has-cover-image' : ''}" ${project.image || project.coverImage ? '' : 'aria-hidden="true"'}><span class="cover-index">${String(projects.indexOf(project) + 1).padStart(2, '0')} / GK</span>${coverContent(project)}<span class="cover-label">${t(project.category)}</span></div><div class="project-body"><div class="project-category">${t(project.category)}</div><h3>${escape(project.title)}</h3><p>${escape(local(project.description))}</p>${tags(project.cardTechnologies || project.technologies)}${project.highlight ? `<div class="project-highlight"><span aria-hidden="true"></span>${escape(local(project.highlight))}</div>` : ''}${playAction}<a class="case-link" href="#project/${project.id}" aria-label="${escape(t('details') + ': ' + project.title)}"><span>${t('details')}</span><span aria-hidden="true">↗</span></a></div></article>`;
+    return `<article class="project-card"><div class="project-cover cover-${project.id}${project.coverImage ? ' has-cover-image' : ''}" ${project.image || project.coverImage ? '' : 'aria-hidden="true"'}><span class="cover-index">${String(projects.indexOf(project) + 1).padStart(2, '0')} / GK</span>${coverContent(project)}<span class="cover-label">${t(project.category)}</span></div><div class="project-body"><div class="project-category">${t(project.category)}</div><h3>${escape(projectTitle)}</h3><p>${escape(local(project.description))}</p>${tags(project.cardTechnologies || project.technologies)}${project.highlight ? `<div class="project-highlight"><span aria-hidden="true"></span>${escape(local(project.highlight))}</div>` : ''}${playAction}<a class="case-link" href="#project/${project.id}" aria-label="${escape(t('details') + ': ' + projectTitle)}"><span>${t('details')}</span><span aria-hidden="true">↗</span></a></div></article>`;
   }
   const themeButton = document.querySelector('.theme-toggle');
   function updateThemeControl() {
@@ -97,15 +103,20 @@
       const detailSection = ([title, content]) => `<section class="detail-section"><h2>${t(title)}</h2><p>${escape(local(content))}</p></section>`;
       return `<div class="detail-layout"><div><section class="detail-section"><h2>${t('overview')}</h2><p>${escape(local(project.purpose))}</p><ul class="feature-list">${project.features[lang].map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>${sections.slice(0,2).map(detailSection).join('')}</div><div>${sections.slice(2).map(detailSection).join('')}</div></div>`;
     }
-    return `<div class="detail-layout"><div><section class="detail-section"><h2>${t('purpose')}</h2><p>${escape(local(project.purpose))}</p></section><section class="detail-section"><h2>${t('features')}</h2><ul class="feature-list">${project.features[lang].map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>${project.technicalDetails?.[lang]?.length ? `<section class="detail-section"><h2>${t('technicalDetails')}</h2><ul class="feature-list">${project.technicalDetails[lang].map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>` : ''}</div><div>${project.architecture ? `<section class="detail-section"><h2>${t('architecture')}</h2><div class="architecture">${escape(local(project.architecture))}</div></section>` : ''}${project.privacy ? `<nav class="detail-legal" aria-label="${t('legal')}"><a href="${project.privacy}">${t('privacy')}</a><a href="${project.terms}">${t('terms')}</a></nav>` : ''}</div></div>`;
+    const extraSections = (project.detailSections || []).map(section => {
+      const items = local(section.items);
+      return `<section class="detail-section"><h2>${escape(local(section.title))}</h2>${section.content ? `<p>${escape(local(section.content))}</p>` : ''}${Array.isArray(items) && items.length ? `<ul class="feature-list">${items.map(item => `<li>${escape(item)}</li>`).join('')}</ul>` : ''}</section>`;
+    }).join('');
+    return `<div class="detail-layout"><div><section class="detail-section"><h2>${t('purpose')}</h2><p>${escape(local(project.purpose))}</p></section><section class="detail-section"><h2>${t('features')}</h2><ul class="feature-list">${project.features[lang].map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>${project.technicalDetails?.[lang]?.length ? `<section class="detail-section"><h2>${t('technicalDetails')}</h2><ul class="feature-list">${project.technicalDetails[lang].map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>` : ''}</div><div>${extraSections}${project.architecture ? `<section class="detail-section"><h2>${t('architecture')}</h2><div class="architecture">${escape(local(project.architecture))}</div></section>` : ''}${project.privacy ? `<nav class="detail-legal" aria-label="${t('legal')}"><a href="${project.privacy}">${t('privacy')}</a><a href="${project.terms}">${t('terms')}</a></nav>` : ''}</div></div>`;
   }
   function projectPage(project) {
+    const projectTitle = local(project.title);
     const heroImage = project.detailImage || project.coverImage;
     const links = [
       ...(project.isPlayable === true && project.playUrl ? [['playUrl', t('play')]] : []),
       ...[['demo', 'Live Demo'], ['github', 'GitHub'], ['googlePlay', 'Google Play']]
     ].filter(([key]) => project[key]);
-    return `<section class="page section-shell project-detail-page"><a class="back-link" href="#projects">${t('back')}</a>${heroImage ? `<figure class="project-detail-hero"><img src="${escape(heroImage)}" alt="${escape(project.title + ' — ' + t(project.category))}" width="1672" height="941" decoding="async"></figure>` : ''}<p class="eyebrow">${t(project.category)}${project.gameType ? ` · ${escape(local(project.gameType))}` : ''}</p><h1>${escape(project.title)}</h1><p class="page-intro">${escape(local(project.description))}</p>${project.technologies.length ? `<section class="project-detail-technologies"><h2>${t(project.gameDetails ? 'usedTechnologies' : 'technologies')}</h2>${tags(project.technologies)}</section>` : ''}${links.length ? `<div class="hero-actions">${links.map(([key,label]) => `<a class="button" href="${escape(project[key])}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`).join('')}</div>` : ''}${projectDetails(project)}${project.screenshots.length ? `<section class="detail-section"><h2>${t('screenshots')}</h2><div class="gallery">${project.screenshots.map(s => `<figure><img src="${escape(s.src)}" alt="${escape(local(s.alt))}" loading="lazy"><figcaption>${escape(local(s.alt))}</figcaption></figure>`).join('')}</div></section>` : ''}</section>`;
+    return `<section class="page section-shell project-detail-page"><a class="back-link" href="#projects">${t('back')}</a>${heroImage ? `<figure class="project-detail-hero"><img src="${escape(heroImage)}" alt="${escape(projectTitle + ' — ' + t(project.category))}" width="1672" height="941" decoding="async"></figure>` : ''}<p class="eyebrow">${t(project.category)}${project.gameType ? ` · ${escape(local(project.gameType))}` : ''}</p><h1>${escape(projectTitle)}</h1><p class="page-intro">${escape(local(project.description))}</p>${project.technologies.length ? `<section class="project-detail-technologies"><h2>${t(project.gameDetails ? 'usedTechnologies' : 'technologies')}</h2>${tags(project.technologies)}</section>` : ''}${links.length ? `<div class="hero-actions">${links.map(([key,label]) => `<a class="button" href="${escape(project[key])}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`).join('')}</div>` : ''}${projectDetails(project)}${project.screenshots.length ? `<section class="detail-section"><h2>${t('screenshots')}</h2><div class="gallery">${project.screenshots.map(s => `<figure><img src="${escape(s.src)}" alt="${escape(local(s.alt))}" loading="lazy"><figcaption>${escape(local(s.alt))}</figcaption></figure>`).join('')}</div></section>` : ''}</section>`;
   }
   function render(focus = false) {
     const [hash, query = ''] = location.hash.slice(1).split('?');
@@ -130,7 +141,7 @@
       page = 'projects';
       const project = projects.find(p => p.id === hash.slice(8));
       main.innerHTML = project ? projectPage(project) : `<section class="page section-shell"><h1>${t('notFound')}</h1><p class="page-intro">${t('notFoundText')}</p><a class="button" href="#projects">${t('back')}</a></section>`;
-      title = `${project?.title || t('notFound')} | GK Mobile Studio`;
+      title = `${project ? local(project.title) : t('notFound')} | GK Mobile Studio`;
       if (project) description = local(project.description);
     } else {
       main.innerHTML = homeTemplate;

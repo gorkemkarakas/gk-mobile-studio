@@ -449,6 +449,50 @@ h3 {
   z-index:3;
 }
 
+.aqua-mockup {
+  padding:13px 14px;
+  background:linear-gradient(145deg,#0c526d,#168ead);
+  color:#e8fbff;
+}
+
+.aqua-stats { display:flex; align-items:flex-start; justify-content:space-between; }
+.aqua-stats span { display:flex; flex-direction:column; }
+.aqua-stats small,.aqua-stats i,.aqua-streak { font:6px/1.2 monospace; letter-spacing:.08em; }
+.aqua-stats b { margin-top:3px; font:15px/1 Manrope,sans-serif; }
+.aqua-stats i { padding:5px 7px; border-radius:8px; background:#7be1ee; color:#07485d; font-style:normal; }
+.water-tank { position:absolute; left:50%; bottom:13px; width:54px; height:78px; transform:translateX(-50%); overflow:hidden; border:2px solid rgba(232,251,255,.8); border-radius:8px 8px 17px 17px; }
+.water-tank span { position:absolute; inset:25% 0 0; background:linear-gradient(#63e0ed,#20abc6); }
+.water-tank i { position:absolute; z-index:1; left:-8px; top:22%; width:70px; height:12px; border-radius:50%; background:#8aebf2; transform:rotate(-5deg); }
+.water-tank b { position:absolute; z-index:2; left:0; right:0; bottom:16px; text-align:center; font:8px/1 monospace; }
+.aqua-streak { position:absolute; right:12px; bottom:14px; color:#a8f3f4; }
+
+.arcane-mockup { background:radial-gradient(circle at 50% 54%,#8d65dc 0 5%,#302351 27%,#151425 66%); color:#f2eaff; }
+.arcane-level { position:absolute; left:11px; top:11px; font:7px/1 monospace; }
+.arcane-level i { display:block; width:55px; height:3px; margin-top:4px; border-radius:2px; background:linear-gradient(90deg,#b78cff 72%,rgba(255,255,255,.15) 72%); }
+.arcane-player { position:absolute; left:50%; top:50%; z-index:2; transform:translate(-50%,-50%); font-size:28px; color:#e6c4ff; text-shadow:0 0 15px #b577ff; }
+.arcane-orb { position:absolute; width:8px; height:8px; border:1px solid #f0d7ff; border-radius:50%; box-shadow:0 0 7px #be8cff; }
+.orb-one { left:27%; top:38%; }.orb-two { right:25%; top:27%; }.orb-three { right:30%; bottom:20%; }
+.arcane-boss { position:absolute; right:10px; bottom:9px; padding:3px 5px; border:1px solid #cf768e; border-radius:3px; color:#ffb4c6; font:6px/1 monospace; }
+
+.garden-mockup { background:linear-gradient(#8ed9c7 0 55%,#4c9c73 55%); color:#f9ffdc; }
+.garden-fountain { position:absolute; left:50%; bottom:10px; width:90px; height:35px; transform:translateX(-50%); border-radius:50%; background:#bfe6db; box-shadow:inset 0 0 0 7px #619e92; }
+.garden-fountain span { position:absolute; left:39px; bottom:24px; width:12px; height:49px; border-radius:7px 7px 2px 2px; background:#d8eee5; }
+.garden-fountain b { position:absolute; left:39px; bottom:43px; z-index:1; color:#f7d26d; }
+.garden-coin { position:absolute; z-index:2; color:#ffd45f; text-shadow:0 2px 0 #a67b27; }
+.coin-one { left:25%; top:28%; }.coin-two { right:24%; top:39%; }
+.garden-leaf { position:absolute; width:35px; height:17px; border-radius:100% 0; background:#397b5a; transform:rotate(25deg); }
+.leaf-one { left:8px; bottom:8px; }.leaf-two { right:5px; top:8px; transform:rotate(195deg); }
+.garden-mockup em { position:absolute; right:9px; bottom:8px; z-index:2; font:6px/1 monospace; font-style:normal; }
+
+.mining-mockup { background:#90c9da; }
+.mine-sky i { position:absolute; width:28px; height:9px; border-radius:50%; background:rgba(255,255,255,.72); }
+.mine-sky i:first-child { left:13%; top:19%; }.mine-sky i:last-child { right:14%; top:29%; width:20px; }
+.mine-ground { position:absolute; inset:48% 0 0; background:linear-gradient(#597b45 0 12%,#8b6541 12% 47%,#4d3a31 47%); }
+.mine-shaft { position:absolute; left:18%; top:12%; width:40px; height:88%; background:#2b2a29; clip-path:polygon(20% 0,80% 0,100% 100%,0 100%); }
+.mine-truck { position:absolute; right:22%; top:13px; padding:2px 6px; border-radius:3px; background:#e7a93a; color:#684414; font-size:15px; }
+.mine-truck i { position:absolute; bottom:-5px; width:8px; height:8px; border-radius:50%; background:#303033; }.mine-truck i:first-child { left:3px; }.mine-truck i:last-child { right:3px; }
+.mine-ground b { position:absolute; right:9px; bottom:7px; color:#f8d89c; font:6px/1 monospace; }
+
 .dashboard-mockup {
   display:grid;
   grid-template-columns:34px 1fr;
@@ -1292,6 +1336,13 @@ body.projects-view main {
 
 .projects-page .cover-restaurant-pos::before {
   background:linear-gradient(135deg,rgba(28,45,67,.94),rgba(46,104,138,.72));
+}
+
+.projects-page .cover-aquaquest::before,
+.projects-page .cover-arcane-survive::before,
+.projects-page .cover-dilek-bahcesi::before,
+.projects-page .cover-mining-tycoon::before {
+  display:none;
 }
 
 .projects-page .cover-word {
