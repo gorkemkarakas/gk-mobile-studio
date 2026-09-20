@@ -5,12 +5,12 @@
   const copy = {
     en: {
       projectOverview: 'Project Overview', caseStudy: 'Case Study', status: 'Status', role: 'Role', platform: 'Platform', developmentPeriod: 'Development period', challengeLabel: 'Problem / Challenge', approachLabel: 'Approach', technicalChallengeLabel: 'Technical Challenge', solutionLabel: 'Solution', outcomeLabel: 'Outcome', howItWorks: 'How it works', whyItMatters: 'Why it matters', behindProduct: 'Behind the Product', productCtaTitle: 'Have a project in mind?', productCtaText: 'Get in touch for web, mobile or IoT projects.', emailMe: 'Get in touch',
-      overview: 'Overview', gameplay: 'Gameplay', decisionMechanic: 'Decision mechanic', visualAtmosphere: 'Visual / Atmosphere design', technicalStructure: 'Technical structure', usedTechnologies: 'Technologies used', play: 'Play', previousProject: 'Previous project', nextProject: 'Next project', goToProject: 'Go to project', projectNavigation: 'Project navigation', backToProjects: 'Back to Projects', miniFeatures: 'Features', miniExperience: 'How It Works', miniTechnical: 'Technical', miniGallery: 'Gallery',
+      overview: 'Overview', gameplay: 'Gameplay', decisionMechanic: 'Decision mechanic', visualAtmosphere: 'Visual / Atmosphere design', technicalStructure: 'Technical structure', usedTechnologies: 'Technologies used', play: 'Play', previousProject: 'Previous project', nextProject: 'Next project', goToProject: 'Go to project', projectNavigation: 'Project navigation', backToProjects: 'Back to Projects', miniFeatures: 'Features', miniExperience: 'How It Works', miniTechnical: 'Technical', miniGallery: 'Gallery', openMenu: 'Open menu', closeMenu: 'Close menu', projectPreview: 'project interface preview', projectShown: 'project shown', projectsShown: 'projects shown',
       darkTheme: 'Dark theme', lightTheme: 'Light theme', heroImage: 'Mobile and web dashboard interfaces on a phone and laptop', skip: 'Skip to content', portfolio: 'Developer portfolio', menu: 'Menu', navigation: 'Main navigation', language: 'Language', legal: 'Legal pages', home: 'Home', projects: 'Projects', projectsTitle: 'Our Projects', about: 'About', intro: 'Independent developer · Görkem Karakaş', heroText: 'Building practical software, interactive products and connected systems.', viewProjects: 'View projects', aboutMe: 'About me', approach: 'Useful ideas. Thoughtful engineering. Simple experiences.', selected: 'Selected work', featured: 'Featured projects', allProjects: 'All projects', footerText: 'Practical software, built with care.', contact: 'Get in touch ↗', privacy: 'Privacy', terms: 'Terms', details: 'View project', all: 'All', filter: 'Filter', apps: 'Mobile Apps', web: 'Web', games: 'Games', iot: 'IoT / Hardware', desktop: 'Desktop', other: 'Other', collection: 'The portfolio', projectsIntro: 'Building practical products with thoughtful solutions.', count: 'projects', empty: 'No projects in this category yet. Explore the other categories.', back: '← All projects', purpose: 'The idea', technologies: 'Technologies', features: 'Key features', technicalDetails: 'Technical details', screenshots: 'Project preview', architecture: 'Architecture', profile: 'Behind the projects', aboutTitle: 'Hi, I’m Görkem.', aboutText: 'I’m an independent developer working on frontend experiences, mobile applications and IoT systems. GK Mobile Studio is where I share my software projects, from practical everyday tools to interactive products and technical experiments.', aboutApproach: 'I focus on useful features, clear interfaces and systems that are easy to understand.', tools: 'Tools', notFound: 'Project not found', notFoundText: 'This project link is unavailable. You can find the current projects in the portfolio.', meta: 'GK Mobile Studio — Web, Mobile & IoT Projects', metaDescription: 'GK Mobile Studio portfolio featuring web, mobile, IoT and interactive software projects by Görkem Karakaş.'
     },
     tr: {
       projectOverview: 'Proje Özeti', caseStudy: 'Vaka Çalışması', status: 'Durum', role: 'Rol', platform: 'Platform', developmentPeriod: 'Geliştirme Dönemi', challengeLabel: 'Problem / İhtiyaç', approachLabel: 'Yaklaşım', technicalChallengeLabel: 'Teknik Zorluk', solutionLabel: 'Çözüm', outcomeLabel: 'Sonuç', howItWorks: 'Nasıl çalışır?', whyItMatters: 'Neden değerli?', behindProduct: 'Ürünün Teknik Tarafı', productCtaTitle: 'Bir proje fikriniz mi var?', productCtaText: 'Web, mobil veya IoT projeleri için iletişime geçebilirsiniz.', emailMe: 'İletişime geç',
-      overview: 'Genel Bakış', gameplay: 'Oynanış', decisionMechanic: 'Karar Mekaniği', visualAtmosphere: 'Görsel / Atmosfer Tasarımı', technicalStructure: 'Teknik Yapı', usedTechnologies: 'Kullanılan Teknolojiler', play: 'Oyna', previousProject: 'Önceki proje', nextProject: 'Sonraki proje', goToProject: 'Projeye git', projectNavigation: 'Proje navigasyonu', backToProjects: 'Projelere Dön', miniFeatures: 'Özellikler', miniExperience: 'Nasıl Çalışır', miniTechnical: 'Teknik', miniGallery: 'Galeri',
+      overview: 'Genel Bakış', gameplay: 'Oynanış', decisionMechanic: 'Karar Mekaniği', visualAtmosphere: 'Görsel / Atmosfer Tasarımı', technicalStructure: 'Teknik Yapı', usedTechnologies: 'Kullanılan Teknolojiler', play: 'Oyna', previousProject: 'Önceki proje', nextProject: 'Sonraki proje', goToProject: 'Projeye git', projectNavigation: 'Proje navigasyonu', backToProjects: 'Projelere Dön', miniFeatures: 'Özellikler', miniExperience: 'Nasıl Çalışır', miniTechnical: 'Teknik', miniGallery: 'Galeri', openMenu: 'Menüyü aç', closeMenu: 'Menüyü kapat', projectPreview: 'proje arayüzü önizlemesi', projectShown: 'proje gösteriliyor', projectsShown: 'proje gösteriliyor',
       darkTheme: "Koyu Tema", lightTheme: "A\u00e7\u0131k Tema", heroImage: "Telefon ve diz\u00fcst\u00fc bilgisayarda mobil ve web paneli aray\u00fczleri",
       skip: 'İçeriğe geç', portfolio: 'Yazılım portföyü', menu: 'Menü', navigation: 'Ana menü', language: 'Dil', legal: 'Yasal sayfalar', home: 'Ana Sayfa', projects: 'Projeler', projectsTitle: 'Projelerimiz', about: 'Hakkımda', intro: 'Bağımsız geliştirici · Görkem Karakaş', heroText: 'Günlük hayata değer katan yazılımlar, etkileşimli ürünler ve bağlı sistemler geliştiriyorum.', viewProjects: 'Projeleri gör', aboutMe: 'Hakkımda', approach: 'Faydalı fikirler. Özenli geliştirme. Sade deneyimler.', selected: 'Seçili çalışmalar', featured: 'Öne çıkan projeler', allProjects: 'Tüm projeler', footerText: 'Özenle geliştirilen, fayda sağlayan yazılımlar.', contact: 'İletişime geç ↗', privacy: 'Gizlilik', terms: 'Koşullar', details: 'Projeyi gör', all: 'Tümü', filter: 'Filtre', apps: 'Mobil Uygulamalar', web: 'Web', games: 'Oyunlar', iot: 'IoT / Donanım', desktop: 'Masaüstü', other: 'Diğer', collection: 'Portföy', projectsIntro: 'Yenilikçi çözümlerle geleceği şekillendiriyoruz.', count: 'proje', empty: 'Bu kategoride henüz proje bulunmuyor. Diğer kategorileri keşfedebilirsiniz.', back: '← Tüm projeler', purpose: 'Projenin amacı', technologies: 'Teknolojiler', features: 'Öne çıkan özellikler', technicalDetails: 'Teknik detaylar', screenshots: 'Proje önizlemesi', architecture: 'Mimari', profile: 'Projelerin arkasında', aboutTitle: 'Merhaba, ben Görkem.', aboutText: 'Frontend, mobil uygulama geliştirme ve IoT sistemlerine ilgi duyan bağımsız bir geliştiriciyim. GK Mobile Studio; günlük hayatı kolaylaştıran araçlardan etkileşimli ürünlere ve teknik denemelere kadar yazılım projelerimi paylaştığım kişisel portföyüm.', aboutApproach: 'Faydalı özelliklere, anlaşılır arayüzlere ve kolay kavranabilen sistemlere odaklanıyorum.', tools: 'Araçlar', notFound: 'Proje bulunamadı', notFoundText: 'Bu proje bağlantısı mevcut değil. Güncel çalışmaları portföyde bulabilirsiniz.', meta: 'GK Mobile Studio — Web, Mobil ve IoT Projeleri', metaDescription: 'Görkem Karakaş’ın web, mobil, IoT ve etkileşimli yazılım projelerini içeren GK Mobile Studio portföyü.'
     }
@@ -173,7 +173,9 @@
     const projectTitle = local(project.title);
     const webp = detail ? project.coverImage : project.coverThumbnail || project.coverImage;
     const fallback = project.coverFallback || webp;
-    const alt = escape(projectTitle + ' — ' + t(project.category));
+    /* Card copy already names the project; keep those thumbnails decorative.
+       Detail-page covers retain a concise description. */
+    const alt = detail ? escape(projectTitle + ' — ' + t('projectPreview')) : '';
     const loading = detail || eager ? 'eager' : 'lazy';
     const priority = detail || eager ? ' fetchpriority="high"' : '';
     const width = detail ? 1440 : 800;
@@ -193,8 +195,8 @@
     if (project.coverImage) return coverPicture(project, options);
     if (project.image) {
       const image = /\.webp(?:$|\?)/i.test(project.image)
-        ? `<picture><source type="image/webp" srcset="${escape(project.image)}"><img src="${escape(project.imageFallback || project.image)}" alt="${escape(local(project.screenshots[0]?.alt))}" loading="lazy" decoding="async" width="960" height="1442"></picture>`
-        : `<img src="${escape(project.image)}" alt="${escape(local(project.screenshots[0]?.alt))}" loading="lazy" decoding="async" width="1023" height="1537">`;
+        ? `<picture><source type="image/webp" srcset="${escape(project.image)}"><img src="${escape(project.imageFallback || project.image)}" alt="" loading="lazy" decoding="async" width="960" height="1442"></picture>`
+        : `<img src="${escape(project.image)}" alt="" loading="lazy" decoding="async" width="1023" height="1537">`;
       return `<div class="cover-mockup finance-mockup"><span class="finance-stat finance-budget" aria-hidden="true"><small>BUDGET</small><b>72%</b></span><span class="finance-stat finance-total" aria-hidden="true"><small>TOTAL</small><b>€248</b></span><i class="finance-chart" aria-hidden="true"></i>${image}</div>`;
     }
     return coverMockups[project.coverVariant] || `<span class="cover-word">${escape(project.coverTitle || projectTitle)}</span>`;
@@ -204,7 +206,7 @@
     const playAction = project.isPlayable === true && project.playUrl
       ? `<a class="case-link" href="${escape(project.playUrl)}" aria-label="${escape(t('play') + ': ' + projectTitle)}"><span>${t('play')}</span><span aria-hidden="true">↗</span></a>`
       : '';
-    return `<article class="project-card" data-project-card><div class="project-cover cover-${project.id}${project.coverImage ? ' has-cover-image' : ''}" ${project.image || project.coverImage ? '' : 'aria-hidden="true"'}><span class="cover-index">${String(projects.indexOf(project) + 1).padStart(2, '0')} / GK</span>${coverContent(project, options)}<span class="cover-label">${t(project.category)}</span></div><div class="project-body"><div class="project-category">${t(project.category)}</div><h3>${escape(projectTitle)}</h3><p>${escape(local(project.description))}</p>${tags(project.cardTechnologies || project.technologies)}${project.highlight ? `<div class="project-highlight"><span aria-hidden="true"></span>${escape(local(project.highlight))}</div>` : ''}${playAction}<a class="case-link" data-card-link href="#project/${project.id}" aria-label="${escape(t('details') + ': ' + projectTitle)}"><span>${t('details')}</span><span aria-hidden="true">↗</span></a></div></article>`;
+    return `<article class="project-card" data-project-card><div class="project-cover cover-${project.id}${project.coverImage ? ' has-cover-image' : ''}" aria-hidden="true"><span class="cover-index">${String(projects.indexOf(project) + 1).padStart(2, '0')} / GK</span>${coverContent(project, options)}<span class="cover-label">${t(project.category)}</span></div><div class="project-body"><div class="project-category">${t(project.category)}</div><h3>${escape(projectTitle)}</h3><p>${escape(local(project.description))}</p>${tags(project.cardTechnologies || project.technologies)}${project.highlight ? `<div class="project-highlight"><span aria-hidden="true"></span>${escape(local(project.highlight))}</div>` : ''}${playAction}<a class="case-link" data-card-link href="#project/${project.id}" aria-label="${escape(t('details') + ': ' + projectTitle)}"><span>${t('details')}</span><span aria-hidden="true">↗</span></a></div></article>`;
   }
   function initFeaturedCarousel() {
     const root = document.querySelector('[data-featured-carousel]');
@@ -254,12 +256,15 @@
         const active = index === state.trackIndex;
         slide.classList.toggle('is-active', active);
         slide.setAttribute('aria-hidden', String(!visible));
+        if (active) slide.setAttribute('aria-current', 'true');
+        else slide.removeAttribute('aria-current');
         slide.toggleAttribute('inert', !visible);
       });
       dots.forEach((dot, index) => {
         const active = index === state.current;
         dot.classList.toggle('is-active', active);
-        dot.setAttribute('aria-current', active ? 'true' : 'false');
+        if (active) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
       });
     }
 
@@ -315,7 +320,7 @@
     track.addEventListener('transitionend', event => {
       if (event.target === track && event.propertyName === 'transform' && state.animating) finishTransition();
     });
-    viewport.addEventListener('keydown', event => {
+    root.addEventListener('keydown', event => {
       if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); }
       if (event.key === 'ArrowRight') { event.preventDefault(); move(1); }
     });
@@ -354,21 +359,46 @@
     position(false);
   }
   const themeButton = document.querySelector('.theme-toggle');
+  const themeRoot = document.documentElement;
+  const THEME_TRANSITION_MS = 240;
+  let themeTransitionTimer = 0;
   function updateThemeControl() {
-    const isDark = document.documentElement.dataset.theme === 'dark';
+    const isDark = themeRoot.dataset.theme === 'dark';
     const label = t(isDark ? 'lightTheme' : 'darkTheme');
     themeButton.setAttribute('aria-label', label);
     themeButton.setAttribute('title', label);
     document.querySelector('meta[name="theme-color"]').content = isDark ? '#101316' : '#ffffff';
   }
   themeButton.addEventListener('click', () => {
-    const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = theme;
+    const theme = themeRoot.dataset.theme === 'dark' ? 'light' : 'dark';
+    window.clearTimeout(themeTransitionTimer);
+
+    if (!reducedMotionQuery.matches) {
+      if (!themeRoot.classList.contains('theme-transition')) {
+        themeRoot.classList.add('theme-transition');
+        /* Commit the transition rule before changing its registered values. */
+        getComputedStyle(themeRoot).getPropertyValue('--bg');
+      }
+      themeButton.classList.remove('is-switching');
+      void themeButton.offsetWidth;
+      themeButton.classList.add('is-switching');
+    } else {
+      themeRoot.classList.remove('theme-transition');
+      themeButton.classList.remove('is-switching');
+    }
+
+    themeRoot.dataset.theme = theme;
     try { localStorage.setItem('gk-theme', theme); } catch { /* Manual switching still works. */ }
     updateThemeControl();
+
+    themeTransitionTimer = window.setTimeout(() => {
+      themeRoot.classList.remove('theme-transition');
+      themeButton.classList.remove('is-switching');
+    }, THEME_TRANSITION_MS + 40);
   });
   function translate() {
     updateThemeControl();
+    updateMenuControl();
     document.querySelectorAll('[data-alt]').forEach(el => el.setAttribute('alt', t(el.dataset.alt)));
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-copy]').forEach(el => { el.textContent = t(el.dataset.copy); });
@@ -389,7 +419,7 @@
           : `<div class="project-card-reveal reveal${revealDelayClass(index)}">${card(project)}</div>`
         ).join('')
       : `<p class="empty-state">${t('empty')}</p>`;
-    document.getElementById('result-count').textContent = `${filtered.length} ${t('count')}`;
+    document.getElementById('result-count').textContent = `${filtered.length} ${t(filtered.length === 1 ? 'projectShown' : 'projectsShown')}`;
     document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
     const allButton = document.querySelector('[data-show-all]');
     if (allButton) allButton.setAttribute('aria-pressed', String(category === 'all'));
@@ -549,19 +579,19 @@
     return `<nav class="project-mini-nav" aria-label="${escape(t('projectNavigation'))}"><a class="project-mini-back" href="${escape(returnHash)}" data-project-back><span aria-hidden="true">←</span><span>${t('backToProjects')}</span></a><strong class="project-mini-title" title="${escape(projectTitle)}">${escape(projectTitle)}</strong>${sectionLinks.length ? `<div class="project-mini-links">${sectionLinks.map(([target, label]) => `<button type="button" data-project-scroll="${target}">${label}</button>`).join('')}</div>` : ''}</nav>`;
   }
   function productCta() {
-    return `<section class="product-cta reveal"><div><p class="section-kicker">GK MOBILE STUDIO</p><h2>${t('productCtaTitle')}</h2><p>${t('productCtaText')}</p></div><div class="product-cta-actions"><a class="button primary" href="mailto:asilzade.1999@gmail.com">${t('emailMe')} ↗</a><a class="button" href="https://www.linkedin.com/in/görkem-karakaş/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="button" href="https://github.com/gorkemkarakas" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></section>`;
+    return `<section class="product-cta reveal"><div><p class="section-kicker">GK MOBILE STUDIO</p><h2>${t('productCtaTitle')}</h2><p>${t('productCtaText')}</p></div><div class="product-cta-actions"><a class="button primary" href="mailto:asilzade.1999@gmail.com">${t('emailMe')} <span aria-hidden="true">↗</span></a><a class="button" href="https://www.linkedin.com/in/görkem-karakaş/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/gorkemkarakas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></section>`;
   }
   function projectPage(project) {
     const projectTitle = local(project.title);
     const heroImage = project.detailImage || project.coverImage;
     const heroContent = project.detailImage
-      ? `<img src="${escape(project.detailImage)}" alt="${escape(projectTitle + ' — ' + t(project.category))}" width="1440" height="810" decoding="async" fetchpriority="high">`
+      ? `<img src="${escape(project.detailImage)}" alt="${escape(projectTitle + ' — ' + t('projectPreview'))}" width="1440" height="810" decoding="async" fetchpriority="high">`
       : coverPicture(project, { detail: true });
     const links = [
       ...(project.isPlayable === true && project.playUrl ? [['playUrl', t('play')]] : []),
       ...[['demo', 'Live Demo'], ['github', 'GitHub'], ['googlePlay', 'Google Play']]
     ].filter(([key]) => project[key]);
-    const linkButtons = links.length ? `<div class="hero-actions">${links.map(([key,label]) => `<a class="button" href="${escape(project[key])}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`).join('')}</div>` : '';
+    const linkButtons = links.length ? `<div class="hero-actions">${links.map(([key,label]) => `<a class="button" href="${escape(project[key])}" target="_blank" rel="noopener noreferrer">${label} <span aria-hidden="true">↗</span></a>`).join('')}</div>` : '';
     if (project.productSummary) {
       const mainTechnologies = (project.cardTechnologies || project.technologies).slice(0, 5);
       return `<section class="page section-shell project-detail-page product-showcase-page">${projectMiniNav(project, true)}<div class="product-hero reveal">${heroImage ? `<figure class="product-hero-media">${heroContent}</figure>` : ''}<header class="product-hero-copy"><p class="eyebrow">${t(project.category)}${project.gameType ? ` · ${escape(local(project.gameType))}` : ''}</p><h1>${escape(projectTitle)}</h1><p class="product-tagline">${escape(local(project.tagline))}</p><p class="product-summary">${escape(local(project.productSummary))}</p>${projectMetadata(project)}${mainTechnologies.length ? `<div class="product-hero-stack">${tags(mainTechnologies)}</div>` : ''}${linkButtons}</header></div>${productFeatures(project)}${productExperience(project)}${projectGallery(project)}${productValue(project)}${behindProduct(project)}${productTechnologies(project)}${productCta()}</section>`;
@@ -595,7 +625,7 @@
     } else if (hash === 'about') {
       page = 'about';
       const skills = [['Frontend',['React','TypeScript','JavaScript']],['Backend',['Python','FastAPI','REST API']],['Mobile',['Android','Capacitor']],['IoT',['ESP32','MQTT','WebSocket']],[t('tools'),['Git','GitHub','VS Code']]];
-      main.innerHTML = `<section class="page section-shell"><p class="eyebrow">${t('profile')}</p><h1>${t('aboutTitle')}</h1><p class="about-copy">${t('aboutText')}</p><p class="page-intro">${t('aboutApproach')}</p><div class="skills-grid">${skills.map(([title,items]) => `<section><h2>${title}</h2><ul>${items.map(item => `<li>${item}</li>`).join('')}</ul></section>`).join('')}</div><div class="about-links"><a class="button primary" href="https://github.com/gorkemkarakas" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="button" href="mailto:asilzade.1999@gmail.com">${t('contact')}</a></div></section>`;
+      main.innerHTML = `<section class="page section-shell"><p class="eyebrow">${t('profile')}</p><h1>${t('aboutTitle')}</h1><p class="about-copy">${t('aboutText')}</p><p class="page-intro">${t('aboutApproach')}</p><div class="skills-grid">${skills.map(([title,items]) => `<section><h2>${title}</h2><ul>${items.map(item => `<li>${item}</li>`).join('')}</ul></section>`).join('')}</div><div class="about-links"><a class="button primary" href="https://github.com/gorkemkarakas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="button" href="mailto:asilzade.1999@gmail.com">${t('emailMe')}</a></div></section>`;
       title = `${t('about')} | GK Mobile Studio`;
     } else if (hash.startsWith('project/')) {
       page = 'projects';
@@ -658,8 +688,22 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   applyScrollState();
-  function closeMenu() { header.classList.remove('menu-open'); menu.setAttribute('aria-expanded','false'); applyScrollState(); }
-  menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; header.classList.toggle('menu-open',open); menu.setAttribute('aria-expanded',String(open)); });
+  function updateMenuControl() {
+    const open = menu.getAttribute('aria-expanded') === 'true';
+    menu.setAttribute('aria-label', t(open ? 'closeMenu' : 'openMenu'));
+  }
+  function closeMenu() {
+    header.classList.remove('menu-open');
+    menu.setAttribute('aria-expanded','false');
+    updateMenuControl();
+    applyScrollState();
+  }
+  menu.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') !== 'true';
+    header.classList.toggle('menu-open',open);
+    menu.setAttribute('aria-expanded',String(open));
+    updateMenuControl();
+  });
   document.querySelector('.header-menu').addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
   document.addEventListener('click', event => {
     if (!header.contains(event.target)) closeMenu();

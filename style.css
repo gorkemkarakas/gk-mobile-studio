@@ -1,3 +1,60 @@
+/* Register the palette so a theme change can interpolate once at the root.
+   Components keep consuming the same variables and their layout/motion
+   transitions remain independent. */
+@property --bg {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#ffffff;
+}
+
+@property --surface {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#ffffff;
+}
+
+@property --ink {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#202630;
+}
+
+@property --muted {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#606975;
+}
+
+@property --line {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#e3e7eb;
+}
+
+@property --accent {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#315be8;
+}
+
+@property --accent-ink {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#ffffff;
+}
+
+@property --accent-hover {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#254bc8;
+}
+
+@property --cover {
+  syntax:"<color>";
+  inherits:true;
+  initial-value:#f4f6f8;
+}
+
 /* Light is the default; only an explicit saved choice enables dark mode. */
 :root {
   color-scheme: light;
@@ -15,6 +72,19 @@
   --header-height-scrolled: 80px;
   --sticky-header-offset: var(--header-height);
   --project-nav-height: 54px;
+}
+
+:root.theme-transition {
+  transition:
+    --bg 240ms ease,
+    --surface 240ms ease,
+    --ink 240ms ease,
+    --muted 240ms ease,
+    --line 240ms ease,
+    --accent 240ms ease,
+    --accent-ink 240ms ease,
+    --accent-hover 240ms ease,
+    --cover 240ms ease;
 }
 
 :root.header-is-scrolled {
@@ -45,9 +115,15 @@ html {
 
 body {
   margin:0;
+  overflow-x:clip;
   background:var(--bg);
   color:var(--ink);
   font:16px/1.65 "DM Sans",sans-serif;
+}
+
+main,
+#page-content {
+  min-width:0;
 }
 
 a {
@@ -64,9 +140,11 @@ a,button {
   -webkit-tap-highlight-color:transparent;
 }
 
-a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
+:where(a,button,[tabindex]):focus-visible {
   outline:2px solid var(--accent);
-  outline-offset:5px;
+  outline-offset:3px;
+  border-radius:4px;
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent);
 }
 
 button,a {
@@ -139,13 +217,13 @@ h3 {
   position:fixed;
   top:-100px;
   left:16px;
-  z-index:30;
+  z-index:100;
   padding:12px;
   background:var(--accent);
   color:var(--bg);
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
   top:12px;
 }
 
@@ -162,6 +240,12 @@ h3 {
   background:var(--bg);
   box-shadow:none;
   transition:min-height .22s ease,background-color .22s ease,border-color .22s ease,box-shadow .22s ease,backdrop-filter .22s ease;
+}
+
+/* The palette itself already interpolates on :root. Avoid applying a second
+   color transition to the header, which otherwise makes it trail the page. */
+:root.theme-transition .site-header {
+  transition:min-height .22s ease,backdrop-filter .22s ease;
 }
 
 .site-header.is-scrolled {
@@ -475,12 +559,10 @@ h3 {
   overflow:hidden;
   padding-block:20px;
   touch-action:pan-y;
-  outline:none;
 }
 
-.carousel-viewport:focus-visible {
+.featured-carousel:focus-visible {
   border-radius:14px;
-  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 28%,transparent);
 }
 
 .carousel-track {
@@ -682,6 +764,7 @@ h3 {
 }
 
 .project-card [data-card-link]:focus-visible {
+  /* The card-level :focus-within ring is the visible focus indicator. */
   outline:none;
 }
 
@@ -2427,9 +2510,18 @@ body.projects-view main {
   font:26px/1 "Segoe UI Symbol",sans-serif;
 }
 .theme-toggle:hover { border-color:var(--accent); }
-.theme-sun { display:none; }
+.theme-toggle>span { display:inline-block; }
+.theme-sun { display:none!important; }
 [data-theme="dark"] .theme-moon { display:none; }
-[data-theme="dark"] .theme-sun { display:inline; }
+[data-theme="dark"] .theme-sun { display:inline-block!important; }
+.theme-toggle.is-switching>span {
+  animation:theme-toggle-feedback 240ms ease-out;
+}
+
+@keyframes theme-toggle-feedback {
+  from { transform:scale(.92) rotate(-12deg); }
+  to { transform:scale(1) rotate(0); }
+}
 .hero-copy,.hero-visual { min-width:0; }
 .hero-visual img {
   width:100%;
@@ -2438,12 +2530,8 @@ body.projects-view main {
   object-fit:contain;
   border-radius:12px;
 }
-body,.site-header,.site-footer,.project-cover,.button,.theme-toggle,.filter-controls button,.category-filters button,.project-mini-nav,.project-mini-back,.project-mini-links button {
-  transition:background-color .18s ease,color .18s ease,border-color .18s ease;
-}
-
 .project-card {
-  transition:transform .18s ease-out,box-shadow .2s ease,background-color .18s ease,border-color .18s ease;
+  transition:transform .18s ease-out,box-shadow .2s ease;
 }
 
 @media(min-width:1400px) {
@@ -2584,6 +2672,8 @@ body,.site-header,.site-footer,.project-cover,.button,.theme-toggle,.filter-cont
   }
   .header-tools .github-link { margin-right:auto; }
   .header-menu { grid-row:3; grid-column:1 / -1; margin-left:0; padding-top:0; }
+  .site-header.menu-open .header-menu { grid-row:2; }
+  .site-header.menu-open .header-tools { grid-row:3; }
   .hero-visual { width:min(100%,440px); justify-self:center; }
   .hero {
     grid-template-columns:1fr;
@@ -2746,6 +2836,7 @@ body,.site-header,.site-footer,.project-cover,.button,.theme-toggle,.filter-cont
   .filter-controls button,
   .category-filters button {
     padding:9px 14px;
+    min-height:44px;
   }
   .filter-controls {
     display:grid;
@@ -2837,9 +2928,418 @@ body,.site-header,.site-footer,.project-cover,.button,.theme-toggle,.filter-cont
   }
 }
 
+/* Narrow-phone polish: keep the 320-430px layouts compact, readable and
+   touch-friendly without changing the tablet/desktop composition. */
+@media(max-width:430px) {
+  .section-shell,
+  .projects-page {
+    width:calc(100% - 32px);
+  }
+
+  .site-header {
+    padding-top:12px;
+  }
+
+  .brand {
+    gap:9px;
+    font-size:14px;
+  }
+
+  .brand img {
+    width:34px;
+    height:34px;
+    flex:0 0 auto;
+  }
+
+  .brand-caption {
+    font-size:10px;
+    letter-spacing:.04em;
+  }
+
+  .header-tools {
+    gap:10px;
+    padding-block:7px 10px;
+  }
+
+  .github-link {
+    display:inline-flex;
+    min-height:44px;
+    align-items:center;
+  }
+
+  .header-menu {
+    padding-bottom:14px;
+  }
+
+  .nav-links a {
+    padding-inline:10px;
+  }
+
+  .hero {
+    gap:24px;
+    padding-block:40px 34px;
+  }
+
+  .hero h1,
+  .page h1,
+  .product-hero-copy h1 {
+    overflow-wrap:break-word;
+    font-size:clamp(2rem,10vw,2.5rem);
+    line-height:1.12;
+  }
+
+  .hero h1 {
+    margin-bottom:18px;
+  }
+
+  .hero-disciplines {
+    margin-top:14px;
+    font-size:clamp(.84rem,4vw,1rem);
+    line-height:1.65;
+  }
+
+  .hero-text,
+  .page-intro,
+  .product-summary {
+    font-size:15px;
+    line-height:1.65;
+  }
+
+  .hero-text {
+    margin-bottom:24px;
+  }
+
+  .hero-actions .button {
+    flex:1 1 130px;
+    min-width:0;
+    padding-inline:12px;
+    gap:10px;
+  }
+
+  .hero-actions .text-link {
+    flex:1 0 100%;
+    min-height:44px;
+  }
+
+  .hero-note {
+    align-items:flex-start;
+    margin-top:22px;
+    line-height:1.55;
+  }
+
+  .hero-note .small-dot {
+    margin-top:.48em;
+  }
+
+  .featured {
+    padding-block:28px 42px;
+  }
+
+  .section-heading {
+    align-items:flex-start;
+    margin-bottom:20px;
+  }
+
+  .section-heading h2 {
+    font-size:clamp(1.35rem,7vw,1.6rem);
+  }
+
+  .section-heading>.text-link {
+    min-height:44px;
+    padding-block:8px;
+  }
+
+  .project-cover,
+  .projects-page .project-cover {
+    height:auto;
+    aspect-ratio:16 / 9;
+  }
+
+  .carousel-slide {
+    padding-inline:5px;
+  }
+
+  .carousel-button {
+    top:calc(28.125vw + 2px);
+    width:44px;
+    height:44px;
+  }
+
+  .carousel-button-prev { left:10px; }
+  .carousel-button-next { right:10px; }
+
+  .carousel-indicators {
+    gap:0;
+    min-width:0;
+  }
+
+  .carousel-dot,
+  .carousel-dot.is-active {
+    position:relative;
+    width:44px;
+    height:44px;
+    flex:0 1 44px;
+    background:transparent;
+  }
+
+  .carousel-dot::after {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    background:color-mix(in srgb,var(--muted) 42%,transparent);
+    transform:translate(-50%,-50%);
+  }
+
+  .carousel-dot.is-active::after {
+    width:24px;
+    background:var(--accent);
+  }
+
+  .project-body {
+    padding:20px;
+  }
+
+  .project-body h3,
+  .project-body>p,
+  .project-highlight,
+  .case-link,
+  .project-meta-item dd,
+  .product-feature-card,
+  .technical-story article,
+  .behind-detail {
+    overflow-wrap:anywhere;
+  }
+
+  .projects-page .project-category {
+    font-size:10px;
+  }
+
+  .projects-page .project-body h3 {
+    font-size:18px;
+    line-height:1.3;
+  }
+
+  .projects-page .project-body>p {
+    min-height:4.8em;
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  .projects-page .tags li {
+    font-size:11px;
+  }
+
+  .projects-page .project-highlight,
+  .projects-page .case-link {
+    font-size:12px;
+  }
+
+  .projects-page .case-link {
+    min-height:44px;
+  }
+
+  .category-filters {
+    gap:7px;
+    justify-content:flex-start;
+  }
+
+  .category-filters button {
+    flex:1 1 auto;
+    padding-inline:12px;
+  }
+
+  .project-mini-nav {
+    gap:2px;
+    padding-inline:6px;
+  }
+
+  .project-mini-back {
+    min-width:0;
+    min-height:44px;
+    padding-inline:7px;
+    font-size:12px;
+  }
+
+  .project-mini-title {
+    padding-inline:6px;
+    font-size:12px;
+  }
+
+  .project-meta {
+    gap:8px;
+    margin-top:22px;
+  }
+
+  .project-meta-item {
+    padding:13px 14px;
+  }
+
+  .product-hero {
+    gap:24px;
+    padding:14px;
+  }
+
+  .product-hero-copy h1 {
+    margin-bottom:10px;
+  }
+
+  .product-tagline {
+    font-size:1.05rem;
+  }
+
+  .product-feature-grid,
+  .product-flow,
+  .technical-story,
+  .behind-details-grid {
+    gap:10px;
+  }
+
+  .product-feature-card,
+  .product-flow li,
+  .technical-story article,
+  .behind-detail {
+    padding:20px;
+  }
+
+  .product-feature-icon {
+    margin-bottom:16px;
+  }
+
+  .product-flow li>span {
+    margin-bottom:13px;
+  }
+
+  .product-section,
+  .product-showcase-page>.project-gallery,
+  .product-value,
+  .product-cta {
+    margin-top:48px;
+  }
+
+  .product-value,
+  .behind-product,
+  .product-cta {
+    padding:22px;
+  }
+
+  .product-cta {
+    gap:24px;
+  }
+
+  .product-cta-actions {
+    width:100%;
+  }
+
+  .product-cta-actions .button {
+    width:100%;
+  }
+
+  .home-cta {
+    padding-bottom:56px;
+  }
+
+  .home-cta-panel {
+    padding:30px 20px;
+  }
+
+  .home-cta-panel h2,
+  .product-cta h2 {
+    line-height:1.25;
+  }
+
+  .gallery {
+    grid-template-columns:minmax(0,1fr);
+    gap:14px;
+  }
+
+  .gallery figure {
+    min-width:0;
+    padding:16px;
+  }
+
+  .gallery img {
+    height:240px;
+  }
+
+  .architecture,
+  .feature-list,
+  .tags li {
+    overflow-wrap:anywhere;
+  }
+
+  .skills-grid {
+    gap:16px;
+  }
+
+  .site-footer {
+    padding-top:30px;
+    padding-bottom:max(24px,env(safe-area-inset-bottom));
+  }
+
+  .footer-top {
+    gap:24px;
+  }
+
+  .legal-links {
+    width:100%;
+    gap:14px;
+  }
+
+  .legal-group {
+    gap:2px;
+  }
+}
+
+@media(max-width:360px) {
+  .brand-caption {
+    display:none;
+  }
+
+  .header-tools {
+    gap:6px;
+  }
+
+  .hero-actions .button {
+    flex-basis:100%;
+  }
+
+  .section-heading {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .section-heading>.text-link {
+    align-self:flex-start;
+  }
+
+  .filter-controls button {
+    padding-inline:10px;
+  }
+
+  .project-mini-back span:last-child {
+    max-width:94px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .product-value,
+  .behind-product,
+  .product-cta,
+  .home-cta-panel {
+    padding-inline:18px;
+  }
+}
+
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after {
     scroll-behavior:auto!important;
     transition:none!important;
+    animation:none!important;
   }
 }
