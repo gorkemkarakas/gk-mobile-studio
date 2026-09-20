@@ -4,16 +4,152 @@ window.PORTFOLIO_CATEGORIES = ['games', 'apps', 'web', 'iot', 'desktop', 'other'
 
 window.PORTFOLIO_PROJECTS = [
   {
-    id: 'devicecloud', title: 'DeviceCloud', category: 'iot', featured: true, coverVariant: 'dashboard', coverImage: 'assets/projects/devicecloud-cover.png',
+    id: 'devicecloud', title: 'DeviceCloud', category: 'iot', featured: true, coverVariant: 'dashboard', coverImage: 'assets/projects/devicecloud-cover.webp', coverThumbnail: 'assets/projects/thumbs/devicecloud-cover.webp', coverFallback: 'assets/projects/fallbacks/devicecloud-cover.jpg',
     highlight: { en: 'Real-time device monitoring', tr: 'Gerçek zamanlı cihaz izleme' },
+    status: { en: 'In Development', tr: 'Geliştiriliyor' },
+    role: { en: 'Product design and full-stack system design', tr: 'Ürün tasarımı ve full-stack sistem tasarımı' },
+    platform: { en: 'Web / IoT', tr: 'Web / IoT' },
+    tagline: { en: 'Manage your IoT devices from one place.', tr: 'IoT cihazlarını tek panelden yönetin.' },
+    productSummary: {
+      en: 'A platform focused on managing IoT device status, telemetry, alarms and configuration data through a single modern dashboard.',
+      tr: 'IoT cihaz durumları, telemetri, alarmlar ve yapılandırma bilgilerini tek bir modern dashboard üzerinden yönetmeye odaklanan platform.'
+    },
+    featureShowcase: {
+      en: [
+        { title: 'Device monitoring', description: 'Track connected devices and their current operational status.' },
+        { title: 'Live telemetry', description: 'View live measurements through clear metrics and charts.' },
+        { title: 'Alerts and events', description: 'Follow warnings, alarms and event history in one place.' },
+        { title: 'Device list', description: 'Access registered devices from one structured inventory.' },
+        { title: 'Remote configuration', description: 'Manage supported device settings from the dashboard.' },
+        { title: 'Analytics', description: 'Turn device data into readable operational insights.' }
+      ],
+      tr: [
+        { title: 'Cihaz izleme', description: 'Bağlı cihazları ve anlık çalışma durumlarını takip edin.' },
+        { title: 'Canlı telemetri', description: 'Anlık ölçümleri anlaşılır metrikler ve grafiklerle görüntüleyin.' },
+        { title: 'Alarmlar ve olaylar', description: 'Uyarıları, alarmları ve olay geçmişini tek yerde izleyin.' },
+        { title: 'Cihaz listesi', description: 'Kayıtlı cihazlara düzenli bir envanter üzerinden erişin.' },
+        { title: 'Uzaktan yapılandırma', description: 'Desteklenen cihaz ayarlarını panel üzerinden yönetin.' },
+        { title: 'Analitik', description: 'Cihaz verilerini anlaşılır operasyon içgörülerine dönüştürün.' }
+      ]
+    },
+    productExperience: {
+      en: 'The main dashboard presents overall system health, while detailed device information, charts and event logs are managed in dedicated modules.',
+      tr: 'Ana dashboard genel sistem durumunu gösterir. Detaylı cihaz bilgileri, grafikler ve olay kayıtları ayrı modüllerde yönetilir.'
+    },
+    productFlow: {
+      en: [
+        { title: 'Connect devices', description: 'Bring supported devices into a shared management environment.' },
+        { title: 'Monitor the system', description: 'Follow status, telemetry and alerts from a clear dashboard.' },
+        { title: 'Manage with context', description: 'Open device details and apply configuration where needed.' }
+      ],
+      tr: [
+        { title: 'Cihazları bağla', description: 'Desteklenen cihazları ortak bir yönetim ortamına dahil edin.' },
+        { title: 'Sistemi izle', description: 'Durum, telemetri ve alarmları sade bir panelden takip edin.' },
+        { title: 'Bağlama göre yönet', description: 'Cihaz detaylarını açın ve gereken yapılandırmayı uygulayın.' }
+      ]
+    },
+    valueProposition: {
+      en: 'DeviceCloud makes complex data from many devices easier to understand and manage.',
+      tr: 'Çok sayıda cihazdan gelen karmaşık veriyi daha sade ve anlaşılır hale getirir.'
+    },
+    challenge: {
+      en: 'Status, telemetry, alarms and configuration data from multiple IoT devices needed to be monitored through one clear interface.',
+      tr: 'Farklı IoT cihazlarından gelen durum, telemetri, alarm ve yapılandırma bilgilerinin tek bir panel üzerinden anlaşılır biçimde takip edilmesi gerekiyordu.'
+    },
+    approach: {
+      en: 'The main dashboard was kept intentionally simple for high-level system status, while device details, charts, events and advanced information were separated into dedicated sections.',
+      tr: 'Ana ekran yalnızca genel sistem durumunu gösterecek şekilde sade tutuldu. Cihaz detayları, grafikler, olaylar ve gelişmiş bilgiler ayrı sekmelere dağıtıldı.'
+    },
+    technicalChallenge: {
+      en: 'Showing too much information on the main dashboard reduced the usefulness of secondary modules and created unnecessary information density.',
+      tr: 'Ana dashboard üzerinde çok fazla bilgiyi aynı anda göstermek diğer modüllerin işlevini azaltıyor ve bilgi yoğunluğu oluşturuyordu.'
+    },
+    solution: {
+      en: 'The information architecture was reorganized to separate high-level monitoring from detailed device management.',
+      tr: 'Bilgi mimarisi yeniden düzenlenerek genel durum ile detaylı cihaz yönetimi birbirinden ayrıldı.'
+    },
+    outcome: {
+      en: 'The result was a clearer and more scalable IoT management dashboard structure.',
+      tr: 'Daha ölçeklenebilir ve anlaşılır bir IoT yönetim paneli yapısı elde edildi.'
+    },
     description: { en: 'An IoT platform for managing devices and monitoring connected systems.', tr: 'Cihazları yönetmek ve bağlı sistemleri izlemek için bir IoT platformu.' },
     purpose: { en: 'Bring device monitoring, metrics and remote configuration into one clear interface.', tr: 'Cihaz izleme, metrikler ve uzaktan yapılandırmayı anlaşılır bir arayüzde bir araya getirmek.' },
     features: { en: ['Device management', 'System and metric monitoring', 'Remote configuration'], tr: ['Cihaz yönetimi', 'Sistem ve metrik takibi', 'Uzaktan yapılandırma'] },
     technologies: [], screenshots: [], github: '', demo: '', googlePlay: '', architecture: ''
   },
   {
-    id: 'lmts-04', title: 'LMTS-04 — Lineer Motor Test ve Telemetri Sistemi', coverTitle: 'LMTS-04', category: 'iot', featured: false, coverVariant: 'telemetry', coverImage: 'assets/projects/lmts04-cover.png',
+    id: 'lmts-04', title: 'LMTS-04 — Lineer Motor Test ve Telemetri Sistemi', coverTitle: 'LMTS-04', category: 'iot', featured: false, coverVariant: 'telemetry', coverImage: 'assets/projects/lmts04-cover.webp', coverThumbnail: 'assets/projects/thumbs/lmts04-cover.webp', coverFallback: 'assets/projects/fallbacks/lmts04-cover.jpg',
     highlight: { en: '8-Channel Telemetry • 50 Hz', tr: '8 Kanal Telemetri • 50 Hz' },
+    status: { en: 'Working Prototype', tr: 'Çalışan prototip' },
+    role: { en: 'Desktop software and telemetry system development', tr: 'Masaüstü yazılım ve telemetri sistemi geliştirme' },
+    platform: { en: 'Windows Desktop / Hardware Integration', tr: 'Windows Desktop / Hardware Integration' },
+    tagline: { en: 'Real-time linear motor testing and telemetry.', tr: 'Gerçek zamanlı lineer motor test ve telemetri.' },
+    productSummary: {
+      en: 'A desktop testing system developed to monitor, analyze and record eight telemetry channels from linear motor tests in real time.',
+      tr: 'Lineer motor testlerinden gelen sekiz farklı telemetri kanalını gerçek zamanlı izlemek, analiz etmek ve kayıt altına almak için geliştirilen masaüstü test sistemi.'
+    },
+    featureShowcase: {
+      en: [
+        { title: '8 telemetry channels', description: 'Monitor core motor and test measurements together.' },
+        { title: 'Real-time charts', description: 'Follow changing measurements through live visualizations.' },
+        { title: 'Serial / Modbus TCP', description: 'Connect to supported test hardware over two protocols.' },
+        { title: 'WebSocket streaming', description: 'Stream hardware data continuously to the desktop interface.' },
+        { title: 'Alarm management', description: 'Track limit conditions with alarm and hysteresis controls.' },
+        { title: 'CSV reporting', description: 'Export recorded test data for further analysis.' },
+        { title: 'Test profiles', description: 'Prepare repeatable configurations for different test scenarios.' },
+        { title: 'Reference comparison', description: 'Compare current measurements with reference test data.' }
+      ],
+      tr: [
+        { title: '8 telemetri kanalı', description: 'Temel motor ve test ölçümlerini birlikte izleyin.' },
+        { title: 'Gerçek zamanlı grafikler', description: 'Değişen ölçümleri canlı görselleştirmeler üzerinden takip edin.' },
+        { title: 'Seri / Modbus TCP', description: 'Desteklenen test donanımına iki protokol üzerinden bağlanın.' },
+        { title: 'WebSocket veri akışı', description: 'Donanım verisini masaüstü arayüzüne kesintisiz aktarın.' },
+        { title: 'Alarm yönetimi', description: 'Limit durumlarını alarm ve histerezis kontrolleriyle izleyin.' },
+        { title: 'CSV raporlama', description: 'Kaydedilen test verilerini ileri analiz için dışa aktarın.' },
+        { title: 'Test profilleri', description: 'Farklı test senaryoları için tekrarlanabilir ayarlar hazırlayın.' },
+        { title: 'Referans karşılaştırması', description: 'Güncel ölçümleri referans test verileriyle karşılaştırın.' }
+      ]
+    },
+    productExperience: {
+      en: 'Measurements from the hardware pass through a Python hardware bridge and reach the Electron desktop interface over WebSocket, where they are presented in real-time charts.',
+      tr: 'Donanımdan gelen ölçüm verileri Python hardware bridge üzerinden WebSocket ile Electron masaüstü arayüzüne aktarılır ve gerçek zamanlı grafiklerle gösterilir.'
+    },
+    productFlow: {
+      en: [
+        { title: 'Connect the hardware', description: 'Establish a serial or Modbus TCP connection with the test setup.' },
+        { title: 'Run and monitor', description: 'Stream eight measurement channels into real-time charts.' },
+        { title: 'Review the test', description: 'Compare results and export recorded data as a CSV report.' }
+      ],
+      tr: [
+        { title: 'Donanımı bağla', description: 'Test düzeneğiyle seri port veya Modbus TCP bağlantısı kurun.' },
+        { title: 'Testi çalıştır ve izle', description: 'Sekiz ölçüm kanalını gerçek zamanlı grafiklere aktarın.' },
+        { title: 'Sonuçları incele', description: 'Verileri karşılaştırın ve kayıtları CSV raporu olarak dışa aktarın.' }
+      ]
+    },
+    valueProposition: {
+      en: 'LMTS-04 replaces scattered measurement tools with a centralized, recorded and comparable testing environment.',
+      tr: 'Test sırasında dağınık ölçüm araçları yerine merkezi, kayıtlı ve karşılaştırılabilir bir test ortamı sağlar.'
+    },
+    challenge: {
+      en: 'Multiple telemetry channels from linear motor tests needed to be monitored, analyzed and recorded in real time.',
+      tr: 'Lineer motor testlerinden gelen birden fazla telemetri kanalının gerçek zamanlı olarak izlenmesi, analiz edilmesi ve kayıt altına alınması gerekiyordu.'
+    },
+    approach: {
+      en: 'The Electron desktop interface was separated from a Python hardware bridge. Data from serial and Modbus TCP connections was structured to reach the interface through WebSocket streaming.',
+      tr: 'Electron masaüstü arayüzü ile Python tabanlı donanım köprüsü birbirinden ayrıldı. Seri port ve Modbus TCP üzerinden gelen veriler WebSocket ile arayüze aktarılacak şekilde yapılandırıldı.'
+    },
+    technicalChallenge: {
+      en: 'Invalid sensor packets, connection interruptions and high-frequency updates had to be handled reliably in a real-time environment.',
+      tr: 'Gerçek zamanlı veride geçersiz sensör paketleri, bağlantı kesilmeleri ve yüksek güncelleme frekansı güvenilir biçimde yönetilmeliydi.'
+    },
+    solution: {
+      en: 'Reliability mechanisms were added, including rejecting invalid packets from history, automatically stopping an active test after data interruption, and separating UI refresh frequency from measurement frequency.',
+      tr: 'Geçersiz paketlerin geçmişe eklenmemesi, veri akışı kesildiğinde aktif testin otomatik durdurulması ve UI yenileme hızının ölçüm hızından ayrılması gibi güvenlik ve kararlılık mekanizmaları eklendi.'
+    },
+    outcome: {
+      en: 'A desktop testing environment was created that can monitor eight telemetry channels in real time, visualize data, manage alarms and generate CSV reports.',
+      tr: 'Sekiz telemetri kanalını gerçek zamanlı izleyebilen, grafikleyebilen, alarm yönetebilen ve CSV raporu üretebilen masaüstü test altyapısı oluşturuldu.'
+    },
     description: {
       en: 'Electron and Python based desktop test system developed to monitor, analyze and record real-time linear motor telemetry including RPM, current, voltage, power, thrust force, temperature, position and efficiency.',
       tr: 'Lineer motor testlerinden alınan devir, akım, gerilim, güç, itki kuvveti, sıcaklık, konum ve verim verilerini gerçek zamanlı izlemek, analiz etmek ve kayıt altına almak için geliştirilmiş Electron ve Python tabanlı masaüstü test sistemi.'
@@ -41,10 +177,76 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: 'evys',
     title: { en: 'EVYS — Electric Vehicle Competition Management System', tr: 'EVYS — Elektrikli Araç Yarış Yönetim Sistemi' },
-    coverTitle: 'EVYS', category: 'web', featured: true, coverVariant: 'dashboard', coverImage: 'assets/projects/evys-cover.jpg',
+    coverTitle: 'EVYS', category: 'web', featured: true, coverVariant: 'dashboard', coverImage: 'assets/projects/evys-cover.webp', coverThumbnail: 'assets/projects/thumbs/evys-cover.webp', coverFallback: 'assets/projects/fallbacks/evys-cover.jpg',
     highlight: {
       en: 'Technical Inspection • Judge Management • Competition Operations',
       tr: 'Teknik Kontrol • Hakem Yönetimi • Yarış Operasyonu'
+    },
+    status: { en: 'Active Development', tr: 'Aktif geliştirme' },
+    role: { en: 'System design and software development', tr: 'Sistem tasarımı ve yazılım geliştirme' },
+    platform: { en: 'Web Application', tr: 'Web Application' },
+    tagline: { en: 'Manage competition operations from one platform.', tr: 'Yarış operasyonlarını tek platformda yönetin.' },
+    productSummary: {
+      en: 'EVYS is a web-based competition management system that brings technical inspections, team management, judge evaluations, announcements and race results into one centralized platform.',
+      tr: 'EVYS; elektrikli araç yarışlarında teknik kontrol, takım yönetimi, hakem değerlendirmeleri, duyurular ve yarış sonuçlarını merkezi bir web platformunda birleştiren yarış yönetim sistemidir.'
+    },
+    featureShowcase: {
+      en: [
+        { title: 'Role-based dashboards', description: 'Give each user access to workflows that match their responsibilities.' },
+        { title: 'Technical inspection', description: 'Evaluate safety and compliance criteria in a structured flow.' },
+        { title: 'Judge evaluations', description: 'Support controlled assessment and eligibility decisions.' },
+        { title: 'Team management', description: 'Keep team information and competition status organized.' },
+        { title: 'Announcements', description: 'Share operational updates from one central channel.' },
+        { title: 'Race results', description: 'Manage times, special statuses and published rankings.' }
+      ],
+      tr: [
+        { title: 'Rol tabanlı paneller', description: 'Her kullanıcının sorumluluğuna uygun süreçlere erişmesini sağlayın.' },
+        { title: 'Teknik kontrol', description: 'Güvenlik ve uygunluk kriterlerini düzenli bir akışta değerlendirin.' },
+        { title: 'Hakem değerlendirmeleri', description: 'Kontrollü değerlendirme ve yarışabilirlik kararlarını destekleyin.' },
+        { title: 'Takım yönetimi', description: 'Takım bilgilerini ve yarış durumlarını düzenli tutun.' },
+        { title: 'Duyurular', description: 'Operasyonel güncellemeleri merkezi bir kanaldan paylaşın.' },
+        { title: 'Yarış sonuçları', description: 'Süreleri, özel durumları ve yayınlanan sıralamaları yönetin.' }
+      ]
+    },
+    productExperience: {
+      en: 'Admin, Judge/Technical Committee, Team and Technical Staff users access different modules based on their responsibilities. Technical inspections, eligibility decisions and race results are managed through the same system.',
+      tr: 'Admin, Hakem/DDK, Takım ve Teknik Ekip kullanıcıları kendi sorumluluk alanlarına göre farklı modüllere erişir. Teknik kontrol, yarışabilirlik değerlendirmesi ve yarış sonuçları aynı sistem üzerinden yönetilir.'
+    },
+    productFlow: {
+      en: [
+        { title: 'Manage the team', description: 'Organize team information and role-specific competition workflows.' },
+        { title: 'Complete inspection', description: 'Evaluate technical criteria and record eligibility decisions.' },
+        { title: 'Publish results', description: 'Enter race times, handle special statuses and share rankings.' }
+      ],
+      tr: [
+        { title: 'Takımı yönet', description: 'Takım bilgilerini ve role özel yarış süreçlerini düzenleyin.' },
+        { title: 'Teknik kontrolü tamamla', description: 'Teknik kriterleri değerlendirin ve yarışabilirlik kararını kaydedin.' },
+        { title: 'Yarış sonucunu yayınla', description: 'Süreleri girin, özel durumları yönetin ve sıralamayı paylaşın.' }
+      ]
+    },
+    valueProposition: {
+      en: 'EVYS brings scattered competition operations into one traceable structure and enables technical workflows to be managed digitally.',
+      tr: 'Dağınık yarış operasyonlarını tek bir takip edilebilir yapı altında toplar ve teknik süreçlerin dijital olarak yönetilmesini sağlar.'
+    },
+    challenge: {
+      en: 'Technical inspections, team management, judge evaluations, announcements and race results can operate as separate workflows in electric vehicle competitions. The goal was to bring these processes into one centralized and traceable system.',
+      tr: 'Elektrikli araç yarışlarında teknik kontrol, takım yönetimi, hakem değerlendirmeleri, duyurular ve yarış sonuçları farklı operasyonlar olarak yürütülebiliyor. Amaç bu süreçleri merkezi ve takip edilebilir bir sistem altında birleştirmekti.'
+    },
+    approach: {
+      en: 'A modular web application was structured around Admin, Judge/Technical Committee, Team and Technical Staff roles, with each role accessing workflows relevant to its responsibilities.',
+      tr: 'Admin, Hakem/DDK, Takım ve Teknik Ekip rollerine ayrılmış modüler bir web uygulaması tasarlandı. Kullanıcıların yalnızca kendi sorumluluk alanlarıyla ilgili süreçlere erişmesi hedeflendi.'
+    },
+    technicalChallenge: {
+      en: 'Technical inspection and race operations required multiple user roles to work with shared team data while keeping responsibilities and workflows controlled.',
+      tr: 'Teknik kontrol ve yarış operasyonlarında farklı kullanıcı rollerinin aynı takım verileri üzerinde kontrollü şekilde işlem yapması ve sonuçların merkezi olarak yönetilmesi gerekiyordu.'
+    },
+    solution: {
+      en: 'Role-based modules, technical inspection criteria, eligibility decisions and centralized race results were introduced. Manual timing and special competition statuses were also supported.',
+      tr: 'Rol tabanlı modüller, teknik kontrol kriterleri, Yarışabilir/Yarışamaz değerlendirmesi ve merkezi yarış sonuç yapısı oluşturuldu. Manuel süre girişi ve özel yarış durumları desteklendi.'
+    },
+    outcome: {
+      en: 'The project resulted in an extensible management architecture capable of bringing major technical and operational competition workflows into a single platform.',
+      tr: 'Yarış organizasyonundaki temel teknik ve operasyonel süreçleri tek platform altında toplayabilecek genişletilebilir bir yönetim mimarisi ortaya çıktı.'
     },
     description: {
       en: 'A comprehensive web-based competition management platform designed to manage technical inspections, judge evaluations, team operations, announcements and competition workflows for electric vehicle events.',
@@ -93,8 +295,74 @@ window.PORTFOLIO_PROJECTS = [
     screenshots: [], github: '', demo: '', googlePlay: ''
   },
   {
-    id: 'aquaquest', title: 'AquaQuest', category: 'apps', featured: true, coverVariant: 'aqua', coverImage: 'assets/projects/aquaquest-cover.png',
+    id: 'aquaquest', title: 'AquaQuest', category: 'apps', featured: true, coverVariant: 'aqua', coverImage: 'assets/projects/aquaquest-cover.webp', coverThumbnail: 'assets/projects/thumbs/aquaquest-cover.webp', coverFallback: 'assets/projects/fallbacks/aquaquest-cover.jpg',
     highlight: { en: 'Gamified Hydration Tracker', tr: 'Oyunlaştırılmış Hidrasyon Takibi' },
+    status: { en: 'MVP / Preparing for Google Play', tr: 'MVP / Google Play hazırlığı' },
+    role: { en: 'Android development, UI/UX and application architecture', tr: 'Android geliştirme, UI/UX ve uygulama mimarisi' },
+    platform: { en: 'Native Android / Java', tr: 'Native Android / Java' },
+    tagline: { en: 'Turn hydration into a game.', tr: 'Su takibini bir oyuna dönüştür.' },
+    productSummary: {
+      en: 'AquaQuest is a gamified native Android hydration app that combines fluid tracking with XP, levels, streaks, daily quests and achievements.',
+      tr: 'AquaQuest; su, kahve, çay ve diğer içecekleri takip etmeyi XP, seviye, seri, günlük görevler ve başarımlarla birleştiren oyunlaştırılmış native Android hidrasyon uygulamasıdır.'
+    },
+    featureShowcase: {
+      en: [
+        { title: 'Smart hydration tracking', description: 'Log different beverages with hydration-aware contribution ratios.' },
+        { title: 'Animated glass water tank', description: 'See daily progress fill a responsive visual water tank.' },
+        { title: 'XP and level progression', description: 'Turn consistent hydration actions into visible progression.' },
+        { title: 'Daily quests', description: 'Follow focused goals that refresh the daily routine.' },
+        { title: 'Streaks and achievements', description: 'Maintain momentum and unlock milestones over time.' },
+        { title: 'Reminders and notifications', description: 'Use scheduled prompts to support a consistent habit.' }
+      ],
+      tr: [
+        { title: 'Akıllı hidrasyon takibi', description: 'Farklı içecekleri hidrasyon katkı oranlarına göre kaydedin.' },
+        { title: 'Animasyonlu cam su tankı', description: 'Günlük ilerlemenin görsel su tankını doldurmasını izleyin.' },
+        { title: 'XP ve seviye sistemi', description: 'Düzenli hidrasyon adımlarını görünür ilerlemeye dönüştürün.' },
+        { title: 'Günlük görevler', description: 'Günlük rutini canlı tutan odaklı hedefleri tamamlayın.' },
+        { title: 'Seri ve başarımlar', description: 'Devamlılığı koruyun ve zaman içinde yeni kilometre taşları açın.' },
+        { title: 'Hatırlatıcılar ve bildirimler', description: 'Planlı bildirimlerle düzenli alışkanlığı destekleyin.' }
+      ]
+    },
+    productExperience: {
+      en: 'The user selects a beverage, logs the amount and the daily hydration goal updates based on the beverage type. The animated water tank visualizes progress while the user earns XP, maintains streaks and unlocks achievements.',
+      tr: 'Kullanıcı içeceğini seçer, miktarı kaydeder ve içeceğin türüne göre günlük hidrasyon hedefi güncellenir. Su tankı ilerlemeyi görsel olarak gösterirken kullanıcı XP kazanır, serisini korur ve başarımlar açar.'
+    },
+    productFlow: {
+      en: [
+        { title: 'Log your beverage', description: 'Choose a beverage and record the amount you consumed.' },
+        { title: 'Fill your goal', description: 'Watch the animated water tank reflect daily hydration progress.' },
+        { title: 'Earn rewards', description: 'Gain XP, maintain streaks and unlock achievements.' }
+      ],
+      tr: [
+        { title: 'İçeceğini kaydet', description: 'İçecek türünü seçin ve tükettiğiniz miktarı ekleyin.' },
+        { title: 'Hedefini doldur', description: 'Animasyonlu su tankında günlük hidrasyon ilerlemenizi görün.' },
+        { title: 'XP ve başarımlar kazan', description: 'XP kazanın, serinizi koruyun ve başarımların kilidini açın.' }
+      ]
+    },
+    valueProposition: {
+      en: 'AquaQuest is designed not just to log water intake, but to make daily hydration more motivating and sustainable.',
+      tr: 'AquaQuest’in amacı yalnızca su tüketimini kaydetmek değil, günlük hidrasyon alışkanlığını daha motive edici ve sürdürülebilir hale getirmektir.'
+    },
+    challenge: {
+      en: 'Traditional hydration trackers can struggle to keep users engaged over time. The goal was to move beyond basic intake logging and create a more engaging experience that encourages consistent hydration.',
+      tr: 'Klasik su takip uygulamalarının günlük kullanım motivasyonunu uzun süre korumakta zorlanması. Amaç yalnızca tüketimi kaydetmek yerine kullanıcıyı düzenli hidrasyona teşvik eden daha etkileşimli bir deneyim oluşturmaktı.'
+    },
+    approach: {
+      en: 'Daily fluid tracking was gamified through XP, levels, streaks, quests and achievements. Progress is visualized through an animated glass water tank on the home screen.',
+      tr: 'Günlük sıvı takibi XP, seviye, seri, görev ve başarımlarla oyunlaştırıldı. Kullanıcının ilerlemesi ana ekrandaki animasyonlu cam su tankı üzerinden görsel olarak gösterildi.'
+    },
+    technicalChallenge: {
+      en: 'During early development, MainActivity grew to roughly 4,400 lines and significant parts of the screen were being recreated even for small user actions.',
+      tr: 'İlk geliştirme sürecinde MainActivity yaklaşık 4.400 satıra ulaşmış ve küçük kullanıcı işlemlerinde bile ekranın önemli bölümleri yeniden oluşturulmaya başlamıştı.'
+    },
+    solution: {
+      en: 'GlassWaterView was extracted into a dedicated custom view, while hydration, XP, level, streak and SharedPreferences logic was moved into HydrationDataManager. UI updates were changed to refresh only affected components instead of rebuilding the entire screen.',
+      tr: 'GlassWaterView ayrı bir custom view haline getirildi. Hidrasyon, XP, seviye, streak ve SharedPreferences yönetimi HydrationDataManager sınıfına taşındı. Arayüz, tüm ekranı yeniden oluşturmak yerine yalnızca değişen parçaları güncelleyecek şekilde düzenlendi.'
+    },
+    outcome: {
+      en: 'The application reached a stable MVP stage suitable for real-device daily use testing and moved closer to Google Play preparation.',
+      tr: 'Uygulama gerçek Android cihazda günlük kullanım senaryosunda test edilebilir, stabil bir MVP seviyesine ulaştı ve Google Play hazırlığına yaklaştı.'
+    },
     description: {
       en: 'A native Android hydration tracking application that turns daily fluid intake into a gamified experience with XP, levels, streaks, achievements and daily quests.',
       tr: 'Günlük sıvı tüketimini XP, seviye, seri, başarımlar ve günlük görevlerle oyunlaştırılmış bir deneyime dönüştüren native Android hidrasyon takip uygulaması.'
@@ -116,17 +384,83 @@ window.PORTFOLIO_PROJECTS = [
     screenshots: [], github: '', demo: '', googlePlay: '', architecture: ''
   },
   {
-    id: 'tripledger', title: 'TripLedger', category: 'apps', featured: true, coverVariant: 'finance', coverImage: 'assets/projects/tripledger-cover.png',
+    id: 'tripledger', title: 'TripLedger', category: 'apps', featured: true, coverVariant: 'finance', coverImage: 'assets/projects/tripledger-cover.webp', coverThumbnail: 'assets/projects/thumbs/tripledger-cover.webp', coverFallback: 'assets/projects/fallbacks/tripledger-cover.jpg',
     highlight: { en: 'Travel Expense Tracking', tr: 'Seyahat Harcama Takibi' },
+    status: { en: 'Android Testing / Release Preparation', tr: 'Android test / yayın hazırlığı' },
+    role: { en: 'Mobile application development and product design', tr: 'Mobil uygulama geliştirme ve ürün tasarımı' },
+    platform: { en: 'Android / Capacitor', tr: 'Android / Capacitor' },
+    tagline: { en: 'Make shared travel expenses simpler.', tr: 'Seyahat harcamalarını paylaşmayı kolaylaştır.' },
+    productSummary: {
+      en: 'TripLedger is an Android application for tracking trips, expenses, participant shares and subscriptions in one mobile experience.',
+      tr: 'TripLedger; geziler, harcamalar, kişi payları ve abonelikleri tek mobil uygulamada takip etmeyi sağlayan Android uygulamasıdır.'
+    },
+    featureShowcase: {
+      en: [
+        { title: 'Trip management', description: 'Keep each journey and its financial activity organized.' },
+        { title: 'Expense tracking', description: 'Record travel spending with clear amounts and context.' },
+        { title: 'Shared costs', description: 'Distribute common expenses across the group.' },
+        { title: 'Participant shares', description: 'See how much of each expense belongs to each traveler.' },
+        { title: 'Subscription tracking', description: 'Keep recurring costs visible alongside trip spending.' },
+        { title: 'Smart settlement', description: 'Make final balances easier to understand at the end of a trip.' }
+      ],
+      tr: [
+        { title: 'Gezi yönetimi', description: 'Her seyahati ve finansal hareketlerini düzenli tutun.' },
+        { title: 'Harcama takibi', description: 'Seyahat giderlerini tutar ve açıklamalarıyla kaydedin.' },
+        { title: 'Ortak giderler', description: 'Paylaşılan harcamaları grup üyelerine dağıtın.' },
+        { title: 'Katılımcı payları', description: 'Her harcamanın hangi gezgine ne kadar yansıdığını görün.' },
+        { title: 'Abonelik takibi', description: 'Tekrarlayan giderleri seyahat harcamalarıyla birlikte izleyin.' },
+        { title: 'Akıllı hesaplaşma', description: 'Gezi sonundaki bakiyeleri daha kolay anlaşılır hale getirin.' }
+      ]
+    },
+    productExperience: {
+      en: 'The user creates a trip, adds expenses and distributes costs among participants. The goal is to make it easy to understand who owes whom and how much at the end of the journey.',
+      tr: 'Kullanıcı yeni bir gezi oluşturur, harcamaları ekler ve katılımcılar arasında gider paylaşımı yapar. Amaç gezi sonunda kimin kime ne kadar ödeme yapacağını kolayca takip etmektir.'
+    },
+    productFlow: {
+      en: [
+        { title: 'Create a trip', description: 'Start a journey and add the people traveling together.' },
+        { title: 'Add shared expenses', description: 'Record spending and assign the relevant participant shares.' },
+        { title: 'Review balances', description: 'See the final distribution and understand who needs to pay whom.' }
+      ],
+      tr: [
+        { title: 'Gezi oluştur', description: 'Yeni bir seyahat başlatın ve birlikte gezen kişileri ekleyin.' },
+        { title: 'Ortak giderleri ekle', description: 'Harcamaları kaydedin ve ilgili katılımcı paylarını belirleyin.' },
+        { title: 'Bakiyeleri incele', description: 'Son dağılımı görün ve kimin kime ödeme yapacağını takip edin.' }
+      ]
+    },
+    valueProposition: {
+      en: 'TripLedger brings calculations spread across spreadsheets, notes and chats into one place for group travel.',
+      tr: 'Grup seyahatlerinde Excel, not uygulaması veya mesajlaşma üzerinden yapılan karmaşık hesapları tek yerde toplar.'
+    },
+    challenge: {
+      en: 'The project aimed to make personal expenses, shared travel costs, participant shares and subscriptions easy to manage from one mobile application.',
+      tr: 'Seyahatlerde kişisel ve ortak harcamaların, kişi paylarının ve aboneliklerin tek bir mobil uygulamada kolayca takip edilmesi hedeflendi.'
+    },
+    approach: {
+      en: 'Trips, expense entries and participant shares were combined into a simple mobile workflow. The application was designed to operate locally without requiring a backend.',
+      tr: 'Geziler, harcama kalemleri ve kişi payları basit bir mobil akış altında birleştirildi. Uygulama backend gerektirmeden localStorage tabanlı çalışacak şekilde tasarlandı.'
+    },
+    technicalChallenge: {
+      en: 'Permission checks for Local Notifications caused startup crashes on some Android devices.',
+      tr: 'Android tarafındaki Local Notifications izin kontrolü bazı cihazlarda uygulamanın açılışında crash oluşturuyordu.'
+    },
+    solution: {
+      en: 'The notification permission check was moved away from application startup toward the relevant Settings flow. ErrorBoundary handling and required Android permissions were also added.',
+      tr: 'Notification izin kontrolünün uygulama açılışından çıkarılıp ihtiyaç duyulan Ayarlar akışına taşınması planlandı. ErrorBoundary ve gerekli Android izinleri de uygulamaya eklendi.'
+    },
+    outcome: {
+      en: 'The application progressed through Google Play Console setup, reached internal testing and entered the final bug-fixing phase before production release.',
+      tr: 'Uygulama Google Play Console süreçlerine kadar ilerledi, dahili test sürümü oluşturuldu ve üretim yayını öncesindeki hata düzeltme aşamasına ulaştı.'
+    },
     description: { en: 'Keep travel expenses, budgets and shared costs in one place.', tr: 'Seyahat harcamalarını, bütçeleri ve ortak giderleri tek yerde takip edin.' },
     purpose: { en: 'Keep personal and shared expenses organized, making travel budgets easier to follow.', tr: 'Kişisel ve ortak harcamaları düzenleyerek seyahat bütçesini takip etmeyi kolaylaştırmak.' },
     features: { en: ['Expense tracking and travel budgets', 'Shared expense records', 'Subscription management'], tr: ['Harcama takibi ve seyahat bütçeleri', 'Ortak gider kayıtları', 'Abonelik yönetimi'] },
-    technologies: [], image: 'assets/tripledger-phone-cutout.png',
-    screenshots: [{ src: 'assets/tripledger-phone-cutout.png', alt: { en: 'TripLedger application preview', tr: 'TripLedger uygulama önizlemesi' } }],
+    technologies: [], image: 'assets/tripledger-phone-cutout.webp', imageFallback: 'assets/tripledger-phone-cutout.png',
+    screenshots: [{ src: 'assets/tripledger-phone-cutout.webp', fallback: 'assets/tripledger-phone-cutout.png', width: 960, height: 1442, alt: { en: 'TripLedger application preview', tr: 'TripLedger uygulama önizlemesi' } }],
     github: '', demo: '', googlePlay: '', privacy: 'privacy/tripledger.html', terms: 'terms/tripledger.html'
   },
   {
-    id: 'tinynotes', title: 'TinyNotes', category: 'apps', featured: true, coverVariant: 'notes', coverImage: 'assets/projects/tinynotes-cover.png',
+    id: 'tinynotes', title: 'TinyNotes', category: 'apps', featured: true, coverVariant: 'notes', coverImage: 'assets/projects/tinynotes-cover.webp', coverThumbnail: 'assets/projects/thumbs/tinynotes-cover.webp', coverFallback: 'assets/projects/fallbacks/tinynotes-cover.jpg',
     highlight: { en: 'Notes • Tasks • Reminders', tr: 'Notlar • Görevler • Hatırlatıcılar' },
     description: { en: 'A simple place to capture notes and organize everyday ideas.', tr: 'Not almak ve günlük fikirleri düzenlemek için sade bir uygulama.' },
     purpose: { en: 'Offer a focused writing space that makes creating and finding notes straightforward.', tr: 'Not oluşturmayı ve bulmayı kolaylaştıran, yazmaya odaklı bir alan sunmak.' },
@@ -134,7 +468,7 @@ window.PORTFOLIO_PROJECTS = [
     technologies: [], screenshots: [], github: '', demo: '', googlePlay: '', privacy: 'privacy/tinynotes.html', terms: 'terms/tinynotes.html'
   },
   {
-    id: 'arcane-survive', title: 'Arcane Survive', category: 'games', featured: false, coverVariant: 'arcane', coverImage: 'assets/projects/arcane-survive-cover.png',
+    id: 'arcane-survive', title: 'Arcane Survive', category: 'games', featured: false, coverVariant: 'arcane', coverImage: 'assets/projects/arcane-survive-cover.webp', coverThumbnail: 'assets/projects/thumbs/arcane-survive-cover.webp', coverFallback: 'assets/projects/fallbacks/arcane-survive-cover.jpg',
     highlight: { en: 'Survivor-Like Action Roguelite', tr: 'Survivor-Like Aksiyon Roguelite' },
     description: {
       en: 'A browser-based survivor-like action roguelite focused on automatic combat, enemy waves, progression and build decisions.',
@@ -159,7 +493,7 @@ window.PORTFOLIO_PROJECTS = [
     screenshots: [], github: '', demo: '', googlePlay: ''
   },
   {
-    id: 'dilek-bahcesi', title: 'Dilek Bahçesi', category: 'games', featured: false, coverVariant: 'garden', coverImage: 'assets/projects/dilek-bahcesi-cover.png',
+    id: 'dilek-bahcesi', title: 'Dilek Bahçesi', category: 'games', featured: false, coverVariant: 'garden', coverImage: 'assets/projects/dilek-bahcesi-cover.webp', coverThumbnail: 'assets/projects/thumbs/dilek-bahcesi-cover.webp', coverFallback: 'assets/projects/fallbacks/dilek-bahcesi-cover.jpg',
     highlight: { en: 'Coin Toss • Collection • Idle Progression', tr: 'Jeton Atma • Koleksiyon • Idle İlerleme' },
     description: {
       en: 'A casual collection game where players throw coins into a wishing fountain to discover random items, complete collections and build their economy.',
@@ -184,7 +518,7 @@ window.PORTFOLIO_PROJECTS = [
     screenshots: [], github: '', demo: '', googlePlay: ''
   },
   {
-    id: 'kingdoms-choice', title: "Kingdom's Choice", category: 'games', featured: false, coverVariant: 'medieval', coverImage: 'assets/projects/kingdoms-choice-cover.png',
+    id: 'kingdoms-choice', title: "Kingdom's Choice", category: 'games', featured: false, coverVariant: 'medieval', coverImage: 'assets/projects/kingdoms-choice-cover.webp', coverThumbnail: 'assets/projects/thumbs/kingdoms-choice-cover.webp', coverFallback: 'assets/projects/fallbacks/kingdoms-choice-cover.jpg',
     highlight: { en: 'Card-Based Decision Game', tr: 'Kart Tabanlı Karar Oyunu' },
     description: {
       en: 'A medieval card-based decision game where the player responds to characters and events. Each choice affects the kingdom’s resources, population, military strength and the overall direction of the story.',
@@ -221,7 +555,7 @@ window.PORTFOLIO_PROJECTS = [
     screenshots: [], github: '', demo: '', googlePlay: ''
   },
   {
-    id: 'mining-tycoon', title: 'Mining Tycoon', category: 'games', featured: false, coverVariant: 'mining', coverImage: 'assets/projects/mining-tycoon-cover.png',
+    id: 'mining-tycoon', title: 'Mining Tycoon', category: 'games', featured: false, coverVariant: 'mining', coverImage: 'assets/projects/mining-tycoon-cover.webp', coverThumbnail: 'assets/projects/thumbs/mining-tycoon-cover.webp', coverFallback: 'assets/projects/fallbacks/mining-tycoon-cover.jpg',
     highlight: { en: 'Idle Mining & Production Management', tr: 'Idle Madencilik ve Üretim Yönetimi' },
     description: {
       en: 'An idle tycoon prototype where workers mine resources, trucks transport them and factories turn production into income.',
@@ -246,7 +580,7 @@ window.PORTFOLIO_PROJECTS = [
     screenshots: [], github: '', demo: '', googlePlay: ''
   },
   {
-    id: 'pulsechat', title: 'PulseChat', category: 'web', featured: true, coverVariant: 'chat', coverImage: 'assets/projects/pulsechat-cover.png',
+    id: 'pulsechat', title: 'PulseChat', category: 'web', featured: true, coverVariant: 'chat', coverImage: 'assets/projects/pulsechat-cover.webp', coverThumbnail: 'assets/projects/thumbs/pulsechat-cover.webp', coverFallback: 'assets/projects/fallbacks/pulsechat-cover.jpg',
     highlight: { en: 'Real-time messaging', tr: 'Gerçek zamanlı mesajlaşma' },
     description: { en: 'A real-time chat application for conversations on the web.', tr: 'Web üzerinde anlık iletişim için gerçek zamanlı bir sohbet uygulaması.' },
     purpose: { en: 'Make real-time conversations accessible through a simple web experience.', tr: 'Gerçek zamanlı sohbeti sade bir web deneyimiyle erişilebilir kılmak.' },
@@ -254,7 +588,7 @@ window.PORTFOLIO_PROJECTS = [
     technologies: [], screenshots: [], github: '', demo: '', googlePlay: ''
   },
   {
-    id: 'restaurant-pos', title: 'Restaurant POS', category: 'web', featured: false, coverVariant: 'pos', coverImage: 'assets/projects/restaurant-pos-cover.png',
+    id: 'restaurant-pos', title: 'Restaurant POS', category: 'web', featured: false, coverVariant: 'pos', coverImage: 'assets/projects/restaurant-pos-cover.webp', coverThumbnail: 'assets/projects/thumbs/restaurant-pos-cover.webp', coverFallback: 'assets/projects/fallbacks/restaurant-pos-cover.jpg',
     highlight: { en: 'Orders • Tables • Payments', tr: 'Sipariş • Masa • Ödeme' },
     description: { en: 'A restaurant POS system for orders, inventory and sales reporting.', tr: 'Sipariş, stok ve satış raporlaması için bir restoran POS sistemi.' },
     purpose: { en: 'Bring daily restaurant operations together with ordering, inventory and sales tools.', tr: 'Sipariş, stok ve satış araçlarıyla günlük restoran operasyonlarını bir araya getirmek.' },

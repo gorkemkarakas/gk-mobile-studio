@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gorkemkarakas.github.io/gk-mobile-studio/sitemap.xml
