@@ -361,11 +361,20 @@ h3 {
   display:none;
 }
 
+.hero.section-shell {
+  width:100%;
+}
 .hero {
+  position:relative;
+  isolation:isolate;
+  overflow:clip;
+  width:100%;
   display:grid;
-  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+  grid-template-columns:minmax(0,1fr);
   align-items:center;
+  min-height:640px;
   gap:36px;
+  padding-inline:max(32px,calc((100% - 1120px) / 2));
   padding-top:88px;
   padding-bottom:68px;
 }
@@ -2523,12 +2532,66 @@ body.projects-view main {
   to { transform:scale(1) rotate(0); }
 }
 .hero-copy,.hero-visual { min-width:0; }
+.hero-copy {
+  position:relative;
+  z-index:2;
+  width:45%;
+  max-width:504px;
+}
+.hero-visual {
+  position:absolute;
+  z-index:1;
+  top:50%;
+  right:max(-40px,calc((100vw - 1440px) / 2));
+  transform:translateY(-50%);
+  display:grid;
+  width:clamp(780px,65vw,1050px);
+  aspect-ratio:4 / 3;
+  pointer-events:none;
+  /* Fade only the perimeter; device colors remain untouched. */
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,transparent 20%,#000 45%,#000 90%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,transparent 20%,#000 45%,#000 90%,transparent 100%);
+}
 .hero-visual img {
+  grid-area:1 / 1;
+  align-self:center;
   width:100%;
   height:auto;
-  aspect-ratio:1448 / 1086;
+  min-height:0;
   object-fit:contain;
-  border-radius:12px;
+  border-radius:0;
+  /* Mask the actual image edges, including the shorter light artwork. */
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 78%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 78%,transparent 100%);
+}
+/* The head initializes data-theme before CSS; initial visibility never fades.
+   Both assets share a reserved slot even though their natural ratios differ. */
+.hero-image-dark {
+  opacity:0;
+  visibility:hidden;
+}
+:root[data-theme="dark"] .hero-image-light {
+  opacity:0;
+  visibility:hidden;
+}
+:root[data-theme="dark"] .hero-image-dark {
+  opacity:1;
+  visibility:visible;
+}
+:root.theme-transition .hero-visual img {
+  transition:opacity 180ms ease;
+}
+/* Light-only polish; preserve the dark composition and compact layouts. */
+@media(min-width:801px) {
+  :root:not([data-theme="dark"]) .hero-visual {
+    -webkit-mask-image:linear-gradient(to right,transparent 0%,transparent 18%,#000 41%,#000 90%,transparent 100%);
+    mask-image:linear-gradient(to right,transparent 0%,transparent 18%,#000 41%,#000 90%,transparent 100%);
+  }
+}
+@media(min-width:1100px) {
+  :root:not([data-theme="dark"]) .hero-visual {
+    width:clamp(819px,68.25vw,1102.5px);
+  }
 }
 .project-card {
   transition:transform .18s ease-out,box-shadow .2s ease;
@@ -2674,9 +2737,22 @@ body.projects-view main {
   .header-menu { grid-row:3; grid-column:1 / -1; margin-left:0; padding-top:0; }
   .site-header.menu-open .header-menu { grid-row:2; }
   .site-header.menu-open .header-tools { grid-row:3; }
-  .hero-visual { width:min(100%,440px); justify-self:center; }
+  .hero-copy { width:100%; max-width:600px; }
+  .hero-visual {
+    position:relative;
+    top:auto;
+    right:auto;
+    transform:none;
+    width:120vw;
+    max-width:920px;
+    justify-self:center;
+    -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 18%,#000 82%,transparent 100%);
+    mask-image:linear-gradient(to right,transparent 0%,#000 18%,#000 82%,transparent 100%);
+  }
   .hero {
-    grid-template-columns:1fr;
+    grid-template-columns:minmax(0,1fr);
+    min-height:0;
+    padding-inline:20px;
     gap:30px;
     padding-block:56px 42px;
   }
@@ -2977,6 +3053,7 @@ body.projects-view main {
 
   .hero {
     gap:24px;
+    padding-inline:16px;
     padding-block:40px 34px;
   }
 
