@@ -1,0 +1,37 @@
+# GitHub Pages uses Jekyll. Exclude internal files even in a local build
+# from the full working tree. Git exclusions are maintained separately.
+# Public README/docs, site scripts, legal pages and product assets stay included.
+exclude:
+  - CLICK_MASTER_PORTFOLIO_INTEGRATION.md
+  - CLICK_MASTER_RELEASE_AUDIT.md
+  - DILEK_BAHCESI_UPDATE_AUDIT.md
+  - DILEK_BAHCESI_UPDATE_REPORT.md
+  - GAME_PORTFOLIO_AUDIT.md
+  - LIGHT_SPIRIT_INTEGRATION_REPORT.md
+  - PARKMATE_COVER_UPDATE.md
+  - PARKMATE_INTEGRATION_REPORT.md
+  - PARKMATE_PORTFOLIO_AUDIT.md
+  - PRE_RELEASE_SECURITY_AUDIT.md
+  - PRE_RELEASE_SECURITY_FIX_REPORT.md
+  - PROJECT_INVENTORY.md
+  - TAHTIN_GOLGESI_PORTFOLIO_AUDIT.md
+  - TAHTIN_GOLGESI_PORTFOLIO_UPDATE.md
+  - TEAMOPS_COVER_REPORT.md
+  - TEAMOPS_INTEGRATION_REPORT.md
+  - TEAM_FEEDBACK_PORTFOLIO_AUDIT.md
+  - THE_LINE_INTEGRATION_REPORT.md
+  - TRIPLEDGER_RELEASE_UPDATE.md
+  - TRIPLEDGER_STORE_CTA_REPORT.md
+  - assets/concepts/teamops
+  - assets/image6.png
+  - docs/internal
+  - .local
+  - tmp
+  # Preserve Jekyll 3's default dependency exclusions when defining exclude.
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby

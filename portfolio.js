@@ -175,7 +175,7 @@
     const fallback = project.coverFallback || webp;
     /* Card copy already names the project; keep those thumbnails decorative.
        Detail-page covers retain a concise description. */
-    const alt = detail ? escape(projectTitle + ' — ' + t('projectPreview')) : '';
+    const alt = detail ? escape(local(project.coverAlt) || projectTitle + ' — ' + t('projectPreview')) : '';
     const loading = detail || eager ? 'eager' : 'lazy';
     const priority = detail || eager ? ' fetchpriority="high"' : '';
     const width = detail ? 1440 : 800;
@@ -203,10 +203,11 @@
   }
   function card(project, options = {}) {
     const projectTitle = local(project.title);
+    const cardTechnologies = (project.cardTechnologies || project.technologies).slice(0, 3);
     const playAction = project.isPlayable === true && project.playUrl
       ? `<a class="case-link" href="${escape(project.playUrl)}" aria-label="${escape(t('play') + ': ' + projectTitle)}"><span>${t('play')}</span><span aria-hidden="true">↗</span></a>`
       : '';
-    return `<article class="project-card" data-project-card><div class="project-cover cover-${project.id}${project.coverImage ? ' has-cover-image' : ''}" aria-hidden="true"><span class="cover-index">${String(projects.indexOf(project) + 1).padStart(2, '0')} / GK</span>${coverContent(project, options)}<span class="cover-label">${t(project.category)}</span></div><div class="project-body"><div class="project-category">${t(project.category)}</div><h3>${escape(projectTitle)}</h3><p>${escape(local(project.description))}</p>${tags(project.cardTechnologies || project.technologies)}${project.highlight ? `<div class="project-highlight"><span aria-hidden="true"></span>${escape(local(project.highlight))}</div>` : ''}${playAction}<a class="case-link" data-card-link href="#project/${project.id}" aria-label="${escape(t('details') + ': ' + projectTitle)}"><span>${t('details')}</span><span aria-hidden="true">↗</span></a></div></article>`;
+    return `<article class="project-card" data-project-card><div class="project-cover cover-${project.id}${project.coverImage ? ' has-cover-image' : ''}" aria-hidden="true"><span class="cover-index">${String(projects.indexOf(project) + 1).padStart(2, '0')} / GK</span>${coverContent(project, options)}</div><div class="project-body"><div class="project-category">${t(project.category)}</div><h3>${escape(projectTitle)}</h3><p class="card-description">${escape(local(project.description))}</p>${tags(cardTechnologies)}${playAction}<a class="case-link" data-card-link href="#project/${project.id}" aria-label="${escape(t('details') + ': ' + projectTitle)}"><span>${t('details')}</span><span aria-hidden="true">↗</span></a></div></article>`;
   }
   function initFeaturedCarousel() {
     const root = document.querySelector('[data-featured-carousel]');
@@ -538,14 +539,27 @@
     if (!local(project.valueProposition)) return '';
     return `<section class="product-value reveal"><div><p class="section-kicker">03 / VALUE</p><h2>${t('whyItMatters')}</h2></div><p>${escape(local(project.valueProposition))}</p></section>`;
   }
+  function initTechnicalDisclosures() {
+    const compact = String(window.matchMedia('(max-width: 430px)').matches);
+    main.querySelectorAll('[data-technical-disclosure]').forEach(details => {
+      // Keep a visitor's open/closed choice until the layout crosses the breakpoint.
+      if (details.dataset.compactLayout === compact) return;
+      details.open = compact !== 'true';
+      details.dataset.compactLayout = compact;
+    });
+  }
   function behindProduct(project) {
     const storyFields = [
       ['technicalChallengeLabel', project.technicalChallenge],
       ['solutionLabel', project.solution],
       ['outcomeLabel', project.outcome]
     ].filter(([, value]) => local(value));
-    const technicalDetails = project.technicalDetails?.[lang]?.length
-      ? `<section class="behind-detail"><h3>${t('technicalDetails')}</h3><ul class="feature-list">${project.technicalDetails[lang].map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>`
+    const technicalItems = project.technicalDetails?.[lang] || [];
+    const technicalList = `<ul class="feature-list">${technicalItems.map(item => `<li>${escape(item)}</li>`).join('')}</ul>`;
+    const technicalDetails = technicalItems.length
+      ? technicalItems.length >= 5
+        ? `<details class="behind-detail technical-disclosure" data-technical-disclosure open><summary><h3>${t('technicalDetails')}</h3></summary>${technicalList}</details>`
+        : `<section class="behind-detail"><h3>${t('technicalDetails')}</h3>${technicalList}</section>`
       : '';
     const architecture = local(project.architecture)
       ? `<section class="behind-detail"><h3>${t('architecture')}</h3><div class="architecture">${escape(local(project.architecture))}</div></section>`
@@ -581,6 +595,22 @@
   function productCta() {
     return `<section class="product-cta reveal"><div><p class="section-kicker">GK MOBILE STUDIO</p><h2>${t('productCtaTitle')}</h2><p>${t('productCtaText')}</p></div><div class="product-cta-actions"><a class="button primary" href="mailto:asilzade.1999@gmail.com">${t('emailMe')} <span aria-hidden="true">↗</span></a><a class="button" href="https://www.linkedin.com/in/görkem-karakaş/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/gorkemkarakas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></section>`;
   }
+  function tripLedgerStoreCta(project) {
+    if (project.id !== 'tripledger' || !project.googlePlay || !project.productSummary) return '';
+    const storeCopy = {
+      tr: {
+        status: "Google Play'de Yayında",
+        title: 'TripLedger’ı Android cihazına indir',
+        description: 'Seyahat harcamalarını, kişi paylarını ve aboneliklerini tek yerden yönet.'
+      },
+      en: {
+        status: 'Now on Google Play',
+        title: 'Download TripLedger for Android',
+        description: 'Manage trip expenses, shared costs and subscriptions in one place.'
+      }
+    }[lang];
+    return `<section class="tripledger-store-cta" aria-labelledby="tripledger-store-title"><div class="tripledger-store-copy"><p class="tripledger-store-status"><span aria-hidden="true"></span>${escape(storeCopy.status)}</p><h2 id="tripledger-store-title">${escape(storeCopy.title)}</h2><p class="tripledger-store-description">${escape(storeCopy.description)}</p></div><a class="tripledger-store-action" href="${escape(project.googlePlay)}" target="_blank" rel="noopener noreferrer"><img src="assets/badges/google-play-${lang}.png" alt="" width="646" height="250" decoding="async"><span>${escape(local(project.googlePlayLabel))} <span aria-hidden="true">↗</span></span></a></section>`;
+  }
   function projectPage(project) {
     const projectTitle = local(project.title);
     const heroImage = project.detailImage || project.coverImage;
@@ -589,12 +619,12 @@
       : coverPicture(project, { detail: true });
     const links = [
       ...(project.isPlayable === true && project.playUrl ? [['playUrl', t('play')]] : []),
-      ...[['demo', 'Live Demo'], ['github', 'GitHub'], ['googlePlay', 'Google Play']]
-    ].filter(([key]) => project[key]);
-    const linkButtons = links.length ? `<div class="hero-actions">${links.map(([key,label]) => `<a class="button" href="${escape(project[key])}" target="_blank" rel="noopener noreferrer">${label} <span aria-hidden="true">↗</span></a>`).join('')}</div>` : '';
+      ...[['demo', 'Live Demo'], ['github', 'GitHub'], ['googlePlay', local(project.googlePlayLabel) || 'Google Play']]
+    ].filter(([key]) => project[key] && !(key === 'googlePlay' && project.id === 'tripledger' && project.productSummary));
+    const linkButtons = links.length ? `<div class="hero-actions">${links.map(([key,label]) => `<a class="button" href="${escape(project[key])}" target="_blank" rel="noopener noreferrer">${escape(label)} <span aria-hidden="true">↗</span></a>`).join('')}</div>` : '';
     if (project.productSummary) {
       const mainTechnologies = (project.cardTechnologies || project.technologies).slice(0, 5);
-      return `<section class="page section-shell project-detail-page product-showcase-page">${projectMiniNav(project, true)}<div class="product-hero reveal">${heroImage ? `<figure class="product-hero-media">${heroContent}</figure>` : ''}<header class="product-hero-copy"><p class="eyebrow">${t(project.category)}${project.gameType ? ` · ${escape(local(project.gameType))}` : ''}</p><h1>${escape(projectTitle)}</h1><p class="product-tagline">${escape(local(project.tagline))}</p><p class="product-summary">${escape(local(project.productSummary))}</p>${projectMetadata(project)}${mainTechnologies.length ? `<div class="product-hero-stack">${tags(mainTechnologies)}</div>` : ''}${linkButtons}</header></div>${productFeatures(project)}${productExperience(project)}${projectGallery(project)}${productValue(project)}${behindProduct(project)}${productTechnologies(project)}${productCta()}</section>`;
+      return `<section class="page section-shell project-detail-page product-showcase-page">${projectMiniNav(project, true)}<div class="product-hero reveal">${heroImage ? `<figure class="product-hero-media">${heroContent}</figure>` : ''}<header class="product-hero-copy"><p class="eyebrow">${t(project.category)}${project.gameType ? ` · ${escape(local(project.gameType))}` : ''}</p><h1>${escape(projectTitle)}</h1><p class="product-tagline">${escape(local(project.tagline))}</p><p class="product-summary">${escape(local(project.productSummary))}</p>${projectMetadata(project)}${mainTechnologies.length ? `<div class="product-hero-stack">${tags(mainTechnologies)}</div>` : ''}${linkButtons}</header></div>${tripLedgerStoreCta(project)}${productFeatures(project)}${productExperience(project)}${projectGallery(project)}${productValue(project)}${behindProduct(project)}${productTechnologies(project)}${productCta()}</section>`;
     }
     return `<section class="page section-shell project-detail-page">${projectMiniNav(project, false)}${heroImage ? `<figure class="project-detail-hero reveal">${heroContent}</figure>` : ''}<p class="eyebrow">${t(project.category)}${project.gameType ? ` · ${escape(local(project.gameType))}` : ''}</p><h1>${escape(projectTitle)}</h1><p class="page-intro">${escape(local(project.description))}</p>${project.technologies.length ? `<section class="project-detail-technologies reveal"><h2>${t(project.gameDetails ? 'usedTechnologies' : 'technologies')}</h2>${tags(project.technologies)}</section>` : ''}${linkButtons}${projectDetails(project)}${projectGallery(project)}</section>`;
   }
@@ -638,6 +668,7 @@
       initFeaturedCarousel();
     }
     translate();
+    initTechnicalDisclosures();
     initProjectMiniNav();
     document.body.classList.toggle('projects-view', page === 'projects' && hash === 'projects');
     document.title = title;
@@ -756,6 +787,7 @@
   window.addEventListener('resize', () => {
     if (window.innerWidth > 800) closeMenu();
     syncHeaderHeight();
+    initTechnicalDisclosures();
   });
   document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => {
     lang = button.dataset.lang;

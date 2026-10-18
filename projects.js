@@ -386,7 +386,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: 'tripledger', title: 'TripLedger', category: 'apps', featured: true, coverVariant: 'finance', coverImage: 'assets/projects/tripledger-cover.webp', coverThumbnail: 'assets/projects/thumbs/tripledger-cover.webp', coverFallback: 'assets/projects/fallbacks/tripledger-cover.jpg',
     highlight: { en: 'Travel Expense Tracking', tr: 'Seyahat Harcama Takibi' },
-    status: { en: 'Android Testing / Release Preparation', tr: 'Android test / yayın hazırlığı' },
+    status: { en: 'Available on Google Play', tr: "Google Play'de Yayında" },
     role: { en: 'Mobile application development and product design', tr: 'Mobil uygulama geliştirme ve ürün tasarımı' },
     platform: { en: 'Android / Capacitor', tr: 'Android / Capacitor' },
     tagline: { en: 'Make shared travel expenses simpler.', tr: 'Seyahat harcamalarını paylaşmayı kolaylaştır.' },
@@ -400,16 +400,14 @@ window.PORTFOLIO_PROJECTS = [
         { title: 'Expense tracking', description: 'Record travel spending with clear amounts and context.' },
         { title: 'Shared costs', description: 'Distribute common expenses across the group.' },
         { title: 'Participant shares', description: 'See how much of each expense belongs to each traveler.' },
-        { title: 'Subscription tracking', description: 'Keep recurring costs visible alongside trip spending.' },
-        { title: 'Smart settlement', description: 'Make final balances easier to understand at the end of a trip.' }
+        { title: 'Subscription tracking', description: 'Keep recurring costs visible alongside trip spending.' }
       ],
       tr: [
         { title: 'Gezi yönetimi', description: 'Her seyahati ve finansal hareketlerini düzenli tutun.' },
         { title: 'Harcama takibi', description: 'Seyahat giderlerini tutar ve açıklamalarıyla kaydedin.' },
         { title: 'Ortak giderler', description: 'Paylaşılan harcamaları grup üyelerine dağıtın.' },
         { title: 'Katılımcı payları', description: 'Her harcamanın hangi gezgine ne kadar yansıdığını görün.' },
-        { title: 'Abonelik takibi', description: 'Tekrarlayan giderleri seyahat harcamalarıyla birlikte izleyin.' },
-        { title: 'Akıllı hesaplaşma', description: 'Gezi sonundaki bakiyeleri daha kolay anlaşılır hale getirin.' }
+        { title: 'Abonelik takibi', description: 'Tekrarlayan giderleri seyahat harcamalarıyla birlikte izleyin.' }
       ]
     },
     productExperience: {
@@ -437,27 +435,29 @@ window.PORTFOLIO_PROJECTS = [
       tr: 'Seyahatlerde kişisel ve ortak harcamaların, kişi paylarının ve aboneliklerin tek bir mobil uygulamada kolayca takip edilmesi hedeflendi.'
     },
     approach: {
-      en: 'Trips, expense entries and participant shares were combined into a simple mobile workflow. The application was designed to operate locally without requiring a backend.',
-      tr: 'Geziler, harcama kalemleri ve kişi payları basit bir mobil akış altında birleştirildi. Uygulama backend gerektirmeden localStorage tabanlı çalışacak şekilde tasarlandı.'
+      en: 'Trips, expense entries, participants and shares are combined in a React interface built with Vite and Tailwind CSS, packaged for Android with Capacitor.',
+      tr: 'Geziler, harcama kalemleri, katılımcılar ve kişi payları; Vite ve Tailwind CSS ile geliştirilen React arayüzünde bir araya getirilir ve Capacitor ile Android uygulaması olarak paketlenir.'
     },
     technicalChallenge: {
-      en: 'Permission checks for Local Notifications caused startup crashes on some Android devices.',
-      tr: 'Android tarafındaki Local Notifications izin kontrolü bazı cihazlarda uygulamanın açılışında crash oluşturuyordu.'
+      en: 'Trip expenses, participants, individual shares and recurring subscriptions need to remain understandable within one mobile workflow.',
+      tr: 'Gezi harcamalarının, katılımcıların, kişi paylarının ve tekrarlayan aboneliklerin tek bir mobil akışta anlaşılır tutulması gerekir.'
     },
     solution: {
-      en: 'The notification permission check was moved away from application startup toward the relevant Settings flow. ErrorBoundary handling and required Android permissions were also added.',
-      tr: 'Notification izin kontrolünün uygulama açılışından çıkarılıp ihtiyaç duyulan Ayarlar akışına taşınması planlandı. ErrorBoundary ve gerekli Android izinleri de uygulamaya eklendi.'
+      en: 'Trip management, expense tracking, participant shares and subscription tracking are brought together in an Android application.',
+      tr: 'Gezi yönetimi, harcama takibi, katılımcı payları ve abonelik takibi bir Android uygulamasında bir araya getirilir.'
     },
     outcome: {
-      en: 'The application progressed through Google Play Console setup, reached internal testing and entered the final bug-fixing phase before production release.',
-      tr: 'Uygulama Google Play Console süreçlerine kadar ilerledi, dahili test sürümü oluşturuldu ve üretim yayını öncesindeki hata düzeltme aşamasına ulaştı.'
+      en: 'TripLedger is available on Google Play as an Android application for managing trips, expenses, participant shares and subscriptions.',
+      tr: 'TripLedger; gezileri, harcamaları, katılımcı paylarını ve abonelikleri yönetmek için Google Play\'de yayınlanan bir Android uygulamasıdır.'
     },
-    description: { en: 'Keep travel expenses, budgets and shared costs in one place.', tr: 'Seyahat harcamalarını, bütçeleri ve ortak giderleri tek yerde takip edin.' },
+    description: { en: 'Track trips, expenses, participant shares and subscriptions in one Android app.', tr: 'Gezileri, harcamaları, katılımcı paylarını ve abonelikleri tek Android uygulamasında takip edin.' },
     purpose: { en: 'Keep personal and shared expenses organized, making travel budgets easier to follow.', tr: 'Kişisel ve ortak harcamaları düzenleyerek seyahat bütçesini takip etmeyi kolaylaştırmak.' },
     features: { en: ['Expense tracking and travel budgets', 'Shared expense records', 'Subscription management'], tr: ['Harcama takibi ve seyahat bütçeleri', 'Ortak gider kayıtları', 'Abonelik yönetimi'] },
-    technologies: [], image: 'assets/tripledger-phone-cutout.webp', imageFallback: 'assets/tripledger-phone-cutout.png',
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Capacitor'], image: 'assets/tripledger-phone-cutout.webp', imageFallback: 'assets/tripledger-phone-cutout.png',
     screenshots: [{ src: 'assets/tripledger-phone-cutout.webp', fallback: 'assets/tripledger-phone-cutout.png', width: 960, height: 1442, alt: { en: 'TripLedger application preview', tr: 'TripLedger uygulama önizlemesi' } }],
-    github: '', demo: '', googlePlay: '', privacy: 'privacy/tripledger.html', terms: 'terms/tripledger.html'
+    github: '', demo: '', googlePlay: 'https://play.google.com/store/apps/details?id=com.gorkemkarakas.tripledger',
+    googlePlayLabel: { en: 'View on Google Play', tr: "Google Play'de Görüntüle" },
+    privacy: 'privacy/tripledger.html', terms: 'terms/tripledger.html'
   },
   {
     id: 'tinynotes', title: 'TinyNotes', category: 'apps', featured: true, coverVariant: 'notes', coverImage: 'assets/projects/tinynotes-cover.webp', coverThumbnail: 'assets/projects/thumbs/tinynotes-cover.webp', coverFallback: 'assets/projects/fallbacks/tinynotes-cover.jpg',
@@ -493,91 +493,333 @@ window.PORTFOLIO_PROJECTS = [
     screenshots: [], github: '', demo: '', googlePlay: ''
   },
   {
-    id: 'dilek-bahcesi', title: 'Dilek Bahçesi', category: 'games', featured: false, coverVariant: 'garden', coverImage: 'assets/projects/dilek-bahcesi-cover.webp', coverThumbnail: 'assets/projects/thumbs/dilek-bahcesi-cover.webp', coverFallback: 'assets/projects/fallbacks/dilek-bahcesi-cover.jpg',
-    highlight: { en: 'Coin Toss • Collection • Idle Progression', tr: 'Jeton Atma • Koleksiyon • Idle İlerleme' },
-    description: {
-      en: 'A casual collection game where players throw coins into a wishing fountain to discover random items, complete collections and build their economy.',
-      tr: 'Oyuncuların dilek kuyusuna jeton atarak rastgele eşyalar keşfettiği, koleksiyon tamamladığı ve oyun ekonomisini geliştirdiği casual koleksiyon oyunu.'
+    "id": "dilek-bahcesi",
+    "title": "Dilek Bahçesi",
+    "category": "games",
+    "featured": false,
+    "coverVariant": "garden",
+    "coverImage": "assets/projects/dilek-bahcesi-cover.webp",
+    "coverThumbnail": "assets/projects/thumbs/dilek-bahcesi-cover.webp",
+    "coverFallback": "assets/projects/fallbacks/dilek-bahcesi-cover.jpg",
+    "coverAlt": {
+      "tr": "Dilek Bahçesi temsili tanıtım illüstrasyonu: bahçede jeton atışı ve koleksiyon eşyaları.",
+      "en": "Dilek Bahçesi promotional illustration: a coin toss and collectible items in a garden."
     },
-    purpose: {
-      en: 'Turn a simple coin toss into a satisfying progression loop built around discovery, rarity, collecting and selling.',
-      tr: 'Basit bir jeton atma mekaniğini keşif, nadirlik, koleksiyon ve satış etrafında tatmin edici bir ilerleme döngüsüne dönüştürmek.'
+    "highlight": {
+      "en": "Coin Toss • Collection • Discovery",
+      "tr": "Jeton Atma • Koleksiyon • Keşif"
     },
-    features: {
-      en: ['Coin toss mechanic', 'Random item rewards', 'Large collectible item pool', 'Item rarity system', 'Collection tracking', 'Inventory and bag', 'Item detail modal', 'Selling collected items', 'Coin economy', 'Better coin progression', 'Collection progress', 'New item indicator', 'Persistent save data', 'Responsive web interface', 'Animated background and environmental visuals', 'Expandable structure for new wells and maps'],
-      tr: ['Jeton atma mekaniği', 'Rastgele eşya ödülleri', 'Geniş koleksiyon eşya havuzu', 'Nadirlik sistemi', 'Koleksiyon takibi', 'Çanta ve envanter', 'Eşya detay modalı', 'Toplanan eşyaları satma', 'Jeton ekonomisi', 'Geliştirilmiş jeton ilerlemesi', 'Koleksiyon ilerleme göstergesi', 'Yeni eşya göstergesi', 'Kalıcı kayıt sistemi', 'Responsive web arayüzü', 'Hareketli arka plan ve çevresel görseller', 'Yeni kuyu ve haritalara genişletilebilir yapı']
+    "tagline": {
+      "tr": "Bir jeton at, yeni bir hazine keşfet.",
+      "en": "Toss a coin. Discover a new treasure."
     },
-    gameDetails: {
-      gameplay: { en: 'Players toss coins into a wishing fountain, reveal random items and grow a collection through a relaxed idle progression loop.', tr: 'Oyuncular dilek kuyusuna jeton atar, rastgele eşyalar keşfeder ve rahat bir idle ilerleme döngüsü içinde koleksiyonlarını büyütür.' },
-      decisionMechanic: { en: 'Rarity, selling decisions, better coin progression and collection goals shape how the player develops the in-game economy.', tr: 'Nadirlik, satış kararları, daha iyi jetonlara ilerleme ve koleksiyon hedefleri oyuncunun oyun ekonomisini nasıl geliştireceğini belirler.' },
-      visualAtmosphere: { en: 'A responsive interface, animated background and environmental details create a calm wishing-garden atmosphere that can expand to new wells and maps.', tr: 'Responsive arayüz, hareketli arka plan ve çevresel detaylar; yeni kuyu ve haritalara genişleyebilen sakin bir dilek bahçesi atmosferi oluşturur.' },
-      technicalStructure: { en: 'A versioned save structure protects persistent progress, while a structured item data model keeps rarity, collection and economy content expandable without exposing raw implementation details.', tr: 'Sürümlendirilmiş kayıt yapısı kalıcı ilerlemeyi korurken düzenli eşya veri modeli; nadirlik, koleksiyon ve ekonomi içeriğinin ham uygulama detaylarını kullanıcıya göstermeden genişletilebilmesini sağlar.' }
+    "status": {
+      "tr": "Oynanabilir Prototip / Geliştiriliyor",
+      "en": "Playable Prototype / In Development"
     },
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'LocalStorage'],
-    gameType: { en: 'Casual / Collection / Idle', tr: 'Casual / Koleksiyon / Idle' }, isPlayable: false, playUrl: '',
-    screenshots: [], github: '', demo: '', googlePlay: ''
+    "platform": {
+      "tr": "Web — Masaüstü ve Mobil Tarayıcı",
+      "en": "Web — Desktop and Mobile Browser"
+    },
+    "description": {
+      "tr": "Dilek kuyusuna jeton atarak 30 farklı eşyayı keşfettiğin, koleksiyonunu tamamlamaya çalıştığın ve çantanı yönettiğin tek oyunculu casual web oyunu prototipi.",
+      "en": "A single-player casual web game prototype where you toss coins into a wishing well, discover 30 different items, work toward completing your collection and manage your inventory."
+    },
+    "productSummary": {
+      "tr": "Eski Taş Kuyusu’nda jetonunu seç, atış yap ve dört nadirlik seviyesindeki hazineleri keşfet. Keşiflerin albümünde kalırken çantandaki eşyaları satabilir, oyun içi altınla yeni jetonlar edinebilir ve şans ile satış değeri geliştirmelerine ilerleyebilirsin. Mevcut prototipte tek oynanabilir alan Eski Taş Kuyusu’dur; ilerleme aynı tarayıcıda yerel olarak saklanır.",
+      "en": "Choose a coin at the Old Stone Well, make a toss and discover treasures across four rarity tiers. Discoveries stay in your album while inventory items can be sold for in-game gold. Acquire more coin types and work toward luck and sale-value upgrades. The Old Stone Well is the only playable area in the current prototype; progress is saved locally in the same browser."
+    },
+    "featureShowcase": {
+      "tr": [
+        {
+          "title": "30 eşya, 4 nadirlik seviyesi",
+          "description": "Sıradan, Nadir, Epik ve Efsanevi eşyaları keşfet, albümündeki eksikleri tamamla. Eşyaları satsan da keşifleri albümünde kalır."
+        },
+        {
+          "title": "9 farklı jeton",
+          "description": "Başlangıç jetonuyla keşfe çık, oyun içi altın ve açılma koşullarıyla yeni jetonlar edin. Bazı jetonların keşfe veya ödüllere katkı sağlayan özel etkilerini deneyimle."
+        },
+        {
+          "title": "Envanter ve favoriler",
+          "description": "Çantandaki miktarları ve eşya detaylarını incele. Favorilerini işaretle, satmak istemediğin eşyaları satış kilidiyle koru."
+        },
+        {
+          "title": "Koleksiyon filtreleri",
+          "description": "Albümünde ve çantanda arama yap; nadirlik ve durum filtreleriyle aradığını bul, farklı sıralamalarla koleksiyonunu düzenle."
+        },
+        {
+          "title": "Sat ve geliştir",
+          "description": "Satış önizlemesiyle miktarı ve kazancı kontrol et; tekli, miktarlı veya toplu satış yap. Kazandığın altını jetonlara, şans ve satış değeri geliştirmelerine ayır."
+        },
+        {
+          "title": "Yerel kayıtla devam et",
+          "description": "Keşiflerini, envanterini ve ilerlemeni aynı tarayıcıda otomatik kaydet. Ses ve titreşim tercihlerini cihazının desteğine göre ayarla."
+        }
+      ],
+      "en": [
+        {
+          "title": "30 items, 4 rarity tiers",
+          "description": "Discover Common, Rare, Epic and Legendary items and fill the gaps in your album. Discoveries stay recorded even after you sell an item."
+        },
+        {
+          "title": "9 different coins",
+          "description": "Begin with the starter coin and acquire more types through in-game gold and unlock requirements. Explore the special effects of selected coins that support discovery or rewards."
+        },
+        {
+          "title": "Inventory and favorites",
+          "description": "Review quantities and item details in your inventory. Mark favorites and use sale locks to protect items you want to keep."
+        },
+        {
+          "title": "Collection filters",
+          "description": "Search your album and inventory, find items with rarity and status filters, and organize your collection with different sorting options."
+        },
+        {
+          "title": "Sell and progress",
+          "description": "Preview quantities and earnings before individual, quantity-based or bulk sales. Spend earned gold on coin types, luck upgrades and sale-value upgrades."
+        },
+        {
+          "title": "Continue with local saves",
+          "description": "Automatically save discoveries, inventory and progress in the same browser. Adjust sound and vibration preferences where supported by your device."
+        }
+      ]
+    },
+    "productExperience": {
+      "tr": "Kuyu, Hazineler, Market ve Geliştirmeler ekranları arasında geçiş yap. Her atışla yeni bir keşfin peşine düş; albümünü tamamlarken çantanı ve satış kararlarını yönet. Eski Taş Kuyusu’ndaki keşif yüzdesini, ustalık aşamalarını ve özel kalıntılarını takip et.",
+      "en": "Move between the Well, Treasures, Market and Upgrades screens. Pursue a new discovery with each toss, working toward a complete album while managing your inventory and sales. Track discovery progress, mastery milestones and special relics at the Old Stone Well."
+    },
+    "productFlow": {
+      "tr": [
+        {
+          "title": "Jetonunu seç",
+          "description": "Jetonunu seç ve Eski Taş Kuyusu’na atış yap."
+        },
+        {
+          "title": "Hazineni keşfet",
+          "description": "Yeni eşyayı incele, albümündeki keşifleri takip et ve çantanı düzenle."
+        },
+        {
+          "title": "Koleksiyonunu büyüt",
+          "description": "Satışlarını planla; oyun içi altınla yeni jetonlar ve geliştirmeler edinerek keşfe devam et."
+        }
+      ],
+      "en": [
+        {
+          "title": "Choose your coin",
+          "description": "Select a coin and toss it into the Old Stone Well."
+        },
+        {
+          "title": "Discover a treasure",
+          "description": "Review your new item, track discoveries in your album and organize your inventory."
+        },
+        {
+          "title": "Grow your collection",
+          "description": "Plan sales and spend in-game gold on more coin types and upgrades to keep exploring."
+        }
+      ]
+    },
+    "valueProposition": {
+      "tr": "Tek dokunuşla başlayan keşif döngüsünü, keşifleri saklayan bir albüm ve kontrollü envanter kararlarıyla birleştiren sakin bir koleksiyon deneyimi.",
+      "en": "A relaxed collecting experience that combines a simple tap-to-discover loop with an album that remembers discoveries and deliberate inventory choices."
+    },
+    "technicalDetails": {
+      "tr": [
+        "HTML, CSS ve JavaScript ile geliştirilen web prototipi; Canvas 2D efektleri ve hareketli kuyu medyasıyla desteklenir.",
+        "İlerleme ve tercihler aynı tarayıcıda yerel olarak saklanır.",
+        "Mevcut prototipte yalnızca Eski Taş Kuyusu oynanabilir. Mercan Bahçesi henüz oynanabilir değildir.",
+        "Mevcut kapak temsili tanıtım illüstrasyonudur."
+      ],
+      "en": [
+        "A web prototype built with HTML, CSS and JavaScript, supported by Canvas 2D effects and animated well media.",
+        "Progress and preferences are stored locally in the same browser.",
+        "Only the Old Stone Well is playable in the current prototype. Coral Garden is not yet playable.",
+        "The current cover is a promotional illustration."
+      ]
+    },
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Canvas 2D",
+      "LocalStorage"
+    ],
+    "gameType": {
+      "en": "Casual / Collection / Discovery",
+      "tr": "Casual / Koleksiyon / Keşif"
+    },
+    "isPlayable": false,
+    "playUrl": "",
+    "screenshots": [],
+    "github": "",
+    "demo": "",
+    "googlePlay": ""
   },
   {
-    id: 'kingdoms-choice', title: "Kingdom's Choice", category: 'games', featured: false, coverVariant: 'medieval', coverImage: 'assets/projects/kingdoms-choice-cover.webp', coverThumbnail: 'assets/projects/thumbs/kingdoms-choice-cover.webp', coverFallback: 'assets/projects/fallbacks/kingdoms-choice-cover.jpg',
-    highlight: { en: 'Card-Based Decision Game', tr: 'Kart Tabanlı Karar Oyunu' },
-    description: {
-      en: 'A medieval card-based decision game where the player responds to characters and events. Each choice affects the kingdom’s resources, population, military strength and the overall direction of the story.',
-      tr: 'Ortaçağ temalı, kart tabanlı bir karar verme oyunu. Oyuncu karşısına çıkan karakterler ve olaylar için seçimler yapar; bu kararlar krallığın kaynaklarını, halkın durumunu, askerî gücü ve hikâyenin gidişatını etkiler.'
+    "id": "kingdoms-choice",
+    "title": "Tahtın Gölgesi",
+    "category": "games",
+    "featured": false,
+    "coverImage": "assets/projects/tahtin-golgesi/sunlit-forest-path.webp",
+    "coverAlt": {
+      "tr": "Tahtın Gölgesi oyun içi orman sahnesi illüstrasyonu: ağaçların arasından geçen güneşli patika.",
+      "en": "Forest scene illustration used in Tahtın Gölgesi: a sunlit path between the trees."
     },
-    purpose: {
-      en: 'A medieval card and decision game built around keeping a kingdom alive through balanced choices.',
-      tr: 'Dengeli kararlarla bir krallığı ayakta tutma fikri etrafında geliştirilen ortaçağ temalı kart ve karar oyunu.'
+    "highlight": {
+      "tr": "Hikâye • Seçimler • Hayatta Kalma",
+      "en": "Story • Choices • Survival"
     },
-    features: {
-      en: ['Card-based decision system', 'Left/right choice mechanic', 'Kingdom resources change with decisions', 'Different character and event cards', 'Poor decisions can lead to an early game over', 'Main menu and game start screen', 'Visual direction suited to a medieval atmosphere', 'Architecture suitable for future sound effects, regions and event chains'],
-      tr: ['Kart tabanlı karar verme sistemi', 'Sağ/sol seçim mantığı', 'Krallık kaynaklarının kararlarla değişmesi', 'Farklı karakter ve olay kartları', 'Kötü kararların erken oyun sonuna yol açabilmesi', 'Ana menü ve oyun başlangıç ekranı', 'Ortaçağ atmosferine uygun görsel yapı', 'İleride ses efektleri, farklı bölgeler ve olay zincirleri eklenmeye uygun mimari']
+    "status": {
+      "tr": "Oynanabilir Prototip / Geliştiriliyor",
+      "en": "Playable Prototype / In Development"
     },
-    gameDetails: {
-      gameplay: {
-        en: 'The player interacts with events or characters presented on cards. Each card offers two different decisions. Choices increase or decrease specific resources, and the game can end when one reaches a critical level. The goal is to keep the kingdom standing for as long as possible through balanced decisions.',
-        tr: 'Oyuncu karşısına çıkan kartlardaki olay veya karakterlerle etkileşime girer. Her kartta iki farklı karar seçeneği bulunur. Verilen kararlar belirli kaynakları artırır veya azaltır. Kaynaklardan biri kritik seviyeye geldiğinde oyun sona erebilir. Amaç mümkün olduğunca uzun süre krallığı ayakta tutmak ve dengeli kararlar vermektir.'
-      },
-      decisionMechanic: {
-        en: 'Every card presents a left and right choice. Each response changes multiple kingdom resources, so short-term gains can create longer-term risks and poor decisions may bring the reign to an early end.',
-        tr: 'Her kart bir sağ ve bir sol seçim sunar. Her yanıt birden fazla krallık kaynağını değiştirir; bu nedenle kısa vadeli kazançlar uzun vadeli riskler yaratabilir ve kötü kararlar saltanatı erken sona erdirebilir.'
-      },
-      visualAtmosphere: {
-        en: 'The interface is designed around character and event cards, with a visual language intended to support a focused medieval and fantasy atmosphere.',
-        tr: 'Arayüz, karakter ve olay kartlarını merkeze alan; ortaçağ ve fantastik atmosferi destekleyecek bir görsel dil etrafında tasarlanıyor.'
-      },
-      technicalStructure: {
-        en: 'The game is being developed for the web. Logic, card data, resource management, game state and UI are kept in separate modules wherever possible. The structure can later be extended so a built, playable version opens directly within the site.',
-        tr: 'Oyun web tabanlı olarak geliştiriliyor. Mantık, kart verileri, kaynak yönetimi, oyun durumu ve UI mümkün olduğunca ayrı modüller halinde tutuluyor. Yapı, ileride oyunun build edilmiş oynanabilir sürümünün site içinde açılabileceği şekilde genişletilebilir.'
-      }
+    "platform": {
+      "tr": "Web — Masaüstü ve Mobil Tarayıcı",
+      "en": "Web — Desktop and Mobile Browser"
     },
-    technologies: ['HTML5', 'CSS3', 'JavaScript'],
-    gameType: { en: 'Medieval Card / Decision Game', tr: 'Ortaçağ Kart / Karar Oyunu' }, isPlayable: false, playUrl: '',
-    screenshots: [], github: '', demo: '', googlePlay: ''
-  },
-  {
-    id: 'mining-tycoon', title: 'Mining Tycoon', category: 'games', featured: false, coverVariant: 'mining', coverImage: 'assets/projects/mining-tycoon-cover.webp', coverThumbnail: 'assets/projects/thumbs/mining-tycoon-cover.webp', coverFallback: 'assets/projects/fallbacks/mining-tycoon-cover.jpg',
-    highlight: { en: 'Idle Mining & Production Management', tr: 'Idle Madencilik ve Üretim Yönetimi' },
-    description: {
-      en: 'An idle tycoon prototype where workers mine resources, trucks transport them and factories turn production into income.',
-      tr: 'İşçilerin kaynak çıkardığı, kamyonların taşıma yaptığı ve fabrikaların üretimi gelire dönüştürdüğü idle tycoon prototipi.'
+    "gameType": {
+      "tr": "Hikâye / Karar Kartları / Hayatta Kalma",
+      "en": "Narrative / Decision Cards / Survival"
     },
-    purpose: {
-      en: 'Build an expandable mining economy through worker, logistics, storage and production upgrades.',
-      tr: 'İşçi, lojistik, depo ve üretim yükseltmeleri üzerinden büyüyen bir madencilik ekonomisi oluşturmak.'
+    "tagline": {
+      "tr": "Gece olmadan bir sığınak bul. Seçimlerinin izini sür.",
+      "en": "Find shelter before nightfall. Follow the traces of your choices."
     },
-    features: {
-      en: ['Worker mining loop', 'Resource transport by trucks', 'Factory production', 'Worker count upgrades', 'Tool upgrades', 'Truck count upgrades', 'Storage capacity upgrades', 'Production progression', 'Expandable map', 'Environmental elements such as clouds, birds and ambient objects', 'Idle and tycoon progression structure'],
-      tr: ['İşçi kazı döngüsü', 'Kamyonlarla kaynak taşıma', 'Fabrika üretimi', 'İşçi sayısı geliştirmeleri', 'Alet geliştirmeleri', 'Kamyon sayısı geliştirmeleri', 'Depo kapasitesi geliştirmeleri', 'Üretim ilerleme sistemi', 'Genişletilebilir harita', 'Bulut, kuş ve çevresel objeler', 'Idle ve tycoon ilerleme yapısı']
+    "description": {
+      "tr": "Ormanda uyanan bir gencin iki günlük yolculuğunu yönettiğin; ihtiyaçlarını, eşyalarını ve insanlarla kurduğun güveni seçimlerle şekillendirdiğin tek oyunculu hikâye oyunu prototipi.",
+      "en": "A single-player narrative game prototype about guiding a young traveler through two days, shaping survival needs, belongings and trust through choices."
     },
-    gameDetails: {
-      gameplay: { en: 'Workers extract resources, trucks carry them through the logistics chain and factories convert production into income.', tr: 'İşçiler kaynak çıkarır, kamyonlar bunları lojistik zincirinde taşır ve fabrikalar üretimi gelire dönüştürür.' },
-      decisionMechanic: { en: 'Worker, tool, truck, storage and production upgrades determine where bottlenecks form and how quickly the mining economy expands.', tr: 'İşçi, alet, kamyon, depo ve üretim geliştirmeleri darboğazların nerede oluşacağını ve madencilik ekonomisinin ne kadar hızlı büyüyeceğini belirler.' },
-      visualAtmosphere: { en: 'An expandable mine map is supported by environmental details including clouds, birds and ambient objects.', tr: 'Genişletilebilir maden haritası; bulutlar, kuşlar ve çevresel objeler gibi atmosfer detaylarıyla desteklenir.' },
-      technicalStructure: { en: 'The prototype separates its mining, transport, storage and production loops so the idle tycoon economy and map can grow over time.', tr: 'Prototip; kazı, taşıma, depolama ve üretim döngülerini ayırarak idle tycoon ekonomisinin ve haritanın zamanla büyütülebilmesini sağlar.' }
+    "productSummary": {
+      "tr": "İlk gece için güvenli bir barınak ara; ertesi gün verdiğin sözlerin ve taşıdığın eşyaların açtığı yolları keşfet. Hikâye kartlarını oku, kararlarını sağa/sola kaydırarak veya düğmelerle ver; sağlık, tokluk, dayanıklılık ve moralini gözet. Günlüğün, ilişkilerin ve ipuçların yolculuğunun izini tutar.",
+      "en": "Seek shelter for the first night, then explore paths opened by your promises and belongings the next day. Read story cards and make choices with left/right swipes or buttons while watching health, satiety, stamina and morale. Your journal records relationships, clues and the traces of your journey."
     },
-    technologies: ['HTML5', 'CSS3', 'JavaScript'],
-    gameType: { en: 'Idle / Tycoon / Management', tr: 'Idle / Tycoon / Yönetim' }, isPlayable: false, playUrl: '',
-    screenshots: [], github: '', demo: '', googlePlay: ''
+    "featureShowcase": {
+      "tr": [
+        {
+          "title": "İki günlük hikâye",
+          "description": "İlk gün gece olmadan barınak bul; ikinci gün önceki kararlarının açtığı yolları keşfet. Seçimlerin ve yanındaki eşyalar günler arasında taşınır."
+        },
+        {
+          "title": "İhtiyaçlarını gözet",
+          "description": "Sağlık, tokluk, dayanıklılık ve moralin yolculuğunu etkiler. Zor anlarda karar ver, ihtiyaçların tükenmeden yolunu bul."
+        },
+        {
+          "title": "Eşyalar ve güven",
+          "description": "Yiyecek, mektup ve diğer eşyaları ilgili kartlarda kullan. Arın, Mira ve Deren ile kurduğun güven farklı sahnelere yön verir."
+        },
+        {
+          "title": "Sözler ve ipuçları",
+          "description": "Günlüğünde borçlarını, verdiğin sözleri, ilişkilerini ve bulduğun ipuçlarını takip et."
+        },
+        {
+          "title": "Tanıştığın yüzler",
+          "description": "Karşılaştığın karakterlerin portrelerini koleksiyonda aç. Açılan portreler yeni yolculuklarda da korunur."
+        },
+        {
+          "title": "Kaldığın yerden devam",
+          "description": "Aktif yolculuğunu aynı tarayıcıdaki yerel kayıttan sürdür. İlk günün sonunda yolculuğunu ikinci güne taşı."
+        }
+      ],
+      "en": [
+        {
+          "title": "A two-day story",
+          "description": "Find shelter before the first night, then explore paths shaped by earlier decisions on the second day. Your choices and belongings carry between days."
+        },
+        {
+          "title": "Watch your needs",
+          "description": "Health, satiety, stamina and morale shape your journey. Make decisions in difficult moments and find a path before your needs run out."
+        },
+        {
+          "title": "Belongings and trust",
+          "description": "Use food, a letter and other items on relevant cards. Trust built with Arın, Mira and Deren leads to different scenes."
+        },
+        {
+          "title": "Promises and clues",
+          "description": "Track debts, promises, relationships and discoveries in your journal."
+        },
+        {
+          "title": "Familiar faces",
+          "description": "Unlock portraits of encountered characters in the collection. Unlocked portraits remain available in later journeys."
+        },
+        {
+          "title": "Continue your journey",
+          "description": "Resume an active journey from a local save in the same browser. Carry your journey into the second day after the first night."
+        }
+      ]
+    },
+    "productExperience": {
+      "tr": "Hikâye kartlarına dokunarak veya Enter ile ilerle. Karar kartlarında sağa/sola kaydır, seçeneklere dokun ya da yön tuşlarını kullan. Eşyalarının ve insanlara verdiğin sözlerin sonuçlarını gör; günlüğünü açarak yolculuğunda bıraktığın izleri takip et.",
+      "en": "Advance story cards with a tap or Enter. On decision cards, swipe left or right, select a button or use the arrow keys. Follow the consequences of your belongings and promises, then open the journal to review the traces of your journey."
+    },
+    "productFlow": {
+      "tr": [
+        {
+          "title": "Hikâyeyi oku",
+          "description": "Ormanda başlayan yolculuğu takip et ve ilk gece için barınak ara."
+        },
+        {
+          "title": "Kararını ver",
+          "description": "İhtiyaçlarını, eşyalarını ve insanlarla kurduğun güveni gözeterek seçim yap."
+        },
+        {
+          "title": "İzlerini takip et",
+          "description": "Günlüğündeki sözleri ve ipuçlarını incele; ilk günün sonuçlarıyla ikinci güne geç."
+        }
+      ],
+      "en": [
+        {
+          "title": "Read the story",
+          "description": "Follow a journey that begins in a forest and seek shelter for the first night."
+        },
+        {
+          "title": "Make a choice",
+          "description": "Consider your needs, belongings and trust in others as you decide."
+        },
+        {
+          "title": "Follow the traces",
+          "description": "Review promises and clues in your journal and enter the second day with the consequences of the first."
+        }
+      ]
+    },
+    "valueProposition": {
+      "tr": "Kısa bir yolculukta hayatta kalma kararlarını, karakter ilişkilerini ve tutulmuş sözlerin sonuçlarını birleştiren hikâye deneyimi.",
+      "en": "A compact narrative experience combining survival decisions, character relationships and the consequences of promises."
+    },
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "ES Modules",
+      "LocalStorage",
+      "Web Audio API",
+      "PWA"
+    ],
+    "cardTechnologies": [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "PWA"
+    ],
+    "technicalDetails": {
+      "tr": [
+        "HTML, CSS ve JavaScript ile geliştirilmiş, tarayıcıda çalışan tek oyunculu prototip.",
+        "Mevcut kapsam iki gündür; üçüncü gün henüz oynanabilir değildir.",
+        "Oyun içi arayüz Türkçedir. Aktif yolculuk ve tercihler aynı tarayıcıda yerel olarak saklanır.",
+        "Müzik, ses seviyesi ve büyük yazı tercihleri bulunur; dokunma titreşimi cihaz desteğine bağlıdır.",
+        "Kapak, oyunda kullanılan mevcut orman sahnesi illüstrasyonudur."
+      ],
+      "en": [
+        "A single-player browser prototype built with HTML, CSS and JavaScript.",
+        "The current scope covers two days; a third day is not yet playable.",
+        "The in-game interface is in Turkish. Active journeys and preferences are stored locally in the same browser.",
+        "Music, volume and large-text preferences are available; touch vibration depends on device support.",
+        "The cover is an existing forest scene illustration used in the game."
+      ]
+    },
+    "screenshots": [],
+    "isPlayable": false,
+    "playUrl": "",
+    "github": "",
+    "demo": "",
+    "googlePlay": ""
   },
   {
     id: 'pulsechat', title: 'PulseChat', category: 'web', featured: true, coverVariant: 'chat', coverImage: 'assets/projects/pulsechat-cover.webp', coverThumbnail: 'assets/projects/thumbs/pulsechat-cover.webp', coverFallback: 'assets/projects/fallbacks/pulsechat-cover.jpg',
@@ -594,5 +836,822 @@ window.PORTFOLIO_PROJECTS = [
     purpose: { en: 'Bring daily restaurant operations together with ordering, inventory and sales tools.', tr: 'Sipariş, stok ve satış araçlarıyla günlük restoran operasyonlarını bir araya getirmek.' },
     features: { en: ['Order management', 'Inventory tracking', 'Sales reporting'], tr: ['Sipariş yönetimi', 'Stok takibi', 'Satış raporlama'] },
     technologies: [], screenshots: [], github: '', demo: '', googlePlay: ''
+  },
+  {
+    "id": "parkmate",
+    "title": "ParkMate",
+    "category": "apps",
+    "featured": false,
+    "coverImage": "assets/projects/parkmate-cover.webp",
+    "coverThumbnail": "assets/projects/thumbs/parkmate-cover.webp",
+    "coverFallback": "assets/projects/fallbacks/parkmate-cover.jpg",
+    "coverAlt": {
+      "tr": "ParkMate temsili tanıtım görseli: park edilmiş araç, yönlendirme yolu ve telefon maketi.",
+      "en": "ParkMate promotional illustration: a parked car, a navigation path and a phone mockup."
+    },
+    "status": {
+      "en": "Working MVP / In Development",
+      "tr": "Çalışan MVP / Geliştiriliyor"
+    },
+    "role": {
+      "en": "Android application and interface development",
+      "tr": "Android uygulaması ve arayüz geliştirme"
+    },
+    "platform": {
+      "en": "Android",
+      "tr": "Android"
+    },
+    "tagline": {
+      "en": "Save your parking spot and find your way back.",
+      "tr": "Park yerini kaydet, aracına daha kolay dön."
+    },
+    "productSummary": {
+      "en": "ParkMate is an Android app that stores your parking location, floor and section details, notes and photos on your device. It tracks parking duration, schedules local reminders and opens Google Maps walking navigation to your saved GPS location.",
+      "tr": "ParkMate; park konumunu, kat ve bölüm bilgilerini, notlarını ve fotoğraflarını cihazında saklayan bir Android uygulamasıdır. Park süresini takip eder, yerel hatırlatıcılar planlar ve kayıtlı GPS konumuna dönmek için Google Maps yürüyüş navigasyonunu açar."
+    },
+    "featureShowcase": {
+      "en": [
+        {
+          "title": "Parking location and details",
+          "description": "Save GPS coordinates and add a floor, section, space number and notes. You can still save parking details when GPS is unavailable."
+        },
+        {
+          "title": "Go to My Car",
+          "description": "Open Google Maps walking navigation to your saved coordinates."
+        },
+        {
+          "title": "Duration and reminders",
+          "description": "Review elapsed parking time and set a local reminder. Notifications depend on device permission and Android operating conditions."
+        },
+        {
+          "title": "Photo clues",
+          "description": "Add up to three photos from your camera or gallery and view them full screen in parking details."
+        },
+        {
+          "title": "History and favorites",
+          "description": "Search completed sessions, filter by type and save frequently used place details as favorites."
+        },
+        {
+          "title": "Personal appearance",
+          "description": "Save Turkish/English, light/dark/system theme and reduced-motion preferences on your device."
+        },
+        {
+          "title": "On-device records",
+          "description": "Keep parking records, drafts, favorites and photos on your device. Core parking records and history require no account or backend."
+        }
+      ],
+      "tr": [
+        {
+          "title": "Park konumu ve detayları",
+          "description": "GPS konumunu kaydet; kat, bölüm, park numarası ve not ekle. GPS kullanılamadığında detaylarla kayıt oluşturabilirsin."
+        },
+        {
+          "title": "Arabama Git",
+          "description": "Kaydettiğin koordinata yürüyüş yönlendirmesi için Google Maps'i aç."
+        },
+        {
+          "title": "Süre ve hatırlatıcılar",
+          "description": "Park süresini görüntüle ve yerel hatırlatıcı ayarla. Bildirimler cihaz iznine ve Android'in çalışma koşullarına bağlıdır."
+        },
+        {
+          "title": "Fotoğraflı park ipuçları",
+          "description": "Kamera veya galeriden en fazla üç fotoğraf ekle; park detayında tam ekran incele."
+        },
+        {
+          "title": "Geçmiş ve favoriler",
+          "description": "Tamamlanan parkları ara, türüne göre filtrele ve sık kullandığın yer detaylarını favorilere al."
+        },
+        {
+          "title": "Sana uygun görünüm",
+          "description": "Türkçe/İngilizce, açık/koyu/sistem teması ve azaltılmış hareket tercihlerini cihazında sakla."
+        },
+        {
+          "title": "Cihazında saklanan kayıtlar",
+          "description": "Park kayıtlarını, taslaklarını, favorilerini ve fotoğraflarını cihazında sakla. Temel kayıt ve geçmiş akışları hesap veya backend gerektirmez."
+        }
+      ]
+    },
+    "productExperience": {
+      "en": "Open the parking form with I parked and save your GPS location and any details you need. Review duration and reminder status on the active parking screen. Use Go to My Car to open external Google Maps navigation, then confirm the end of your parking session and review it in history.",
+      "tr": "Park Ettim ile kayıt formunu aç, GPS konumunu ve ihtiyacın olan park ipuçlarını kaydet. Aktif park ekranından süreyi ve hatırlatma durumunu takip et. Arabama Git ile harici Google Maps navigasyonunu aç; aracına döndüğünde parkı onaylayarak bitir ve geçmişte görüntüle."
+    },
+    "productFlow": {
+      "en": [
+        {
+          "title": "Save your parking spot",
+          "description": "Open the form, capture your location and save any notes, floor, section or photos you need."
+        },
+        {
+          "title": "Review your location and parking duration",
+          "description": "Check elapsed time and reminder status, and edit active parking details when needed."
+        },
+        {
+          "title": "Return to your car",
+          "description": "When coordinates are available, open Google Maps with Go to My Car. Confirm the end of the session when you return; the record moves to history."
+        }
+      ],
+      "tr": [
+        {
+          "title": "Park yerini kaydet",
+          "description": "Park Ettim ile formu aç; konumunu ve gerekirse not, kat, bölüm veya fotoğraf ekleyerek kaydet."
+        },
+        {
+          "title": "Konumunu ve park süreni takip et",
+          "description": "Geçen süreyi ve hatırlatma durumunu incele; gerekirse aktif park bilgilerini düzenle."
+        },
+        {
+          "title": "Arabana geri dön",
+          "description": "Konum varsa Arabama Git ile Google Maps'i aç. Döndüğünde parkı onaylayarak bitir; kayıt geçmişine taşınır."
+        }
+      ]
+    },
+    "valueProposition": {
+      "en": "Keep the location and visual clues you need to return to your car in one place, especially where floor, section and space numbers matter. Core parking records and history require no account or backend.",
+      "tr": "Özellikle kat, bölüm ve park numarasının önemli olduğu otoparklarda, aracına dönüş için gereken konum ve görsel ipuçlarını tek yerde tutar. Temel kayıt ve geçmiş akışları hesap veya backend gerektirmez."
+    },
+    "technicalDetails": {
+      "en": [
+        "The React and TypeScript interface is built with Vite and packaged for Android with Capacitor.",
+        "Active parking, history, drafts and favorites use a versioned state snapshot in Capacitor Preferences with serialized writes.",
+        "Photos are stored in the app's local data directory; cleanup targets files no longer referenced by retained records.",
+        "GPS and camera operations use their respective permission flows. A missing GPS fix does not necessarily block saving a parking record.",
+        "The local notification service manages regular reminders, a twelve-hour long-parking check and a fifteen-minute return check after navigation; the return phase replaces the other two checks.",
+        "Navigation opens in external Google Maps. Core records stay local; cloud backup and account synchronization are not implemented."
+      ],
+      "tr": [
+        "React ve TypeScript arayüzü Vite ile derlenir; Capacitor ile Android uygulaması olarak paketlenir.",
+        "Aktif park, geçmiş, taslaklar ve favoriler Capacitor Preferences içinde sürümlü bir state snapshot'ında saklanır; yazımlar sıraya alınır.",
+        "Fotoğraflar uygulamanın yerel veri dizininde tutulur; yalnızca artık kullanılmayan dosyalar güvenli temizlik akışına alınır.",
+        "GPS ve kamera işlemleri ilgili izin akışlarıyla çalışır. Konum alınamaması park kaydını zorunlu olarak engellemez.",
+        "Normal hatırlatma, 12 saatlik uzun park kontrolü ve navigasyon sonrası 15 dakikalık dönüş kontrolü yerel bildirim servisinde yönetilir; dönüş aşaması diğer iki kontrolün yerini alır.",
+        "Navigasyon harici Google Maps'te açılır. Temel kayıtlar yereldir; bulut yedekleme veya hesap senkronizasyonu uygulanmamıştır."
+      ]
+    },
+    "description": {
+      "en": "Keep your parking location, photos and parking duration together in one Android app.",
+      "tr": "Park yerini, fotoğraflarını ve park süreni tek Android uygulamasında takip et."
+    },
+    "purpose": {
+      "en": "Keep the location and visual clues you need to return to your car in one place, especially where floor, section and space numbers matter. Core parking records and history require no account or backend.",
+      "tr": "Özellikle kat, bölüm ve park numarasının önemli olduğu otoparklarda, aracına dönüş için gereken konum ve görsel ipuçlarını tek yerde tutar. Temel kayıt ve geçmiş akışları hesap veya backend gerektirmez."
+    },
+    "features": {
+      "tr": [
+        "GPS ile park konumu kaydetme",
+        "Google Maps üzerinden yürüyüş yönlendirmesi",
+        "Park süresi takibi",
+        "Yerel hatırlatıcılar",
+        "En fazla üç park fotoğrafı",
+        "Park geçmişi",
+        "Favoriler",
+        "Uygulama ayarları",
+        "Cihaz üzerinde yerel veri saklama"
+      ],
+      "en": [
+        "GPS parking location saving",
+        "Google Maps walking directions",
+        "Parking duration tracking",
+        "Local reminders",
+        "Up to three parking photos",
+        "Parking history",
+        "Favorites",
+        "App settings",
+        "On-device data storage"
+      ]
+    },
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Capacitor",
+      "CSS Modules",
+      "Capacitor Geolocation",
+      "Camera",
+      "Filesystem",
+      "Preferences",
+      "Local Notifications",
+      "App Launcher",
+      "Share",
+      "Haptics",
+      "Lucide React"
+    ],
+    "cardTechnologies": [
+      "React",
+      "TypeScript",
+      "Capacitor",
+      "Geolocation"
+    ],
+    "screenshots": [],
+    "github": "",
+    "demo": "",
+    "googlePlay": ""
+  },
+  {
+    "id": "teamops",
+    "title": "TeamOps",
+    "category": "web",
+    "featured": false,
+    "coverTitle": "TeamOps",
+    "coverImage": "assets/projects/teamops-cover.webp",
+    "coverThumbnail": "assets/projects/thumbs/teamops-cover.webp",
+    "coverFallback": "assets/projects/fallbacks/teamops-cover.jpg",
+    "coverAlt": {
+      "tr": "TeamOps temsili ürün tanıtım kapağı: görev listesi, durumlar, ilerleme çubukları ve görev notları.",
+      "en": "TeamOps conceptual product cover: a task list, statuses, progress bars and task notes."
+    },
+    "status": {
+      "tr": "Geliştiriliyor / Çalışan Prototip",
+      "en": "In Development / Working Prototype"
+    },
+    "platform": {
+      "tr": "Web",
+      "en": "Web"
+    },
+    "role": {
+      "tr": "Web uygulaması ve full-stack geliştirme",
+      "en": "Web application and full-stack development"
+    },
+    "tagline": {
+      "en": "Track tasks, progress and blockers in one place.",
+      "tr": "Görevleri, ilerlemeyi ve engelleri tek yerde takip et."
+    },
+    "description": {
+      "tr": "Görevleri ve göreve bağlı ilerleme notlarını takip etmeye odaklanan web prototipi.",
+      "en": "A web prototype focused on tracking tasks and task-linked progress updates."
+    },
+    "productSummary": {
+      "en": "TeamOps is a task and progress tracking prototype. It combines task creation and editing, status and progress updates, and task-linked notes and blocker reports through a React interface, an Express API and MySQL storage.",
+      "tr": "TeamOps, bir görev ve ilerleme takip prototipidir. Görev oluşturma ve düzenleme, durum ve ilerleme yüzdesi güncelleme, göreve bağlı not ve engel kaydı akışlarını React arayüzü, Express API ve MySQL veri katmanında birleştirir."
+    },
+    "featureShowcase": {
+      "en": [
+        {
+          "title": "Task creation and editing",
+          "description": "Manage a title, project name, description, priority and due date in one form."
+        },
+        {
+          "title": "Status and progress",
+          "description": "Update to-do, in-progress, blocked and completed task states and progress percentages."
+        },
+        {
+          "title": "Progress updates",
+          "description": "Add a short update to a task and review earlier notes in chronological order."
+        },
+        {
+          "title": "Blocker reports",
+          "description": "Mark a task-linked update as a blocker to make it visible."
+        },
+        {
+          "title": "Search and filters",
+          "description": "Filter tasks by status and search by title or project name."
+        },
+        {
+          "title": "Task summaries",
+          "description": "Review counts calculated from current records in the daily view and task list."
+        }
+      ],
+      "tr": [
+        {
+          "title": "Görev oluşturma ve düzenleme",
+          "description": "Başlık, proje adı, açıklama, öncelik ve son tarihi tek formda yönet."
+        },
+        {
+          "title": "Durum ve ilerleme",
+          "description": "Yapılacak, devam eden, engelli ve tamamlanan görev durumlarını ve ilerleme yüzdesini güncelle."
+        },
+        {
+          "title": "İlerleme notları",
+          "description": "Göreve kısa bir güncelleme ekle ve önceki notları tarih sırasıyla incele."
+        },
+        {
+          "title": "Engel bildirimi",
+          "description": "Göreve bağlı bir notu engel olarak işaretleyerek görünür hale getir."
+        },
+        {
+          "title": "Arama ve filtreler",
+          "description": "Görevleri durumlarına göre filtrele; başlık veya proje adına göre ara."
+        },
+        {
+          "title": "Görev özeti",
+          "description": "Günlük görünümde ve görev listesinde mevcut kayıtlardan hesaplanan sayaçları incele."
+        }
+      ]
+    },
+    "productExperience": {
+      "en": "Review tasks in the daily view, then narrow the My Tasks list by status or search. Create or edit a task, update its progress and add a short note or blocker report to the relevant task. Changes are sent through the API to the MySQL data layer.",
+      "tr": "Günlük görünümden görevlerini gözden geçir, Görevlerim ekranında durum veya aramayla listeyi daralt. Görev oluşturup düzenle, ilerleme yüzdesini güncelle ve ilgili göreve kısa bir not ya da engel bildirimi ekle. Değişiklikler API üzerinden MySQL veri katmanına iletilir."
+    },
+    "productFlow": {
+      "en": [
+        {
+          "title": "Define the task",
+          "description": "Create a task with a title, project, priority and optional due date."
+        },
+        {
+          "title": "Update progress",
+          "description": "Change the task status and percentage, then add a short progress update or blocker report."
+        },
+        {
+          "title": "Review the work",
+          "description": "Find records with search and filters, then review their states and update history."
+        }
+      ],
+      "tr": [
+        {
+          "title": "Görevi tanımla",
+          "description": "Başlık, proje, öncelik ve varsa son tarihi girerek yeni görev oluştur."
+        },
+        {
+          "title": "İlerlemeyi güncelle",
+          "description": "Görev durumunu ve yüzdesini düzenle; kısa bir ilerleme notu veya engel bildirimi ekle."
+        },
+        {
+          "title": "İşleri gözden geçir",
+          "description": "Görev listesinde arama ve filtrelerle kayıtları bul; durumları ve not geçmişini incele."
+        }
+      ]
+    },
+    "valueProposition": {
+      "en": "Keep task status and the notes explaining progress or blockers in the same context. The current prototype brings task tracking and progress communication into one interface.",
+      "tr": "Görev durumu ile işin neden ilerlediğini veya takıldığını anlatan notları aynı bağlamda tutar. Mevcut prototip, görev takibi ve ilerleme iletişimini tek arayüzde denemeyi sağlar."
+    },
+    "technicalDetails": {
+      "en": [
+        "The React/JSX client is built with Vite, with plain CSS styles and responsive breakpoints.",
+        "The Express API separates task and progress-update operations into route, controller, service and model layers.",
+        "Tasks and task-linked updates are stored in MySQL tables using parameterized SQL through mysql2/promise.",
+        "The server validates task priority, status, progress range and update content. Calendar validation and some state transitions still need improvement.",
+        "The interface stores the Turkish/English preference in localStorage and uses a translation dictionary for core screens.",
+        "Authentication, role-based authorization and employee evaluation modules are not implemented in the current prototype.",
+        "Moving a task from TODO to 5% progress can return 10% in the current prototype. Validation to reject invalid calendar dates still needs improvement."
+      ],
+      "tr": [
+        "React/JSX istemcisi Vite ile derlenir; arayüz stilleri düz CSS ve responsive breakpoint'lerle tanımlanır.",
+        "Express API, route/controller/service/model katmanlarıyla görev ve ilerleme güncellemesi işlemlerini ayırır.",
+        "Görevler ve göreve bağlı notlar MySQL tablolarında tutulur; mysql2/promise üzerinden parametreli SQL kullanılır.",
+        "Görev önceliği, durumu, yüzde aralığı ve not içeriği için sunucu tarafında doğrulamalar bulunur. Tarih doğrulaması ve bazı durum geçişleri geliştirme gerektirir.",
+        "Arayüz Türkçe/İngilizce seçimini localStorage içinde saklar; temel ekranlar çeviri sözlüğü kullanır.",
+        "Kimlik doğrulama, rol bazlı yetkilendirme ve çalışan değerlendirme modülleri mevcut prototip kapsamında uygulanmamıştır.",
+        "TODO durumundan %5 ilerlemeye geçiş mevcut prototipte %10 döndürebilir. Takvim dışı tarihleri reddetme doğrulaması geliştirme gerektirir."
+      ]
+    },
+    "purpose": {
+      "en": "Keep task status and the notes explaining progress or blockers in the same context. The current prototype brings task tracking and progress communication into one interface.",
+      "tr": "Görev durumu ile işin neden ilerlediğini veya takıldığını anlatan notları aynı bağlamda tutar. Mevcut prototip, görev takibi ve ilerleme iletişimini tek arayüzde denemeyi sağlar."
+    },
+    "features": {
+      "tr": [
+        "Görev oluşturma",
+        "Görev düzenleme",
+        "Durum takibi",
+        "İlerleme yüzdesi",
+        "Görev notları",
+        "Engel bildirimleri",
+        "Arama ve filtreleme"
+      ],
+      "en": [
+        "Task creation",
+        "Task editing",
+        "Status tracking",
+        "Progress percentages",
+        "Task notes",
+        "Blocker reports",
+        "Search and filtering"
+      ]
+    },
+    "technologies": [
+      "React",
+      "JavaScript",
+      "Vite",
+      "CSS",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "mysql2",
+      "REST API"
+    ],
+    "cardTechnologies": [
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL"
+    ],
+    "screenshots": [],
+    "github": "",
+    "demo": "",
+    "googlePlay": ""
+  },
+  {
+    id: 'light-spirit', title: 'Light Spirit', category: 'games', featured: false, coverTitle: 'Light Spirit',
+    coverImage: 'assets/projects/light-spirit-cover.webp',
+    coverThumbnail: 'assets/projects/thumbs/light-spirit-cover.webp',
+    coverFallback: 'assets/projects/fallbacks/light-spirit-cover.jpg',
+    coverAlt: { tr: 'Light Spirit oyunundan ışık ruhu ve karanlık labirent görünümü.', en: 'The light spirit and dark maze in Light Spirit gameplay.' },
+    status: { tr: 'Oynanabilir Prototip / Geliştiriliyor', en: 'Playable Prototype / In Development' },
+    platform: { tr: 'Masaüstü / Mobil Web', en: 'Desktop / Mobile Web' },
+    role: { tr: 'Oyun ve web arayüzü geliştirme', en: 'Game and web interface development' },
+    gameType: { tr: '2D Arcade / Labirent', en: '2D Arcade / Maze' },
+    tagline: { tr: 'Işığını koru, karanlıktan çıkış yolunu bul.', en: 'Keep your light alive and find a way out of the dark.' },
+    description: {
+      tr: 'Enerjini yönetip ışıkları toplayarak üç karanlık labirentten çıkmaya çalıştığın tek oyunculu 2D arcade oyunu.',
+      en: 'A single-player 2D arcade game about managing energy, collecting light and escaping three dark mazes.'
+    },
+    productSummary: {
+      tr: 'Light Spirit, küçük bir ışık ruhunu karanlık labirentlerde yönlendirdiğin özgün bir web oyunu prototipidir. Zamanla azalan enerjini ışık toplayarak yenile, daralan görüş alanında yolunu bul ve üç bölümün çıkış portallarına ulaş. Kapılar, kristaller ve ışığa tepki veren Shadow, bölümlere farklı kararlar ekler.',
+      en: 'Light Spirit is an original web game prototype in which you guide a small spirit through dark mazes. Replenish fading energy by collecting light, navigate a shrinking field of view and reach the exit portals across three levels. Doors, crystals and a light-sensitive Shadow introduce different decisions along the way.'
+    },
+    featureShowcase: {
+      tr: [
+        { title: 'Enerji ve görüş alanı', description: 'Enerjin zamanla azalır; görüş alanın enerjiye göre değişir. Işıkları toplayarak enerjini yenile.' },
+        { title: 'Üç bölümlük yolculuk', description: 'İlk Kıvılcım, Işığın Bedeli ve Karanlıktaki Gözler bölümlerini sırayla aç; çıkış portalına ulaşarak ilerle.' },
+        { title: 'Kapılar ve kristaller', description: 'İkinci bölümde enerji harcayan kapı kestirmesini veya uzun yolu seç; iki kristali etkinleştirerek portalı aç.' },
+        { title: 'Işığa tepki veren Shadow', description: 'Üçüncü bölümde güçlü ışığın uzaklaştırdığı Shadow’dan kaç. Temas enerji kaybettirir ve kısa bir koruma süresi başlatır.' },
+        { title: 'Klavye ve dokunmatik kontrol', description: 'WASD veya yön tuşlarıyla hareket et; mobilde yön ve etkileşim düğmelerini kullan.' },
+        { title: 'Bölüm ilerlemesi', description: 'Tamamladığın bölümler tarayıcıda saklanır ve sıradaki bölümü açar. Kayıt, devam eden koşunun konumunu veya enerjisini içermez.' },
+        { title: 'Duraklat ve yeniden dene', description: 'Oyunu duraklat veya bölümü yeniden başlat. Sekme odağı kaybolduğunda oyun otomatik duraklar.' }
+      ],
+      en: [
+        { title: 'Energy and visibility', description: 'Energy fades over time and determines your field of view. Collect lights to replenish it.' },
+        { title: 'A three-level journey', description: 'Unlock First Spark, The Cost of Light and Eyes in the Dark in sequence, progressing by reaching each exit portal.' },
+        { title: 'Doors and crystals', description: 'In the second level, choose an energy-costing door shortcut or the longer route, then activate two crystals to unlock the portal.' },
+        { title: 'A light-sensitive Shadow', description: 'Evade the third level’s Shadow, which retreats from strong light. Contact drains energy and starts a short protection period.' },
+        { title: 'Keyboard and touch controls', description: 'Move with WASD or arrow keys, or use directional and interaction buttons on mobile.' },
+        { title: 'Level progression', description: 'Completed levels are stored in your browser and unlock the next level. Saves do not include the position or energy of an ongoing run.' },
+        { title: 'Pause and retry', description: 'Pause the game or restart a level. The game automatically pauses when the tab loses focus.' }
+      ]
+    },
+    productExperience: {
+      tr: 'Menüden açık bir bölüm seç, ışık ruhunu koridorlarda yönlendir ve enerjini takip et. İkinci bölümde kapı ve kristallerle etkileşime gir; üçüncü bölümde Shadow’dan kaç. Enerjin bitmeden portala ulaşarak sonraki bölümü aç veya tamamladığın bölümleri yeniden oyna.',
+      en: 'Choose an unlocked level from the menu, guide the spirit through corridors and watch your energy. Interact with doors and crystals in the second level and evade the Shadow in the third. Reach the portal before your energy runs out to unlock the next level, or replay completed levels.'
+    },
+    productFlow: {
+      tr: [
+        { title: 'Bölümünü seç', description: 'İlk bölümden başla veya daha önce açtığın bir bölümü menüden seç.' },
+        { title: 'Işığını koru', description: 'Işıkları topla, yolunu planla ve bölümün kapı, kristal veya Shadow mekaniğine göre ilerle.' },
+        { title: 'Portala ulaş', description: 'Bölümün hedefini tamamlayıp çıkışa ulaş; ilerlemeni sakla ve sonraki bölüme geç.' }
+      ],
+      en: [
+        { title: 'Choose a level', description: 'Start with the first level or select one you have already unlocked from the menu.' },
+        { title: 'Keep your light alive', description: 'Collect lights, plan your route and adapt to the level’s doors, crystals or Shadow.' },
+        { title: 'Reach the portal', description: 'Complete the level objective and reach the exit, saving progression and moving on to the next level.' }
+      ]
+    },
+    valueProposition: {
+      tr: 'Basit labirent hareketini, zamanla azalan enerji ve değişen görüş alanıyla birleştirir. Üç kısa bölüm, rota planlama ve ışık yönetimini farklı etkileşimlerle keşfetmeni sağlar.',
+      en: 'Combines simple maze movement with fading energy and changing visibility. Three short levels let you explore route planning and light management through different interactions.'
+    },
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'ES Modules', 'Phaser 3', 'Canvas 2D', 'Vite', 'LocalStorage'],
+    cardTechnologies: ['Phaser 3', 'JavaScript', 'Vite', 'Canvas 2D'],
+    technicalDetails: {
+      tr: [
+        'Phaser ve JavaScript ile geliştirilen web tabanlı 2D oyun prototipi.',
+        'Masaüstü klavyesi ve mobil dokunmatik kontroller için hazırlanmıştır.',
+        'Mevcut sürüm tek oyunculu üç bölüm içerir; tamamlanan bölümlere ait ilerleme tarayıcıda saklanır.'
+      ],
+      en: [
+        'A web-based 2D game prototype built with Phaser and JavaScript.',
+        'Designed for desktop keyboard and mobile touch controls.',
+        'The current version contains three single-player levels and stores completed-level progression in the browser.'
+      ]
+    },
+    screenshots: [
+      { src: 'assets/projects/light-spirit/desktop-gameplay.png', width: 1280, height: 980, alt: { tr: 'Light Spirit üçüncü bölüm: labirent ve görüş alanı — masaüstü oyun ekranı.', en: 'Light Spirit level three: maze and field of view — desktop gameplay.' } },
+      { src: 'assets/projects/light-spirit/mobile-gameplay.png', width: 390, height: 648, alt: { tr: 'Light Spirit düşük enerji ve dokunmatik kontroller — mobil oyun ekranı.', en: 'Light Spirit low energy and touch controls — mobile gameplay.' } }
+    ],
+    isPlayable: false, playUrl: '', github: '', demo: '', googlePlay: ''
+  },
+  {
+    "id": "the-line",
+    "title": "THE LINE",
+    "category": "games",
+    "featured": false,
+    "coverImage": "assets/projects/the-line-cover.webp",
+    "coverThumbnail": "assets/projects/thumbs/the-line-cover.webp",
+    "coverFallback": "assets/projects/fallbacks/the-line-cover.jpg",
+    "coverAlt": {
+      "tr": "THE LINE gerçek ana menü ekranı: üs savunma oyununun başlangıç görünümü.",
+      "en": "THE LINE actual main menu screen: the starting view of the base defense game."
+    },
+    "status": {
+      "tr": "Oynanabilir Prototip / Geliştiriliyor",
+      "en": "Playable Prototype / In Development"
+    },
+    "platform": {
+      "tr": "Web",
+      "en": "Web"
+    },
+    "role": {
+      "tr": "Oyun ve web arayüzü geliştirme",
+      "en": "Game and web interface development"
+    },
+    "gameType": {
+      "tr": "2D Üs Savunma / Taktik",
+      "en": "2D Base Defense / Tactics"
+    },
+    "tagline": {
+      "tr": "Birliklerini sahaya sür, savunmanı güçlendir, hattı koru.",
+      "en": "Deploy your units, strengthen your defenses and hold the line."
+    },
+    "description": {
+      "tr": "Birlikler ve savunma geliştirmeleriyle düşman dalgalarına karşı üssünü koruduğun tek oyunculu web oyunu prototipi.",
+      "en": "A single-player web game prototype about defending your base against enemy waves with units and defensive upgrades."
+    },
+    "productSummary": {
+      "tr": "THE LINE, yan görünüşlü bir üs savunma oyunu prototipidir. Birliklerini sahaya sür, duvarını ve taretini destekle, düşman saldırılarından kazandığın parayı yeni birliklere veya savunma geliştirmelerine ayır. Amaç, dalgalar halinde gelen düşmanlara karşı üssünü ayakta tutmaktır.",
+      "en": "THE LINE is a side-view base defense game prototype. Deploy units, support your wall and turret, and spend money earned from defeating enemies on more units or defensive upgrades. Keep your base standing against successive enemy waves."
+    },
+    "featureShowcase": {
+      "tr": [
+        {
+          "title": "Üs ve savunma hattı",
+          "description": "Üssünü, duvarını ve otomatik ateş eden taretini düşman saldırılarına karşı koru."
+        },
+        {
+          "title": "İki birlik türü",
+          "description": "Piyade ve ağır nişancı birliklerini sahaya sür; birliklerin düşmanlarla otomatik savaşır."
+        },
+        {
+          "title": "Düşman dalgaları",
+          "description": "Farklı özelliklere sahip düşmanlarla karşılaş ve sonraki saldırı dalgasına hazırlan."
+        },
+        {
+          "title": "Savunma geliştirmeleri",
+          "description": "Kazandığın parayla duvar, taret ve üs geliştirmeleri satın al."
+        },
+        {
+          "title": "Kaynak kararları",
+          "description": "Düşmanları yenerek para kazan; yeni birliklerle kalıcı olmayan koşu içi savunma geliştirmeleri arasında seçim yap."
+        },
+        {
+          "title": "Duraklat ve yeniden başlat",
+          "description": "Savunmaya ara ver, kaldığın koşuya dön veya yeniden başla. Üs dayanıklılığı tükendiğinde yeni bir deneme yap."
+        }
+      ],
+      "en": [
+        {
+          "title": "Base and defensive line",
+          "description": "Protect your base, wall and automatically firing turret against enemy attacks."
+        },
+        {
+          "title": "Two unit types",
+          "description": "Deploy riflemen and heavy gunners; your units engage enemies automatically."
+        },
+        {
+          "title": "Enemy waves",
+          "description": "Face enemies with different traits and prepare for the next wave of attacks."
+        },
+        {
+          "title": "Defensive upgrades",
+          "description": "Spend earned money on wall, turret and base upgrades."
+        },
+        {
+          "title": "Resource decisions",
+          "description": "Earn money by defeating enemies, then choose between new units and defensive upgrades that last for the current run."
+        },
+        {
+          "title": "Pause and restart",
+          "description": "Take a break, return to your current run or restart. Try again when your base runs out of durability."
+        }
+      ]
+    },
+    "productExperience": {
+      "tr": "Ana menüden savunmayı başlat, mevcut bütçenle birlik topla ve savaş alanını takip et. Birliklerin ve taretin otomatik savaşırken kazandığın parayı yeni destek veya savunma geliştirmeleri için kullan. Üssün düştüğünde yeniden başlayarak farklı bir harcama planı dene.",
+      "en": "Start the defense from the main menu, recruit units within your budget and watch the battlefield. While your units and turret fight automatically, use earned money for reinforcements or defensive upgrades. When your base falls, restart and try a different spending plan."
+    },
+    "productFlow": {
+      "tr": [
+        {
+          "title": "Savunmayı başlat",
+          "description": "Ana menüden oyuna gir ve üssünün savunma durumunu gözden geçir."
+        },
+        {
+          "title": "Birliklerini planla",
+          "description": "Bütçeni piyade, ağır nişancı ve savunma geliştirmeleri arasında paylaştır."
+        },
+        {
+          "title": "Hattı koru",
+          "description": "Düşman dalgalarına dayan, kazandığın parayla savunmanı destekle ve gerekirse yeniden dene."
+        }
+      ],
+      "en": [
+        {
+          "title": "Start the defense",
+          "description": "Enter from the main menu and review the state of your defenses."
+        },
+        {
+          "title": "Plan your units",
+          "description": "Divide your budget between riflemen, heavy gunners and defensive upgrades."
+        },
+        {
+          "title": "Hold the line",
+          "description": "Withstand enemy waves, support your defenses with earned money and retry when needed."
+        }
+      ]
+    },
+    "valueProposition": {
+      "tr": "Otomatik savaşı, sınırlı bütçeyle verilen birlik ve geliştirme kararlarıyla birleştirir. Savunma hattını ayakta tutmak için ne zaman destek çağıracağına ve neyi güçlendireceğine karar verirsin.",
+      "en": "Combines automatic combat with unit and upgrade decisions made on a limited budget. Decide when to bring in reinforcements and which defenses to strengthen to keep the line standing."
+    },
+    "technologies": [
+      "Phaser 3",
+      "TypeScript",
+      "Vite",
+      "HTML5",
+      "CSS3"
+    ],
+    "cardTechnologies": [
+      "Phaser 3",
+      "TypeScript",
+      "Vite"
+    ],
+    "technicalDetails": {
+      "tr": [
+        "Phaser ve TypeScript ile geliştirilen web tabanlı 2D oyun prototipi.",
+        "Mevcut sürüm tek oyunculudur; tarayıcı arayüzünden birlik ve geliştirme kararları verilir.",
+        "İlerleme mevcut koşuyla sınırlıdır; kalıcı kayıt veya çevrim içi çok oyunculu özellik sunulmaz."
+      ],
+      "en": [
+        "A web-based 2D game prototype built with Phaser and TypeScript.",
+        "The current version is single-player, with unit and upgrade decisions made through the browser interface.",
+        "Progress is limited to the current run; persistent saves and online multiplayer are not provided."
+      ]
+    },
+    "screenshots": [],
+    "isPlayable": false,
+    "playUrl": "",
+    "github": "",
+    "demo": "",
+    "googlePlay": ""
+  },
+  {
+    "id": "click-master",
+    "title": "Click Master",
+    "category": "games",
+    "featured": false,
+    "coverImage": "assets/projects/click-master-cover.webp",
+    "coverThumbnail": "assets/projects/thumbs/click-master-cover.webp",
+    "coverFallback": "assets/projects/fallbacks/click-master-cover.jpg",
+    "coverAlt": {
+      "tr": "Click Master ana menü illüstrasyonundan hazırlanan kapak: kahraman ve yeşil slime, gün batımındaki kale manzarası.",
+      "en": "Cover adapted from Click Master’s main menu illustration: a hero and green slime against a castle at sunset."
+    },
+    "status": {
+      "tr": "Oynanabilir Prototip / Geliştiriliyor",
+      "en": "Playable Prototype / In Development"
+    },
+    "platform": {
+      "tr": "Web — Masaüstü ve Mobil Tarayıcı",
+      "en": "Web — Desktop and Mobile Browser"
+    },
+    "role": {
+      "tr": "Oyun ve web arayüzü geliştirme",
+      "en": "Game and web interface development"
+    },
+    "gameType": {
+      "tr": "2D Clicker / Otomatik Savaş",
+      "en": "2D Clicker / Auto Battle"
+    },
+    "tagline": {
+      "tr": "Tıkla, sandığını aç, kahramanını güçlendir.",
+      "en": "Tap, open a chest and strengthen your hero."
+    },
+    "highlight": {
+      "tr": "Tıklama • Sandık • Ekipman",
+      "en": "Tapping • Chests • Equipment"
+    },
+    "description": {
+      "tr": "Tıklayarak para kazandığın, sandıklardan ekipman edindiğin ve otomatik savaşlarla seviye ilerlettiğin tek oyunculu 2D web oyunu prototipi.",
+      "en": "A single-player 2D web game prototype where you earn coins by tapping, obtain equipment from chests and gain levels through automatic battles."
+    },
+    "productSummary": {
+      "tr": "Green Plains’te kahramanının otomatik saldırılarını takip et, tıklamalarla para kazan ve sandık ödüllerini takma ya da satma arasında seçim yap. Silahlarla saldırı gücünü artır, XP kazanarak seviye atla ve Giant Boar karşılaşmasına ulaş. Mevcut prototip, tek bölgede tekrar eden bir savaş ve ekipman ilerlemesi sunar.",
+      "en": "Follow your hero’s automatic attacks in Green Plains, earn coins through tapping and choose whether to equip or sell chest rewards. Increase attack power with weapons, gain XP and levels, and reach the Giant Boar encounter. The current prototype offers a repeating battle and equipment progression loop in one region."
+    },
+    "featureShowcase": {
+      "tr": [
+        {
+          "title": "Tıklayarak kazan",
+          "description": "Oyun alanına dokun veya tıkla; kazandığın parayı sandık açmak için biriktir."
+        },
+        {
+          "title": "Otomatik savaş",
+          "description": "Kahramanın düşmanlara otomatik saldırır. Düşmanları yenerek para ve XP kazan, seviyeni takip et."
+        },
+        {
+          "title": "Beş nadirlikte ödüller",
+          "description": "Sandıkları aç, farklı nadirliklerdeki silah ve gövde zırhı ödüllerini keşfet."
+        },
+        {
+          "title": "Tak veya sat",
+          "description": "Ödülünü mevcut ekipmanınla karşılaştır. Silah takarak saldırı gücünü artır veya ödülü satıp para kazan."
+        },
+        {
+          "title": "Green Plains yolculuğu",
+          "description": "Slime, Wild Rat, Boar ve Wolf aşamalarını geç, Giant Boar boss ile karşılaş. Boss sonrasında aynı bölgedeki döngü yeniden başlar."
+        },
+        {
+          "title": "Yerel ilerleme kaydı",
+          "description": "Para, seviye, aşama ve takılı ekipmanların aynı tarayıcıda saklanır. Seçimini bekleyen sandık ödülüne oyuna döndüğünde devam edebilirsin."
+        }
+      ],
+      "en": [
+        {
+          "title": "Earn by tapping",
+          "description": "Tap or click the playfield and save earned coins to open chests."
+        },
+        {
+          "title": "Automatic battles",
+          "description": "Your hero attacks enemies automatically. Defeat them for coins and XP and follow your level progression."
+        },
+        {
+          "title": "Five reward rarities",
+          "description": "Open chests and discover weapon and chest armor rewards across five rarity tiers."
+        },
+        {
+          "title": "Equip or sell",
+          "description": "Compare a reward with your current equipment. Equip a weapon to increase attack power or sell the reward for coins."
+        },
+        {
+          "title": "A Green Plains journey",
+          "description": "Progress through Slime, Wild Rat, Boar and Wolf stages and face the Giant Boar boss. The loop restarts in the same region after the boss."
+        },
+        {
+          "title": "Local progress saves",
+          "description": "Coins, levels, stages and equipped items are stored in the same browser. Return to a pending chest reward and continue your choice."
+        }
+      ]
+    },
+    "productExperience": {
+      "tr": "Oyun alanına tıklayarak para biriktirirken otomatik savaşları takip et. Sandığını açtığında ödülün özelliklerini ve o slottaki mevcut ekipmanını incele; tak veya sat kararını ver. Kazandığın XP ile seviye atla, silahlarını değiştir ve Green Plains döngüsüne devam et.",
+      "en": "Build up coins by tapping the playfield while following automatic battles. When you open a chest, review the reward’s stats and your current equipment for that slot, then choose to equip or sell. Gain levels through XP, change weapons and continue the Green Plains loop."
+    },
+    "productFlow": {
+      "tr": [
+        {
+          "title": "Tıkla ve kazan",
+          "description": "Oyun alanına dokun; tıklamalar ve yenilen düşmanlarla para biriktir."
+        },
+        {
+          "title": "Sandığını aç",
+          "description": "Ödülünü mevcut ekipmanınla karşılaştır, tak veya sat."
+        },
+        {
+          "title": "Güçlen ve ilerle",
+          "description": "XP ile seviye atla, silahlarla saldırını güçlendir ve boss karşılaşmasına ulaş."
+        }
+      ],
+      "en": [
+        {
+          "title": "Tap and earn",
+          "description": "Tap the playfield and collect coins from taps and defeated enemies."
+        },
+        {
+          "title": "Open a chest",
+          "description": "Compare the reward with your current equipment, then equip or sell it."
+        },
+        {
+          "title": "Grow and progress",
+          "description": "Gain levels through XP, increase attack power with weapons and reach the boss encounter."
+        }
+      ]
+    },
+    "valueProposition": {
+      "tr": "Basit tıklama etkileşimini otomatik savaş ve ekipman kararlarıyla birleştiren kısa bir gelişim döngüsü. Her sandık, kazancını nasıl değerlendireceğine dair yeni bir seçim sunar.",
+      "en": "A compact progression loop combining simple tapping with automatic battles and equipment decisions. Each chest offers a new choice about how to use your earnings."
+    },
+    "technologies": [
+      "Phaser 3",
+      "TypeScript",
+      "Vite",
+      "HTML5",
+      "CSS3",
+      "WebGL",
+      "LocalStorage"
+    ],
+    "cardTechnologies": [
+      "Phaser 3",
+      "TypeScript",
+      "Vite"
+    ],
+    "technicalDetails": {
+      "tr": [
+        "Phaser ve TypeScript ile geliştirilen, WebGL kullanan tek oyunculu web prototipi.",
+        "Dikey oyun alanı, masaüstü fare ve mobil dokunmatik girdileri için hazırlanmıştır.",
+        "İlerleme aynı tarayıcıda yerel olarak saklanır; kayıt başarısızlıkları oyun içinde bildirilir.",
+        "Mevcut kapak oyunun ana menü illüstrasyonundan hazırlanmıştır."
+      ],
+      "en": [
+        "A single-player web prototype built with Phaser and TypeScript, using WebGL.",
+        "The portrait playfield is designed for desktop mouse and mobile touch input.",
+        "Progress is saved locally in the same browser, with in-game feedback when saving fails.",
+        "The current cover is adapted from the game’s main menu illustration."
+      ]
+    },
+    "screenshots": [],
+    "isPlayable": false,
+    "playUrl": "",
+    "github": "",
+    "demo": "",
+    "googlePlay": ""
   }
 ];

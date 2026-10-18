@@ -379,6 +379,69 @@ h3 {
   padding-bottom:68px;
 }
 
+/* HERO AURORA EXPERIMENT — decorative, home-only; remove this block to revert. */
+#page-content > .hero::before,
+#page-content > .hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-repeat:no-repeat;
+  animation:hero-aurora-drift 26s ease-in-out infinite alternate;
+}
+
+#page-content > .hero::before {
+  background-image:
+    radial-gradient(ellipse at 72% 32%,rgba(75,125,255,.08),transparent 62%),
+    radial-gradient(ellipse at 52% 78%,rgba(148,125,230,.055),transparent 58%);
+  opacity:.65;
+}
+
+#page-content > .hero::after {
+  background-image:radial-gradient(ellipse at 86% 66%,rgba(116,153,255,.07),transparent 60%);
+  opacity:.45;
+  animation-duration:30s;
+  animation-direction:alternate-reverse;
+}
+
+:root[data-theme="dark"] #page-content > .hero::before {
+  background-image:
+    radial-gradient(ellipse at 72% 32%,rgba(42,89,197,.2),transparent 62%),
+    radial-gradient(ellipse at 52% 78%,rgba(105,73,190,.13),transparent 58%);
+  opacity:.85;
+}
+
+:root[data-theme="dark"] #page-content > .hero::after {
+  background-image:radial-gradient(ellipse at 86% 66%,rgba(59,76,160,.18),transparent 60%);
+  opacity:.65;
+}
+
+@keyframes hero-aurora-drift {
+  from { transform:translate3d(-1%,0,0); }
+  to { transform:translate3d(1%,1.5%,0); }
+}
+
+@media(max-width:800px) {
+  #page-content > .hero::before,
+  :root[data-theme="dark"] #page-content > .hero::before {
+    opacity:.5;
+    animation-duration:30s;
+  }
+  #page-content > .hero::after {
+    display:none;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  #page-content > .hero::before,
+  #page-content > .hero::after {
+    animation:none;
+    transform:none;
+  }
+}
+/* END HERO AURORA EXPERIMENT */
+
 .eyebrow {
   text-transform:uppercase;
   color:var(--muted);
@@ -590,9 +653,9 @@ h3 {
   display:flex;
   min-width:0;
   padding-inline:9px;
-  opacity:.76;
+  opacity:1;
   transform:scale(.93);
-  transition:transform .46s cubic-bezier(.22,.72,.2,1),opacity .32s ease;
+  transition:transform .46s cubic-bezier(.22,.72,.2,1);
 }
 
 .carousel-slide.is-active {
@@ -645,28 +708,45 @@ h3 {
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:8px;
-  min-height:28px;
+  gap:4px;
+  flex-wrap:wrap;
+  min-width:0;
+  min-height:44px;
   margin-top:4px;
 }
 
 .carousel-dot {
-  width:8px;
-  height:8px;
+  position:relative;
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
   padding:0;
   border:0;
   border-radius:999px;
-  background:color-mix(in srgb,var(--muted) 42%,transparent);
+  background:transparent;
   cursor:pointer;
+}
+
+.carousel-dot::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  pointer-events:none;
+  background:color-mix(in srgb,var(--muted) 42%,transparent);
+  transform:translate(-50%,-50%);
   transition:width .22s ease,background-color .22s ease,transform .22s ease;
 }
 
-.carousel-dot:hover {
-  transform:scale(1.2);
+.carousel-dot:hover::after {
+  transform:translate(-50%,-50%) scale(1.2);
   background:color-mix(in srgb,var(--accent) 64%,var(--muted));
 }
 
-.carousel-dot.is-active {
+.carousel-dot.is-active::after {
   width:24px;
   background:var(--accent);
 }
@@ -2127,6 +2207,12 @@ body.projects-view main {
   object-position:center;
 }
 
+/* Preserve the full composition of these promotional covers. */
+.product-hero-media:has(source[srcset*="parkmate-cover.webp"]),
+.product-hero-media:has(source[srcset*="teamops-cover.webp"]) {
+  aspect-ratio:16 / 9;
+}
+
 .product-hero-copy h1 {
   margin-bottom:12px;
   font-size:clamp(2.4rem,4.5vw,4.3rem);
@@ -2171,6 +2257,110 @@ body.projects-view main {
 
 .product-hero .hero-actions {
   margin-top:22px;
+}
+
+/* TripLedger's store card sits directly beneath the product hero. */
+.tripledger-store-cta {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;
+  align-items:center;
+  margin-top:24px;
+  padding:clamp(20px,3vw,32px);
+  border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));
+  border-radius:18px;
+  background:var(--surface);
+  box-shadow:0 12px 36px color-mix(in srgb,var(--accent) 8%,transparent);
+}
+
+.tripledger-store-copy {
+  min-width:0;
+}
+
+.tripledger-store-status {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:color-mix(in srgb,var(--accent) 10%,var(--surface));
+  color:var(--accent);
+  font-size:12px;
+  font-weight:650;
+}
+
+.tripledger-store-status>span {
+  width:6px;
+  height:6px;
+  flex-shrink:0;
+  border-radius:50%;
+  background:currentColor;
+}
+
+.tripledger-store-copy h2 {
+  margin:0 0 10px;
+  color:var(--ink);
+  font-size:clamp(1.25rem,2.4vw,1.75rem);
+  line-height:1.3;
+  letter-spacing:-.025em;
+  overflow-wrap:anywhere;
+}
+
+.tripledger-store-description {
+  max-width:60ch;
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.65;
+}
+
+.tripledger-store-action {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-self:end;
+  width:240px;
+  max-width:100%;
+  padding:8px 8px 14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--surface);
+  color:var(--ink);
+  text-align:center;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:650;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+
+.tripledger-store-action img {
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+.tripledger-store-action:focus-visible {
+  outline:3px solid var(--accent);
+  outline-offset:5px;
+}
+
+@media(hover:hover) {
+  .tripledger-store-action:hover {
+    border-color:var(--accent);
+    box-shadow:0 6px 18px color-mix(in srgb,var(--accent) 12%,transparent);
+  }
+}
+
+@media(max-width:640px) {
+  .tripledger-store-cta {
+    grid-template-columns:minmax(0,1fr);
+    gap:18px;
+  }
+  .tripledger-store-action {
+    justify-self:start;
+  }
 }
 
 .product-section,
@@ -3145,37 +3335,6 @@ body.projects-view main {
   .carousel-button-prev { left:10px; }
   .carousel-button-next { right:10px; }
 
-  .carousel-indicators {
-    gap:0;
-    min-width:0;
-  }
-
-  .carousel-dot,
-  .carousel-dot.is-active {
-    position:relative;
-    width:44px;
-    height:44px;
-    flex:0 1 44px;
-    background:transparent;
-  }
-
-  .carousel-dot::after {
-    content:"";
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:8px;
-    height:8px;
-    border-radius:999px;
-    background:color-mix(in srgb,var(--muted) 42%,transparent);
-    transform:translate(-50%,-50%);
-  }
-
-  .carousel-dot.is-active::after {
-    width:24px;
-    background:var(--accent);
-  }
-
   .project-body {
     padding:20px;
   }
@@ -3412,6 +3571,163 @@ body.projects-view main {
     padding-inline:18px;
   }
 }
+
+/* UI/UX PACKAGE 2 — shared card hierarchy and compact phone details. */
+.project-card .project-body {
+  padding:20px;
+}
+
+.project-card .project-category {
+  font-size:11px;
+  margin-bottom:7px;
+}
+
+.project-card .project-body h3 {
+  font-size:18px;
+  line-height:1.3;
+  margin-bottom:8px;
+}
+
+.carousel-slide .project-body h3 {
+  font-size:20px;
+}
+
+.project-card .project-body>.card-description {
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  line-clamp:3;
+  overflow:hidden;
+  min-height:4.65em;
+  font-size:14px;
+  line-height:1.55;
+  margin-bottom:14px;
+}
+
+.project-card .tags {
+  max-height:none;
+  overflow:visible;
+  margin-bottom:14px;
+}
+
+.project-card .tags li {
+  padding:3px 8px;
+  font-size:12px;
+  overflow-wrap:anywhere;
+}
+
+.project-card .case-link {
+  min-height:44px;
+  padding-top:12px;
+  font-size:13px;
+}
+
+.technical-disclosure > summary {
+  min-height:44px;
+  padding-block:9px;
+  cursor:pointer;
+  color:var(--ink);
+  line-height:1.6;
+}
+
+.technical-disclosure > summary::marker {
+  color:var(--accent);
+}
+
+.technical-disclosure > summary h3 {
+  display:inline;
+  margin:0;
+}
+
+.technical-disclosure > summary:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+@media(max-width:430px) {
+  .project-detail-page {
+    padding-block:28px 44px;
+  }
+  .project-detail-page .project-mini-nav {
+    margin-bottom:16px;
+  }
+  .product-hero {
+    gap:18px;
+  }
+  .product-hero-media {
+    aspect-ratio:16 / 9;
+    max-height:210px;
+  }
+  .project-detail-hero {
+    max-width:360px;
+  }
+  .project-detail-page h1 {
+    font-size:clamp(1.75rem,7.5vw,2rem);
+    line-height:1.2;
+    margin-bottom:12px;
+  }
+  .product-tagline {
+    font-size:16px;
+    line-height:1.45;
+    margin-bottom:12px;
+  }
+  .product-hero .project-meta {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+    margin-top:16px;
+  }
+  .product-hero .project-meta-item:first-child {
+    grid-column:1 / -1;
+  }
+  .product-hero .project-meta-item {
+    padding:10px 12px;
+  }
+  .product-hero .project-meta-item dd {
+    font-size:13px;
+    line-height:1.5;
+  }
+  /* The complete stack remains in the dedicated Technologies section. */
+  .product-hero-stack {
+    display:none;
+  }
+  .product-section,
+  .product-showcase-page>.project-gallery,
+  .product-value,
+  .product-cta {
+    margin-top:32px;
+  }
+  .product-section>h2,
+  .product-showcase-page>.project-gallery>h2,
+  .product-section-heading {
+    margin-bottom:20px;
+  }
+  .product-feature-card,
+  .product-flow li,
+  .technical-story article,
+  .behind-detail {
+    padding:16px;
+  }
+  .product-feature-icon {
+    margin-bottom:12px;
+  }
+  .product-feature-card p,
+  .product-flow p {
+    font-size:15px;
+    line-height:1.6;
+  }
+  .product-value,
+  .behind-product,
+  .product-cta {
+    padding:18px;
+  }
+  .tripledger-store-cta {
+    margin-top:18px;
+    padding:18px;
+    gap:14px;
+  }
+}
+/* END UI/UX PACKAGE 2 */
 
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after {
